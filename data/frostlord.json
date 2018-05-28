@@ -1,0 +1,41 @@
+{
+	"save": 3,
+	"weapons": [
+		{
+			"name": "Frost Spear",
+			"reach": 2,
+			"attacks": 4,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 3
+		},
+		{
+			"name": "Frostlord's Punches and Kicks",
+			"reach": 1,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 3,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Stonehorn's Horns",
+			"reach": 2,
+			"attacks": 6,
+			"hit": 4,
+			"wound": 3,
+			"rend": -2,
+			"damage": 3
+		},
+		{
+			"name": "Stonehorn's Crushing Hooves",
+			"reach": 1,
+			"attacks": 3.5,
+			"hit": 3,
+			"wound": 2,
+			"rend": -1,
+			"damage": 2
+		}
+	]
+}
