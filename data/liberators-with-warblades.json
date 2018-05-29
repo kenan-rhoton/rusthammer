@@ -1,0 +1,19 @@
+{
+    "name": "Liberators (Warblades)",
+    "bravery": 6,
+    "movement": 5,
+    "save": 4,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Warblade",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 2,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

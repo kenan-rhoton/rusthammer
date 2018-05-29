@@ -4,25 +4,34 @@ use std;
 
 #[derive(Deserialize)]
 pub struct Unit {
+    pub name: String,
+    pub bravery: i32,
+    pub movement: i32,
     pub save: i32,
-    pub weapons: Vec<weapons::Weapon>
+    pub size: i32,
+    pub weapons: Vec<weapons::Weapon>,
+    pub wounds: i32
 }
 
 impl Unit {
 
     pub fn precision(&self) -> f64 {
+        self.size as f64 *
         self.weapons.iter().fold(0.0, |acc, x| acc + x.precision())
     }
 
     pub fn threat(&self) -> f64 {
+        self.size as f64 *
         self.weapons.iter().fold(0.0, |acc, x| acc + x.threat())
     }
 
     pub fn unsaved(&self, opponent : &Unit) -> f64 {
+        self.size as f64 *
         self.weapons.iter().fold(0.0, |acc, x| acc + x.unsaved(opponent.save))
     }
 
     pub fn expected_damage(&self, opponent : &Unit) -> f64 {
+        self.size as f64 *
         self.weapons.iter().fold(0.0, |acc, x| acc + x.expected_damage(opponent.save))
     }
 
@@ -42,7 +51,12 @@ mod tests {
     macro_rules! simple_unit {
         () => (
             super::Unit {
+                name: String::from("Simple"),
                 save: 6,
+                size: 1,
+                wounds: 4,
+                bravery: 6,
+                movement: 4,
                 weapons: vec![
                     super::weapons::Weapon {
                         name: String::from(""),
@@ -56,7 +70,12 @@ mod tests {
     macro_rules! complex_unit {
         () => (
             super::Unit {
+                name: String::from("Complex"),
                 save: 3,
+                size: 9,
+                wounds: 4,
+                bravery: 6,
+                movement: 4,
                 weapons: vec![
                     super::weapons::Weapon {
                         name: String::from(""),
@@ -83,7 +102,7 @@ mod tests {
 
         assert_approx_eq!(
             complex_unit!().precision(),
-            3.0 * (4.0/6.0) * (4.0/6.0) + 6.0 * 0.5 * (4.0/6.0) + 3.5 * (4.0/6.0) * (5.0/6.0));
+            9.0 * (3.0 * (4.0/6.0) * (4.0/6.0) + 6.0 * 0.5 * (4.0/6.0) + 3.5 * (4.0/6.0) * (5.0/6.0)));
     }
 
     #[test]
@@ -94,9 +113,10 @@ mod tests {
 
         assert_approx_eq!(
             complex_unit!().threat(),
-            3.0 * (4.0/6.0) * (4.0/6.0) +
-            6.0 * 0.5 * (4.0/6.0) * 3.0 +
-            3.5 * (4.0/6.0) * (5.0/6.0) * 2.0);
+            9.0 * (
+                3.0 * (4.0/6.0) * (4.0/6.0) +
+                6.0 * 0.5 * (4.0/6.0) * 3.0 +
+                3.5 * (4.0/6.0) * (5.0/6.0) * 2.0));
     }
 
     #[test]
@@ -107,9 +127,10 @@ mod tests {
 
         assert_approx_eq!(
             complex_unit!().unsaved(&simple_unit!()),
-            3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
-            6.0 * 0.5 * (4.0/6.0) +
-            3.5 * (4.0/6.0) * (5.0/6.0) );
+            9.0 * (
+                3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
+                6.0 * 0.5 * (4.0/6.0) +
+                3.5 * (4.0/6.0) * (5.0/6.0)));
     }
 
     #[test]
@@ -120,8 +141,9 @@ mod tests {
 
         assert_approx_eq!(
             complex_unit!().expected_damage(&simple_unit!()),
-            3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
-            6.0 * 0.5 * (4.0/6.0) * 3.0 +
-            3.5 * (4.0/6.0) * (5.0/6.0) * 2.0 );
+            9.0 * (
+                3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
+                6.0 * 0.5 * (4.0/6.0) * 3.0 +
+                3.5 * (4.0/6.0) * (5.0/6.0) * 2.0 ));
     }
 }

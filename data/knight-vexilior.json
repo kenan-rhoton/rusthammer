@@ -1,0 +1,19 @@
+{
+    "name": "Knight-Vexilior",
+    "bravery": 9,
+    "movement": 4,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Warhammer",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

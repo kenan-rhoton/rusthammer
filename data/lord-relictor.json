@@ -1,0 +1,29 @@
+{
+    "name": "Lord-Relictor",
+    "bravery": 9,
+    "movement": 4,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Sigmarite Runeblade",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Warhammer",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}
+

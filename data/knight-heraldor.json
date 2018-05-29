@@ -1,0 +1,19 @@
+{
+    "name": "Knight-Heraldor",
+    "bravery": 8,
+    "movement": 5,
+    "save": 4,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Sigmarite Broadsword",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        }
+    ]
+}

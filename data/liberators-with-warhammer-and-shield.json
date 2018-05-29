@@ -1,0 +1,19 @@
+{
+    "name": "Liberators (Warhammer & Shield)",
+    "bravery": 6,
+    "movement": 5,
+    "save": 3,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Warhammer",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

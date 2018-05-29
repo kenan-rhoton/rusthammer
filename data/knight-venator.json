@@ -1,0 +1,37 @@
+{
+    "name": "Knight-Venator",
+    "bravery": 9,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Realmhunter's Bow",
+            "reach": 30,
+            "attacks": 3,
+            "hit": 2,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Star-eagle's Celestial Talons",
+            "reach": 30,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Star-eagle's Celestial Talons",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

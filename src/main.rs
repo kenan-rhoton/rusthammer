@@ -12,12 +12,10 @@ extern crate serde_derive;
 mod units;
 
 fn main() {
-    let mut args: Vec<String> = std::env::args().collect();
+    let args: Vec<String> = std::env::args().collect();
 
     match args.len() {
         3 => {
-            args[2].push_str(".json");
-            args[2].insert_str(0,"data/");
             let unit1 = units::Unit::from_file(args[2].parse().unwrap());
             match (args[1].as_ref(), unit1) {
                 ("threat", Ok(u1)) =>
@@ -31,11 +29,7 @@ fn main() {
             }
         },
         4 => {
-            args[2].push_str(".json");
-            args[2].insert_str(0,"data/");
             let unit1 = units::Unit::from_file(args[2].parse().unwrap());
-            args[3].push_str(".json");
-            args[3].insert_str(0,"data/");
             let unit2 = units::Unit::from_file(args[3].parse().unwrap());
             match (args[1].as_ref(), unit1, unit2) {
                 ("damage", Ok(u1), Ok(u2)) =>

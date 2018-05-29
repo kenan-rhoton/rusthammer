@@ -1,0 +1,28 @@
+{
+    "name": "Prosecutors (Stormcall Javelins)",
+    "bravery": 6,
+    "movement": 12,
+    "save": 4,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Stormcall Javelins",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 2
+        },
+        {
+            "name": "Stormcall Javelins",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

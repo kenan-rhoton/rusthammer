@@ -1,0 +1,19 @@
+{
+    "name": "Lord-Celestant",
+    "bravery": 9,
+    "movement": 5,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Relic Hammer",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Gryph-Hounds",
+    "bravery": 6,
+    "movement": 9,
+    "save": 7,
+    "size": 1,
+    "wounds": 3,
+    "weapons": [
+        {
+            "name": "Beak and Claws",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}
