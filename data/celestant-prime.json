@@ -1,0 +1,19 @@
+{
+    "name": "Celestant Prime",
+    "bravery": 10,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 8,
+    "weapons": [
+        {
+            "name": "Ghal Maraz, the Hammer of Sigmar",
+            "reach": 2,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 2,
+            "rend": -3,
+            "damage": 3
+        }
+    ]
+}

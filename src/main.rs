@@ -19,9 +19,9 @@ fn main() {
             let unit1 = units::Unit::from_file(args[2].parse().unwrap());
             match (args[1].as_ref(), unit1) {
                 ("threat", Ok(u1)) =>
-                    println!("Threat: {}", u1.threat()),
+                    println!("{}\nThreat: {}", u1.name, u1.threat()),
                 ("precision", Ok(u1)) =>
-                    println!("Threat: {}", u1.precision()),
+                    println!("{}\nPrecision: {}", u1.name, u1.precision()),
                 (_, Err(_)) =>
                     eprintln!("Cannot find data file: {}", args[2]),
                 (_, Ok(_)) =>
@@ -33,9 +33,17 @@ fn main() {
             let unit2 = units::Unit::from_file(args[3].parse().unwrap());
             match (args[1].as_ref(), unit1, unit2) {
                 ("damage", Ok(u1), Ok(u2)) =>
-                    println!("Expected Damage: {}", u1.expected_damage(&u2)),
+                    println!(
+                        "{} vs {} (Wounds: {} Size: {} Save: {}\n\
+                        Expected Damage: {}",
+                        u1.name, u2.name, u2.wounds, u2.size, u2.save,
+                        u1.expected_damage(&u2)),
                 ("unsaved", Ok(u1), Ok(u2)) =>
-                    println!("Expected Unsaved Wounds: {}", u1.unsaved(&u2)),
+                    println!(
+                        "{} vs {} (Wounds: {} Size: {} Save: {}\n\
+                        Expected Unsaved Wounds: {}",
+                        u1.name, u2.name, u2.wounds, u2.size, u2.save,
+                        u1.unsaved(&u2)),
                 (_, Err(_), Ok(_)) =>
                     eprintln!("Cannot find data file: {}", args[2]),
                 (_, Ok(_), Err(_)) =>
