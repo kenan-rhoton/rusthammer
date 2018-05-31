@@ -1,6 +1,6 @@
 mod probabilities;
 
-#[derive(Deserialize)]
+#[derive(Deserialize,Clone)]
 pub struct Weapon {
     pub name: String,
     pub reach: i32,
@@ -27,6 +27,18 @@ impl Weapon {
 
     pub fn expected_damage(&self, save : i32) -> f64 {
         self.unsaved(save) * self.damage
+    }
+
+    pub fn merge(&self, w : &Weapon) -> Weapon {
+        Weapon {
+            name: self.name.clone(),
+            reach: self.reach + w.reach,
+            attacks: self.attacks + w.attacks,
+            hit: self.hit + w.hit,
+            wound: self.wound + w.wound,
+            rend: self.rend + w.rend,
+            damage: self.damage + w.damage
+        }
     }
 
 }

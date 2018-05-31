@@ -2,7 +2,7 @@ mod weapons;
 extern crate serde_json;
 use std;
 
-#[derive(Deserialize)]
+#[derive(Deserialize,Default,Clone)]
 pub struct Unit {
     pub name: String,
     pub bravery: i32,
@@ -10,7 +10,9 @@ pub struct Unit {
     pub save: i32,
     pub size: i32,
     pub weapons: Vec<weapons::Weapon>,
-    pub wounds: i32
+    pub wounds: i32,
+    #[serde(default)]
+    pub retry: Vec<weapons::Weapon>,
 }
 
 impl Unit {
@@ -33,6 +35,19 @@ impl Unit {
     pub fn expected_damage(&self, opponent : &Unit) -> f64 {
         self.size as f64 *
         self.weapons.iter().fold(0.0, |acc, x| acc + x.expected_damage(opponent.save))
+    }
+
+    pub fn merge(&self, weapon : &weapons::Weapon) -> Unit {
+        Unit {
+            weapons: self.weapons.iter().map(|w| {
+                if w.name == weapon.name {
+                    w.merge(weapon)
+                } else {
+                    (*w).clone()
+                }
+            }).collect(),
+            ..(*self).clone()
+        }
     }
 
     pub fn from_file(filename : String) -> Result<Unit, Box<std::error::Error>> {
