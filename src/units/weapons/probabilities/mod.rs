@@ -1,6 +1,6 @@
 mod dice;
 
-fn check(target : i32) -> f64 {
+pub fn check(target : i32) -> f64 {
     dice::roll_over(target)
 }
 

@@ -1,0 +1,49 @@
+{
+    "name": "Fulminators",
+    "bravery": 7,
+    "movement": 10,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Lightning Surge",
+            "reach": 6,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 0,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Stormstrike Glaive",
+            "reach": 2,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Dracoth's Claws and Fangs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Stormstrike Glaive (Charge)",
+            "replace": "Stormstrike Glaive",
+            "reach": 0,
+            "attacks": 0,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 2
+        }
+    ]
+}

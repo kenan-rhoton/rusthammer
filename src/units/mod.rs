@@ -12,29 +12,46 @@ pub struct Unit {
     pub weapons: Vec<weapons::Weapon>,
     pub wounds: i32,
     #[serde(default)]
-    pub retry: Vec<weapons::WeaponOption>
+    pub retry: Vec<weapons::WeaponOption>,
+    #[serde(default)]
+    pub special: Vec<String>
 }
 
 impl Unit {
 
     pub fn precision(&self) -> f64 {
         self.size as f64 *
-        self.weapons.iter().fold(0.0, |acc, x| acc + x.precision())
+            self.weapons.iter().fold(0.0, |acc, x| acc + x.precision())
     }
 
     pub fn threat(&self) -> f64 {
         self.size as f64 *
-        self.weapons.iter().fold(0.0, |acc, x| acc + x.threat())
+            self.weapons.iter().fold(0.0, |acc, x| acc + x.threat())
+    }
+
+    fn special_saves(&self, rend : i32) -> f64 {
+        if self.special.iter().any(|s| s == "Reroll 1s on Save") {
+            1.0 - 1.0/6.0 * weapons::probabilities::check(self.save - rend) as f64
+        } else {
+            1.0
+        }
     }
 
     pub fn unsaved(&self, opponent : &Unit) -> f64 {
         self.size as f64 *
-        self.weapons.iter().fold(0.0, |acc, x| acc + x.unsaved(opponent.save))
+            self.weapons.iter().fold(0.0, |acc, x| {
+                println!("POTATOES {}", opponent.special_saves(x.rend));
+                opponent.special_saves(x.rend) *
+                    x.unsaved(opponent.save) + acc
+            })
     }
 
     pub fn expected_damage(&self, opponent : &Unit) -> f64 {
         self.size as f64 *
-        self.weapons.iter().fold(0.0, |acc, x| acc + x.expected_damage(opponent.save))
+            self.weapons.iter().fold(0.0, |acc, x| {
+                opponent.special_saves(x.rend) *
+                    x.expected_damage(opponent.save) + acc
+            })
     }
 
     pub fn merge(&self, weapon : &weapons::WeaponOption) -> Unit {
@@ -75,12 +92,13 @@ mod tests {
                 weapons: vec![
                     super::weapons::Weapon {
                         name: String::from(""),
-                        reach: 2, attacks: 4.0, hit: 3, wound: 3, rend: -1, damage: 3.0
+                        reach: 2, attacks: 4.0, hit: 3, wound: 3, rend: -1, damage: 3.0, extra: vec![]
                     }
                 ],
-                retry: vec![]
+                retry: vec![],
+                special: vec![]
             }
-        )
+            )
     }
 
     macro_rules! complex_unit {
@@ -95,18 +113,19 @@ mod tests {
                 weapons: vec![
                     super::weapons::Weapon {
                         name: String::from(""),
-                        reach: 1, attacks: 3.0, hit: 3, wound: 3, rend: 0, damage: 1.0
+                        reach: 1, attacks: 3.0, hit: 3, wound: 3, rend: 0, damage: 1.0, extra: vec![]
                     },
                     super::weapons::Weapon {
                         name: String::from(""),
-                        reach: 2, attacks: 6.0, hit: 4, wound: 3, rend: -2, damage: 3.0
+                        reach: 2, attacks: 6.0, hit: 4, wound: 3, rend: -2, damage: 3.0, extra: vec![]
                     },
                     super::weapons::Weapon {
                         name: String::from(""),
-                        reach: 1, attacks: 3.5, hit: 3, wound: 2, rend: -3, damage: 2.0
+                        reach: 1, attacks: 3.5, hit: 3, wound: 2, rend: -3, damage: 2.0, extra: vec![]
                     }
                 ],
-                retry: vec![]
+                retry: vec![],
+                special: vec![String::from("Reroll 1s on Save")]
             }
         )
     }
@@ -140,7 +159,7 @@ mod tests {
     fn test_unsaved() {
         assert_approx_eq!(
             simple_unit!().unsaved(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5);
+            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5 * (1.0 - 1.0/6.0 * 0.5));
 
         assert_approx_eq!(
             complex_unit!().unsaved(&simple_unit!()),
@@ -154,7 +173,7 @@ mod tests {
     fn test_expected_damage() {
         assert_approx_eq!(
             simple_unit!().expected_damage(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5 * 3.0);
+            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5 * 3.0 * (1.0 - 1.0/6.0 * 0.5));
 
         assert_approx_eq!(
             complex_unit!().expected_damage(&simple_unit!()),
