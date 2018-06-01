@@ -1,0 +1,42 @@
+{
+    "name": "Retributors",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 5,
+    "wounds": 3,
+    "weapons": [
+        {
+            "name": "Lightning Hammer",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2,
+            "extra": [
+                {
+                    "name": "Blast to Ashes",
+                    "reach": 1,
+                    "attacks": 2,
+                    "hit": 6,
+                    "wound": -10,
+                    "rend": -100,
+                    "damage": 2
+                }
+            ]
+        }
+    ],
+    "retry": [
+        {
+            "name": "Starsoul Mace",
+            "replace": "Lightning Hammer",
+            "reach": 0,
+            "attacks": -1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 0
+        }
+    ]
+}

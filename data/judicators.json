@@ -45,6 +45,26 @@
             "wound": 1,
             "rend": 1,
             "damage": 1
+        },
+        {
+            "name": "Shockbolt Bow",
+            "replace": "Skybolt Bow",
+            "reach": 0,
+            "attacks": 2.5,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Thunderbolt Crossbow",
+            "replace": "Skybolt Bow",
+            "reach": -6,
+            "attacks": 0,
+            "hit": 0,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
         }
     ]
 }

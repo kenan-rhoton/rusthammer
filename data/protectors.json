@@ -1,0 +1,31 @@
+{
+    "name": "Protectors",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 5,
+    "wounds": 3,
+    "weapons": [
+        {
+            "name": "Stormstrike Glaive",
+            "reach": 3,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Starsoul Mace",
+            "replace": "Stormstrike Glaive",
+            "reach": -2,
+            "attacks": -2,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 1
+        }
+    ]
+}

@@ -19,41 +19,60 @@ pub struct Unit {
 
 impl Unit {
 
-    pub fn precision(&self) -> f64 {
+    fn to_roll(&self, target : i32, name : &str) -> f64{
+        weapons::probabilities::check(target) +
+            if self.special.iter().any(|s| s == &format!("Reroll 1s on {}", name)) {
+                1.0/6.0 * weapons::probabilities::check(target)
+            } else if self.special.iter().any(|s| s == &format!("Reroll Failed {}s", name)) {
+                (target - 1) as f64/6.0 * weapons::probabilities::check(target)
+            } else {
+                0.0
+            }
+    }
+
+    fn to_hit(&self, hit : i32) -> f64 {
+        self.to_roll(hit, "Hit")
+    }
+
+    fn to_wound(&self, wound : i32) -> f64 {
+        self.to_roll(wound, "Wound")
+    }
+
+    fn to_save(&self, rend : i32) -> f64 {
+        self.to_roll(self.save - rend, "Save")
+    }
+
+    fn each_weapon<C>(&self, mut action : C) -> f64 where C: FnMut(&weapons::Weapon) -> f64 {
         self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| acc + x.precision())
+            self.weapons.iter().fold(0.0, |acc, x| {
+                acc + action(x) + x.extra.iter().fold(0.0, |acc, x| acc + action(x))
+            })
+    }
+
+    pub fn precision(&self) -> f64 {
+        self.each_weapon(|x| {
+            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound)
+        })
     }
 
     pub fn threat(&self) -> f64 {
-        self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| acc + x.threat())
-    }
-
-    fn special_saves(&self, rend : i32) -> f64 {
-        if self.special.iter().any(|s| s == "Reroll 1s on Save") {
-            1.0 - 1.0/6.0 * weapons::probabilities::check(self.save - rend) as f64
-        } else if self.special.iter().any(|s| s == "Reroll Failed Saves") {
-            1.0 - weapons::probabilities::check(self.save - rend) as f64
-        } else {
-            1.0
-        }
+        self.each_weapon(|x| {
+            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) * x.damage
+        })
     }
 
     pub fn unsaved(&self, opponent : &Unit) -> f64 {
-        self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| {
-                println!("POTATOES {}", opponent.special_saves(x.rend));
-                opponent.special_saves(x.rend) *
-                    x.unsaved(opponent.save) + acc
-            })
+        self.each_weapon(|x| {
+            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
+                (1.0 - opponent.to_save(x.rend))
+        })
     }
 
     pub fn expected_damage(&self, opponent : &Unit) -> f64 {
-        self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| {
-                opponent.special_saves(x.rend) *
-                    x.expected_damage(opponent.save) + acc
-            })
+        self.each_weapon(|x| {
+            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
+                (1.0 - opponent.to_save(x.rend)) * x.damage
+        })
     }
 
     pub fn merge(&self, weapon : &weapons::WeaponOption) -> Unit {
@@ -161,7 +180,7 @@ mod tests {
     fn test_unsaved() {
         assert_approx_eq!(
             simple_unit!().unsaved(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5 * (1.0 - 1.0/6.0 * 0.5));
+            4.0 * (4.0/6.0) * (4.0/6.0) * (0.5 - (1.0/6.0 * 0.5)));
 
         assert_approx_eq!(
             complex_unit!().unsaved(&simple_unit!()),
@@ -175,7 +194,7 @@ mod tests {
     fn test_expected_damage() {
         assert_approx_eq!(
             simple_unit!().expected_damage(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * 0.5 * 3.0 * (1.0 - 1.0/6.0 * 0.5));
+            4.0 * (4.0/6.0) * (4.0/6.0) * (0.5 - (1.0/6.0 * 0.5)) * 3.0);
 
         assert_approx_eq!(
             complex_unit!().expected_damage(&simple_unit!()),
