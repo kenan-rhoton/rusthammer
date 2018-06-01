@@ -32,7 +32,7 @@ impl Unit {
     fn special_saves(&self, rend : i32) -> f64 {
         if self.special.iter().any(|s| s == "Reroll 1s on Save") {
             1.0 - 1.0/6.0 * weapons::probabilities::check(self.save - rend) as f64
-        else if self.special.iter().any(|s| s == "Reroll Failed Saves") {
+        } else if self.special.iter().any(|s| s == "Reroll Failed Saves") {
             1.0 - weapons::probabilities::check(self.save - rend) as f64
         } else {
             1.0
