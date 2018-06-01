@@ -34,8 +34,16 @@
                     "damage": 3.5
                 }
             ]
+        },
+        {
+            "name": "Storm Breath",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 0,
+            "rend": -100,
+            "damage": 2
         }
-
     ],
     "special": [
         "Reroll 1s on Save"

@@ -10,7 +10,7 @@
             "name": "Warblade",
             "reach": 1,
             "attacks": 2,
-            "hit": 2,
+            "hit": 3,
             "wound": 4,
             "rend": 0,
             "damage": 1

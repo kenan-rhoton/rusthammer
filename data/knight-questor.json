@@ -1,0 +1,35 @@
+{
+    "name": "Knight-Questor",
+    "bravery": 8,
+    "movement": 5,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Warblade",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Thundercharged Strike",
+                    "reach": 1,
+                    "attacks": 4,
+                    "hit": 3,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 2
+                }
+            ]
+        }
+    ],
+    "special": [
+        "Reroll Failed Saves"
+    ],
+    "retry": [
+    ]
+}

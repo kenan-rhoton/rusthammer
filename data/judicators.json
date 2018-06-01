@@ -1,0 +1,50 @@
+{
+    "name": "Judicators",
+    "bravery": 6,
+    "movement": 5,
+    "save": 4,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Skybolt Bow",
+            "reach": 24,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Storm Gladius",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Boltstorm Crossbow",
+            "replace": "Skybolt Bow",
+            "reach": -12,
+            "attacks": 1,
+            "hit": 0,
+            "wound": 1,
+            "rend": 1,
+            "damage": 1
+        },
+        {
+            "name": "Boltstorm Crossbow (Rapid Fire)",
+            "replace": "Skybolt Bow",
+            "reach": -12,
+            "attacks": 2,
+            "hit": 0,
+            "wound": 1,
+            "rend": 1,
+            "damage": 1
+        }
+    ]
+}

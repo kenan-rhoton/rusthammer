@@ -7,12 +7,30 @@
     "wounds": 5,
     "weapons": [
         {
-            "name": "Relic Hammer",
+            "name": "Sigmarite Runeblade",
             "reach": 1,
             "attacks": 4,
             "hit": 3,
             "wound": 3,
             "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Warhammer",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Sigmarite Warcloak",
+            "reach": 16,
+            "attacks": 3.5,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
             "damage": 1
         }
     ]

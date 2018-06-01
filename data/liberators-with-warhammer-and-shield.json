@@ -2,7 +2,7 @@
     "name": "Liberators (Warhammer & Shield)",
     "bravery": 6,
     "movement": 5,
-    "save": 3,
+    "save": 4,
     "size": 5,
     "wounds": 2,
     "weapons": [
@@ -15,5 +15,8 @@
             "rend": 0,
             "damage": 1
         }
+    ],
+    "special": [
+        "Reroll 1s on Save"
     ]
 }

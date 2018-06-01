@@ -1,5 +1,5 @@
 {
-    "name": "Lord-Castellant",
+    "name": "Lord-Veritant",
     "bravery": 9,
     "movement": 5,
     "save": 3,
@@ -7,9 +7,9 @@
     "wounds": 6,
     "weapons": [
         {
-            "name": "Castellant's Halberd",
-            "reach": 2,
-            "attacks": 3,
+            "name": "Judgement Blade",
+            "reach": 1,
+            "attacks": 4,
             "hit": 3,
             "wound": 3,
             "rend": -1,
@@ -17,3 +17,4 @@
         }
     ]
 }
+
