@@ -11,6 +11,18 @@ pub struct Weapon {
     pub damage: f64
 }
 
+#[derive(Deserialize,Clone)]
+pub struct WeaponOption {
+    pub name: String,
+    pub replace: String,
+    pub reach: i32,
+    pub attacks: f64,
+    pub hit: i32,
+    pub wound: i32,
+    pub rend: i32,
+    pub damage: f64
+}
+
 impl Weapon {
 
     pub fn precision(&self) -> f64 {
@@ -29,9 +41,9 @@ impl Weapon {
         self.unsaved(save) * self.damage
     }
 
-    pub fn merge(&self, w : &Weapon) -> Weapon {
+    pub fn merge(&self, w : &WeaponOption) -> Weapon {
         Weapon {
-            name: self.name.clone(),
+            name: w.name.clone(),
             reach: self.reach + w.reach,
             attacks: self.attacks + w.attacks,
             hit: self.hit + w.hit,

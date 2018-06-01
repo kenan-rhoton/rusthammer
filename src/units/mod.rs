@@ -12,7 +12,7 @@ pub struct Unit {
     pub weapons: Vec<weapons::Weapon>,
     pub wounds: i32,
     #[serde(default)]
-    pub retry: Vec<weapons::Weapon>,
+    pub retry: Vec<weapons::WeaponOption>
 }
 
 impl Unit {
@@ -37,10 +37,10 @@ impl Unit {
         self.weapons.iter().fold(0.0, |acc, x| acc + x.expected_damage(opponent.save))
     }
 
-    pub fn merge(&self, weapon : &weapons::Weapon) -> Unit {
+    pub fn merge(&self, weapon : &weapons::WeaponOption) -> Unit {
         Unit {
             weapons: self.weapons.iter().map(|w| {
-                if w.name == weapon.name {
+                if w.name == weapon.replace {
                     w.merge(weapon)
                 } else {
                     (*w).clone()
@@ -77,7 +77,8 @@ mod tests {
                         name: String::from(""),
                         reach: 2, attacks: 4.0, hit: 3, wound: 3, rend: -1, damage: 3.0
                     }
-                ]
+                ],
+                retry: vec![]
             }
         )
     }
@@ -104,7 +105,8 @@ mod tests {
                         name: String::from(""),
                         reach: 1, attacks: 3.5, hit: 3, wound: 2, rend: -3, damage: 2.0
                     }
-                ]
+                ],
+                retry: vec![]
             }
         )
     }

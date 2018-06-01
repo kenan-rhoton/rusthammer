@@ -24,5 +24,69 @@
             "rend": -1,
             "damage": 1
         }
+    ],
+    "retry": [
+        {
+            "name": "Tempestos Hammer (Charge)",
+	    "replace": "Tempestos Hammer",
+            "reach": 0,
+            "attacks": 2,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Thunderaxe",
+	    "replace": "Tempestos Hammer",
+            "reach": 0,
+            "attacks": 0,
+            "hit": 0,
+            "wound": 1,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Thunderaxe (2 allies)",
+	    "replace": "Tempestos Hammer",
+            "reach": 0,
+            "attacks": 2,
+            "hit": 0,
+            "wound": 1,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Lightning Hammer",
+	    "replace": "Tempestos Hammer",
+            "reach": -1,
+            "attacks": 0,
+            "hit": 0,
+            "wound": 1,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Stormstrike Glaive",
+	    "replace": "Tempestos Hammer",
+            "reach": 0,
+            "attacks": 1,
+            "hit": 0,
+            "wound": 2,
+            "rend": 0,
+            "damage": -1
+        }
+,
+        {
+            "name": "Stormstrike Glaive (Charge)",
+	    "replace": "Tempestos Hammer",
+            "reach": 0,
+            "attacks": 1,
+            "hit": 0,
+            "wound": 2,
+            "rend": -1,
+            "damage": 1
+        }
+
     ]
 }
