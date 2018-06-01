@@ -1,0 +1,88 @@
+{
+    "name": "Drakesworn Templar",
+    "bravery": 9,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 16,
+    "weapons": [
+        {
+            "name": "Skybolt Bow",
+            "reach": 24,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Tempest Axe",
+            "reach": 2,
+            "attacks": 6,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Stardrake's Great Claws",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Rain of Stars",
+            "reach": 1200,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 0,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Sweeping Tail",
+            "reach": 3,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Arc Hammer",
+            "replace": "Tempest Axe",
+            "reach": -1,
+            "attacks": -4,
+            "hit": -1,
+            "wound": 0,
+            "rend": 1,
+            "damage": 3,
+            "extra": [
+                {
+                    "name": "Hammer Smash",
+                    "reach": 1,
+                    "attacks": 2,
+                    "hit": 6,
+                    "wound": 3,
+                    "rend": -1,
+                    "damage": 3
+                }
+            ]
+        },
+        {
+            "name": "Stormlance",
+            "replace": "Tempest Axe",
+            "reach": 1,
+            "attacks": -3,
+            "hit": 0,
+            "wound": 0,
+            "rend": -1,
+            "damage": 0
+        }
+    ]
+}

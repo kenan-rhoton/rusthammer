@@ -10,7 +10,7 @@
             "name": "Celestial Hammers",
             "reach": 18,
             "attacks": 2,
-            "hit": 3,
+            "hit": 4,
             "wound": 4,
             "rend": 0,
             "damage": 1
@@ -19,10 +19,13 @@
             "name": "Celestial Hammers",
             "reach": 1,
             "attacks": 2,
-            "hit": 2,
+            "hit": 3,
             "wound": 3,
             "rend": 0,
             "damage": 1
         }
+    ],
+    "special": [
+        "Reroll 1s on Hit"
     ]
 }

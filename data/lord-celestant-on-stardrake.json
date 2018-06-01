@@ -1,0 +1,103 @@
+{
+    "name": "Lord-Celestant on Stardrake",
+    "bravery": 9,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 16,
+    "weapons": [
+        {
+            "name": "Celestine Hammer",
+            "reach": 2,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Stardrake's Great Claws",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2,
+        },
+        {
+            "name": "Rain of Stars",
+            "reach": 1200,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 0,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Sweeping Tail",
+            "reach": 3,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Reroll 1s on Save"
+    ],
+    "retry": [
+        {
+            "name": "Celestine Hammer (Charge)",
+            "replace": "Celestine Hammer",
+            "reach": 0,
+            "attacks": 2,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 0
+        },
+        {
+            "name": "Stormbound Blade",
+            "replace": "Celestine Hammer",
+            "reach": 0,
+            "attacks": 0,
+            "hit": -1,
+            "wound": 2,
+            "rend": 0,
+            "damage": 0,
+            "extra": [
+                {
+                    "name": "Stormbound Boom",
+                    "reach": 2,
+                    "attacks": 2,
+                    "hit": 6,
+                    "wound": 4,
+                    "rend": -1,
+                    "damage": 2
+                }
+            ]
+        },
+        {
+            "name": "Stormbound Blade (Charge)",
+            "replace": "Celestine Hammer",
+            "reach": 0,
+            "attacks": 2,
+            "hit": -1,
+            "wound": 2,
+            "rend": 0,
+            "damage": 0,
+            "extra": [
+                {
+                    "name": "Stormbound Boom",
+                    "reach": 2,
+                    "attacks": 2,
+                    "hit": 6,
+                    "wound": 4,
+                    "rend": -1,
+                    "damage": 2
+                }
+            ]
+        }
+    ]
+}

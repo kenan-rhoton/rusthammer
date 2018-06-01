@@ -24,5 +24,8 @@
             "rend": 0,
             "damage": 1
         }
+    ],
+    "special": [
+        "Reroll 1s on Save"
     ]
 }

@@ -3,7 +3,7 @@
     "bravery": 7,
     "movement": 10,
     "save": 3,
-    "size": 1,
+    "size": 2,
     "wounds": 5,
     "weapons": [
         {
@@ -11,7 +11,7 @@
             "reach": 6,
             "attacks": 2,
             "hit": 3,
-            "wound": 0,
+            "wound": -10,
             "rend": -100,
             "damage": 2
         },
@@ -29,10 +29,24 @@
             "reach": 1,
             "attacks": 3,
             "hit": 3,
-            "wound": 3,
+            "wound": 4,
             "rend": -1,
-            "damage": 1
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Intolerable Damage",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 3,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 3.5
+                }
+            ]
         }
+    ],
+    "special": [
+        "Reroll 1s on Save"
     ],
     "retry": [
         {
