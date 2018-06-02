@@ -1,0 +1,58 @@
+{
+    "name": "Lord-Aquilor",
+    "bravery": 9,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 7,
+    "weapons": [
+        {
+            "name": "Heavy Boltstorm Pistol",
+            "reach": 9,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Starbound Blade",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Shock Handaxe",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Gryph-charger's Razor Beak and Claws",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -2,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Aethereal Strike",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 6,
+                    "wound": -10,
+                    "rend": -100,
+                    "damage": 1
+                }
+            ]
+        }
+    ]
+}
+

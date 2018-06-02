@@ -1,0 +1,107 @@
+{
+    "name": "Desolators",
+    "bravery": 7,
+    "movement": 10,
+    "save": 3,
+    "size": 2,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Storm Blast",
+            "reach": 12,
+            "attacks": 2,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Thunderaxe",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2,
+	    "extra": [
+		    {
+			    "name": "Lightning Blast",
+			    "reach": 1,
+			    "attacks": 3,
+			    "hit": 6,
+			    "wound": -10,
+			    "rend": -100,
+			    "damage": 1
+		    }
+	    ]
+        },
+        {
+            "name": "Dracoth's Claws and Fangs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Intolerable Damage",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 3,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 3.5
+                }
+            ]
+        }
+    ],
+    "special": [
+        "Reroll 1s on Save"
+    ],
+    "retry": [
+        {
+            "name": "Thunderaxe (Unit of 4)",
+	    "replace": "Thunderaxe",
+            "reach": 0,
+            "attacks": 1,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 0,
+	    "extra": [
+		    {
+			    "name": "Lightning Blast",
+			    "reach": 1,
+			    "attacks": 3,
+			    "hit": 6,
+			    "wound": -10,
+			    "rend": -100,
+			    "damage": 1
+		    }
+	    ]
+	},
+        {
+            "name": "Thunderaxe (Unit of 6)",
+	    "replace": "Thunderaxe",
+            "reach": 0,
+            "attacks": 2,
+            "hit": 0,
+            "wound": 0,
+            "rend": 0,
+            "damage": 0,
+	    "extra": [
+		    {
+			    "name": "Lightning Blast",
+			    "reach": 1,
+			    "attacks": 3,
+			    "hit": 6,
+			    "wound": -10,
+			    "rend": -100,
+			    "damage": 1
+		    }
+	    ]
+	}
+    ]
+}
+

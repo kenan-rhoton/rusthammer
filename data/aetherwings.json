@@ -1,0 +1,19 @@
+{
+    "name": "Aetherwings",
+    "bravery": 6,
+    "movement": 12,
+    "save": 10,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Beak and Claws",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

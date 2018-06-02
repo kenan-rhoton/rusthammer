@@ -1,0 +1,62 @@
+{
+    "name": "Concussors",
+    "bravery": 7,
+    "movement": 10,
+    "save": 3,
+    "size": 2,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Storm Blast",
+            "reach": 12,
+            "attacks": 2,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Lightning Hammer",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2,
+	    "extra": [
+		    {
+			    "name": "Lightning Blast",
+			    "reach": 1,
+			    "attacks": 3,
+			    "hit": 6,
+			    "wound": -10,
+			    "rend": -100,
+			    "damage": 1
+		    }
+	    ]
+        },
+        {
+            "name": "Dracoth's Claws and Fangs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Intolerable Damage",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 3,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 3.5
+                }
+            ]
+        }
+    ],
+    "special": [
+        "Reroll 1s on Save"
+    ]
+}

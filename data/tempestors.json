@@ -1,0 +1,60 @@
+{
+    "name": "Tempestors",
+    "bravery": 7,
+    "movement": 10,
+    "save": 3,
+    "size": 2,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Volleystorm Crossbow",
+            "reach": 12,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Lightning Surge",
+            "reach": 6,
+            "attacks": 2,
+            "hit": 3,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Warblade",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Dracoth's Claws and Fangs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Intolerable Damage",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 3,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 3.5
+                }
+            ]
+        }
+    ],
+    "special": [
+        "Reroll 1s on Save"
+    ]
+}

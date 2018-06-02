@@ -1,0 +1,28 @@
+{
+    "name": "Vanguard-Hunters",
+    "bravery": 7,
+    "movement": 6,
+    "save": 4,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Boltstorm Pistol",
+            "reach": 9,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Shock Handaxe",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}
