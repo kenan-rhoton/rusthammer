@@ -30,13 +30,20 @@
     "retry": [
         {
             "name": "Starsoul Mace",
-            "replace": "Lightning Hammer",
-            "reach": 0,
-            "attacks": -1,
-            "hit": -10,
-            "wound": -10,
-            "rend": -100,
-            "damage": 0
+            "changes": [
+                {"RemoveWeapon": "Lightning Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Starsoul Mace",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 2
+                    }
+                }
+            ]
         }
     ]
 }

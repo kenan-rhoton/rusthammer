@@ -19,13 +19,20 @@
     "retry": [
         {
             "name": "Starsoul Mace",
-            "replace": "Stormstrike Glaive",
-            "reach": -2,
-            "attacks": -2,
-            "hit": -10,
-            "wound": -10,
-            "rend": -100,
-            "damage": 1
+            "changes": [
+                { "RemoveWeapon": "Stormstrike Glaive" },
+                {
+                    "AddWeapon": {
+                        "name": "Starsoul Mace",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 2
+                    }
+                }
+            ]
         }
     ]
 }

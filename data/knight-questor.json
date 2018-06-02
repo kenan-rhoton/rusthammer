@@ -31,5 +31,11 @@
         "Reroll Failed Saves"
     ],
     "retry": [
+        {
+            "name": "Hero's Bane",
+            "changes": [
+                { "AddSpecial": "Reroll Failed Hits" }
+            ]
+        }
     ]
 }

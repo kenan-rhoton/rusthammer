@@ -1,70 +1,108 @@
 {
-	"name": "Vanguard-Raptors",
-	"bravery": 7,
-	"movement": 5,
-	"save": 4,
-	"size": 3,
-	"wounds": 2,
-	"weapons": [
-		{
-			"name": "Longstrike Crossbow",
-			"reach": 24,
-			"attacks": 1,
-			"hit": 3,
-			"wound": 3,
-			"rend": -2,
-			"damage": 2,
-			"extra": [
-				{
-					"name": "Headshot",
-					"reach": 24,
-					"attacks": 1,
-					"hit": 6,
-					"wound": -10,
-					"rend": -100,
-					"damage": 2
-				}
-			]
-		},
-		{
-			"name": "Heavy Stock",
-			"reach": 1,
-			"attacks": 1,
-			"hit": 4,
-			"wound": 3,
-			"rend": 0,
-			"damage": 1
-		},
-		{
-			"name": "Aetherwing's Beak and Claws",
-			"reach": 1,
-			"attacks": 2,
-			"hit": 4,
-			"wound": 3,
-			"rend": 0,
-			"damage": 1
-		}
-	],
-	"retry": [
-		{
-			"name": "Hurricane Crossbows",
-			"replace": "Longstrike Crossbow",
-			"reach": -6,
-			"attacks": 5,
-			"hit": 1,
-			"wound": 1,
-			"rend": 2,
-			"damage": -1
-		},
-		{
-			"name": "Hurricane Crossbows (Rapid Fire)",
-			"replace": "Longstrike Crossbow",
-			"reach": -6,
-			"attacks": 8,
-			"hit": 1,
-			"wound": 1,
-			"rend": 2,
-			"damage": -1
-		}
-	]
+    "name": "Vanguard-Raptors",
+    "bravery": 7,
+    "movement": 5,
+    "save": 4,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Longstrike Crossbow",
+            "reach": 24,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -2,
+            "damage": 2,
+            "extra": [
+                {
+                    "name": "Headshot",
+                    "reach": 24,
+                    "attacks": 1,
+                    "hit": 6,
+                    "wound": -10,
+                    "rend": -100,
+                    "damage": 2
+                }
+            ]
+        },
+        {
+            "name": "Heavy Stock",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Aetherwing's Beak and Claws",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Hurricane Crossbows",
+            "changes": [
+                {"RemoveWeapon": "Longstrike Crossbow"},
+                {"RemoveWeapon": "Aetherwing's Beak and Claws"},
+                {
+                    "AddWeapon": {
+                        "name": "Hurricane Crossbows",
+                        "reach": 18,
+                        "attacks": 6,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Heavy Stock",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 1,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Hurricane Crossbows (Rapid Fire)",
+            "changes": [
+                {"RemoveWeapon": "Longstrike Crossbow"},
+                {"RemoveWeapon": "Aetherwing's Beak and Claws"},
+                {
+                    "AddWeapon": {
+                        "name": "Hurricane Crossbows",
+                        "reach": 18,
+                        "attacks": 9,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Heavy Stock",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 1,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        }
+    ]
 }

@@ -28,43 +28,71 @@
     "retry": [
         {
             "name": "Boltstorm Crossbow",
-            "replace": "Skybolt Bow",
-            "reach": -12,
-            "attacks": 1,
-            "hit": 0,
-            "wound": 1,
-            "rend": 1,
-            "damage": 1
+            "changes": [
+                { "RemoveWeapon": "Skybolt Bow" },
+                {
+                    "AddWeapon": {
+                        "name": "Boltstorm Crossbow",
+                        "reach": 12,
+                        "attacks": 2,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
         },
         {
             "name": "Boltstorm Crossbow (Rapid Fire)",
-            "replace": "Skybolt Bow",
-            "reach": -12,
-            "attacks": 2,
-            "hit": 0,
-            "wound": 1,
-            "rend": 1,
-            "damage": 1
+            "changes": [
+                {"RemoveWeapon": "Skybolt Bow"},
+                {
+                    "AddWeapon": {
+                        "name": "Boltstorm Crossbow (Rapid Fire)",
+                        "reach": 12,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
         },
         {
             "name": "Shockbolt Bow",
-            "replace": "Skybolt Bow",
-            "reach": 0,
-            "attacks": 2.5,
-            "hit": 0,
-            "wound": 0,
-            "rend": 0,
-            "damage": 0
+            "changes": [
+                {"RemoveWeapon": "Skybolt Bow"},
+                {
+                    "AddWeapon": {
+                        "name": "Shockbolt Bow",
+                        "reach": 24,
+                        "attacks": 3.5,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
         },
         {
             "name": "Thunderbolt Crossbow",
-            "replace": "Skybolt Bow",
-            "reach": -6,
-            "attacks": 0,
-            "hit": 0,
-            "wound": -10,
-            "rend": -100,
-            "damage": 2
+            "changes": [
+                {"RemoveWeapon": "Skybolt Bow"},
+                {
+                    "AddWeapon": {
+                        "name": "Thunderbolt Crossbow",
+                        "reach": 18,
+                        "attacks": 1,
+                        "hit": 3,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 2
+                    }
+                }
+            ]
         }
     ]
 }

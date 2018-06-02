@@ -22,6 +22,7 @@ fn exec_two(command : &String, source : &super::units::Unit, target : &super::un
         a => eprintln!("Unrecognized command: {}", a),
     }
 }
+
 pub fn two_units(command : &String, source : &super::units::Unit, target : &super::units::Unit ) {
     println!(
         "{} vs {} (Wounds: {} Size: {} Save: {})",

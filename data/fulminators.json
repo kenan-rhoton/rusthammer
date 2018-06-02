@@ -51,13 +51,19 @@
     "retry": [
         {
             "name": "Stormstrike Glaive (Charge)",
-            "replace": "Stormstrike Glaive",
-            "reach": 0,
-            "attacks": 0,
-            "hit": 0,
-            "wound": 0,
-            "rend": 0,
-            "damage": 2
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Stormstrike Glaive",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
         }
     ]
 }

@@ -19,33 +19,52 @@
     "retry": [
         {
             "name": "Starsoul Mace",
-            "replace": "Thunderaxe",
-            "reach": 1,
-            "attacks": 0,
-            "hit": -10,
-            "wound": -10,
-            "rend": -100,
-            "damage": 0
+            "changes": [
+                { "RemoveWeapon": "Thunderaxe" },
+                { 
+                    "AddWeapon": {
+                        "name": "Starsoul Mace",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 2
+                    }
+                }
+            ]
         },
         {
-            "name": "Thunderaxe (3 targets)",
-            "replace": "Thunderaxe",
-            "reach": 0,
-            "attacks": 2,
-            "hit": 0,
-            "wound": 0,
-            "rend": 0,
-            "damage": 0
+            "name": "3 targets",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Thunderaxe",
+                        "reach": 0,
+                        "attacks": 2,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
         },
         {
-            "name": "Thunderaxe (5 targets)",
-            "replace": "Thunderaxe",
-            "reach": 0,
-            "attacks": 4,
-            "hit": 0,
-            "wound": 0,
-            "rend": 0,
-            "damage": 0
+            "name": "5 targets",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Thunderaxe",
+                        "reach": 0,
+                        "attacks": 4,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
         }
     ]
 }

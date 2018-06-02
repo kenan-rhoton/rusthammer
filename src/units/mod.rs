@@ -1,8 +1,10 @@
 mod weapons;
+mod probabilities;
+mod change;
 extern crate serde_json;
 use std;
 
-#[derive(Deserialize,Default,Clone)]
+#[derive(Debug,PartialEq,Deserialize,Default,Clone)]
 pub struct Unit {
     pub name: String,
     pub bravery: i32,
@@ -12,195 +14,31 @@ pub struct Unit {
     pub weapons: Vec<weapons::Weapon>,
     pub wounds: i32,
     #[serde(default)]
-    pub retry: Vec<weapons::WeaponOption>,
+    pub retry: Vec<UnitOption>,
     #[serde(default)]
     pub special: Vec<String>
 }
 
+#[derive(Deserialize,Debug,PartialEq,Default,Clone)]
+pub struct UnitOption {
+    pub name: String,
+    pub changes: Vec<change::Change>
+}
+
 impl Unit {
 
-    fn to_roll(&self, target : i32, name : &str) -> f64{
-        weapons::probabilities::check(target) +
-            if self.special.iter().any(|s| s == &format!("Reroll 1s on {}", name)) {
-                1.0/6.0 * weapons::probabilities::check(target)
-            } else if self.special.iter().any(|s| s == &format!("Reroll Failed {}s", name)) {
-                (target - 1) as f64/6.0 * weapons::probabilities::check(target)
-            } else {
-                0.0
-            }
-    }
-
-    fn to_hit(&self, hit : i32) -> f64 {
-        self.to_roll(hit, "Hit")
-    }
-
-    fn to_wound(&self, wound : i32) -> f64 {
-        self.to_roll(wound, "Wound")
-    }
-
-    fn to_save(&self, rend : i32) -> f64 {
-        self.to_roll(self.save - rend, "Save")
-    }
-
-    fn each_weapon<C>(&self, mut action : C) -> f64 where C: FnMut(&weapons::Weapon) -> f64 {
-        self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| {
-                acc + action(x) + x.extra.iter().fold(0.0, |acc, x| acc + action(x))
-            })
-    }
-
-    pub fn precision(&self) -> f64 {
-        self.each_weapon(|x| {
-            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound)
-        })
-    }
-
-    pub fn threat(&self) -> f64 {
-        self.each_weapon(|x| {
-            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) * x.damage
-        })
-    }
-
-    pub fn unsaved(&self, opponent : &Unit) -> f64 {
-        self.each_weapon(|x| {
-            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
-                (1.0 - opponent.to_save(x.rend))
-        })
-    }
-
-    pub fn expected_damage(&self, opponent : &Unit) -> f64 {
-        self.each_weapon(|x| {
-            x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
-                (1.0 - opponent.to_save(x.rend)) * x.damage
-        })
-    }
-
-    pub fn merge(&self, weapon : &weapons::WeaponOption) -> Unit {
-        Unit {
-            weapons: self.weapons.iter().map(|w| {
-                if w.name == weapon.replace {
-                    w.merge(weapon)
-                } else {
-                    (*w).clone()
-                }
-            }).collect(),
-            ..(*self).clone()
-        }
+    pub fn merge(&self, opt : &UnitOption) -> Unit {
+        opt.changes.iter().fold(self.clone(),
+            |current, change_data| current.apply_change(change_data))
     }
 
     pub fn from_file(filename : String) -> Result<Unit, Box<std::error::Error>> {
         let file = std::fs::File::open(filename)?;
-
         let u = serde_json::from_reader(file)?;
-
         Ok(u)
     }
 
 }
 
 #[cfg(test)]
-mod tests {
-
-    macro_rules! simple_unit {
-        () => (
-            super::Unit {
-                name: String::from("Simple"),
-                save: 6,
-                size: 1,
-                wounds: 4,
-                bravery: 6,
-                movement: 4,
-                weapons: vec![
-                    super::weapons::Weapon {
-                        name: String::from(""),
-                        reach: 2, attacks: 4.0, hit: 3, wound: 3, rend: -1, damage: 3.0, extra: vec![]
-                    }
-                ],
-                retry: vec![],
-                special: vec![]
-            }
-            )
-    }
-
-    macro_rules! complex_unit {
-        () => (
-            super::Unit {
-                name: String::from("Complex"),
-                save: 3,
-                size: 9,
-                wounds: 4,
-                bravery: 6,
-                movement: 4,
-                weapons: vec![
-                    super::weapons::Weapon {
-                        name: String::from(""),
-                        reach: 1, attacks: 3.0, hit: 3, wound: 3, rend: 0, damage: 1.0, extra: vec![]
-                    },
-                    super::weapons::Weapon {
-                        name: String::from(""),
-                        reach: 2, attacks: 6.0, hit: 4, wound: 3, rend: -2, damage: 3.0, extra: vec![]
-                    },
-                    super::weapons::Weapon {
-                        name: String::from(""),
-                        reach: 1, attacks: 3.5, hit: 3, wound: 2, rend: -3, damage: 2.0, extra: vec![]
-                    }
-                ],
-                retry: vec![],
-                special: vec![String::from("Reroll 1s on Save")]
-            }
-        )
-    }
-
-    #[test]
-    fn test_precision() {
-        assert_approx_eq!(
-            simple_unit!().precision(),
-            4.0 * (4.0/6.0) * (4.0/6.0));
-
-        assert_approx_eq!(
-            complex_unit!().precision(),
-            9.0 * (3.0 * (4.0/6.0) * (4.0/6.0) + 6.0 * 0.5 * (4.0/6.0) + 3.5 * (4.0/6.0) * (5.0/6.0)));
-    }
-
-    #[test]
-    fn test_threat() {
-        assert_approx_eq!(
-            simple_unit!().threat(),
-            4.0 * (4.0/6.0) * (4.0/6.0) * 3.0);
-
-        assert_approx_eq!(
-            complex_unit!().threat(),
-            9.0 * (
-                3.0 * (4.0/6.0) * (4.0/6.0) +
-                6.0 * 0.5 * (4.0/6.0) * 3.0 +
-                3.5 * (4.0/6.0) * (5.0/6.0) * 2.0));
-    }
-
-    #[test]
-    fn test_unsaved() {
-        assert_approx_eq!(
-            simple_unit!().unsaved(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * (0.5 - (1.0/6.0 * 0.5)));
-
-        assert_approx_eq!(
-            complex_unit!().unsaved(&simple_unit!()),
-            9.0 * (
-                3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
-                6.0 * 0.5 * (4.0/6.0) +
-                3.5 * (4.0/6.0) * (5.0/6.0)));
-    }
-
-    #[test]
-    fn test_expected_damage() {
-        assert_approx_eq!(
-            simple_unit!().expected_damage(&complex_unit!()),
-            4.0 * (4.0/6.0) * (4.0/6.0) * (0.5 - (1.0/6.0 * 0.5)) * 3.0);
-
-        assert_approx_eq!(
-            complex_unit!().expected_damage(&simple_unit!()),
-            9.0 * (
-                3.0 * (4.0/6.0) * (4.0/6.0) * (5.0/6.0)+
-                6.0 * 0.5 * (4.0/6.0) * 3.0 +
-                3.5 * (4.0/6.0) * (5.0/6.0) * 2.0 ));
-    }
-}
+mod tests;

@@ -1,0 +1,64 @@
+{
+    "name": "Brokk Grungsson",
+    "bravery": 8,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 8,
+    "weapons": [
+        {
+            "name": "Grungsson's Boast",
+            "reach": 18,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Magnate's Charter",
+            "reach": 18,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Aetherblasters",
+            "reach": 9,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Aethermatic Saw",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 2,
+            "rend": -2,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Supercharged",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

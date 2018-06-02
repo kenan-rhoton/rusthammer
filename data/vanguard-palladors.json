@@ -24,7 +24,7 @@
             "rend": 0,
             "damage": 1
         },
-	{
+        {
             "name": "Lunar Blade",
             "reach": 1,
             "attacks": 1,
@@ -32,7 +32,7 @@
             "wound": -10,
             "rend": -100,
             "damage": 0.333333333
-	},
+        },
         {
             "name": "Gryph-charger's Razor Beak and Claws",
             "reach": 1,
@@ -56,25 +56,32 @@
     ],
     "retry": [
         {
-	    "name": "Starstrike Javelin",
-            "replace": "Shock Handaxe",
-            "reach": 1,
-            "attacks": -1,
-            "hit": 1,
-            "wound": 0,
-            "rend": -1,
-            "damage": 0,
-	    "extra": [
-		    {
-			    "name": "Starstrike Javelin",
-			    "reach": 18,
-			    "attacks": 1,
-			    "hit": 3,
-			    "wound": 3,
-			    "rend": -1,
-			    "damage": 1
-		    }
-	    ]
+            "name": "Starstrike Javelin",
+            "changes": [
+                {"RemoveWeapon": "Shock Handaxe"},
+                {
+                    "AddWeapon": {
+                        "name": "Starstrike Javelin",
+                        "reach": 2,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Starstrike Javelin",
+                        "reach": 18,
+                        "attacks": 1,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
         }
     ]
 }

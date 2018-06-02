@@ -1,0 +1,28 @@
+{
+    "name": "Arkanaut Admiral",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 12,
+    "weapons": [
+        {
+            "name": "Volley Pistol",
+            "reach": 12,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Skalfhammer",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 2,
+            "rend": -2,
+            "damage": 2
+        }
+    ]
+}

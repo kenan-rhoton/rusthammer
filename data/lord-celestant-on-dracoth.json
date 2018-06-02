@@ -51,76 +51,118 @@
     "retry": [
         {
             "name": "Tempestos Hammer (Charge)",
-            "replace": "Tempestos Hammer",
-            "reach": 0,
-            "attacks": 2,
-            "hit": 0,
-            "wound": 0,
-            "rend": 0,
-            "damage": 0
-        },
-        {
-            "name": "Thunderaxe",
-            "replace": "Tempestos Hammer",
-            "reach": 0,
-            "attacks": 0,
-            "hit": 0,
-            "wound": 1,
-            "rend": 0,
-            "damage": 0
-        },
-        {
-            "name": "Thunderaxe (2 allies)",
-            "replace": "Tempestos Hammer",
-            "reach": 0,
-            "attacks": 2,
-            "hit": 0,
-            "wound": 1,
-            "rend": 0,
-            "damage": 0
-        },
-        {
-            "name": "Lightning Hammer",
-            "replace": "Tempestos Hammer",
-            "reach": -1,
-            "attacks": 0,
-            "hit": 1,
-            "wound": 1,
-            "rend": 0,
-            "damage": 0,
-            "extra": [
+            "changes": [
                 {
-                    "name": "Lightning Hammer's Blast",
-                    "reach": 1,
-                    "attacks": 3,
-                    "hit": 6,
-                    "wound": -10,
-                    "rend": -100,
-                    "damage": 2
+                    "ModifyWeapon": {
+                        "name": "Tempestos Hammer",
+                        "reach": 0,
+                        "attacks": 2,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
                 }
             ]
         },
         {
+            "name": "Thunderaxe",
+            "changes": [
+                {"RemoveWeapon": "Tempestos Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Thunderaxe",
+                        "reach": 2,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Thunderaxe (2 allies)",
+            "changes": [
+                {"RemoveWeapon": "Tempestos Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Thunderaxe",
+                        "reach": 2,
+                        "attacks": 5,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Lightning Hammer",
+            "changes": [
+                {"RemoveWeapon": "Tempestos Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Lightning Hammer",
+                        "reach": 1,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 2,
+                        "extra": [
+                            {
+                                "name": "Lightning Hammer's Blast",
+                                "reach": 1,
+                                "attacks": 3,
+                                "hit": 6,
+                                "wound": -10,
+                                "rend": -100,
+                                "damage": 2
+                            }
+                        ]
+                    }
+                }
+
+            ]
+        },
+        {
             "name": "Stormstrike Glaive",
-            "replace": "Tempestos Hammer",
-            "reach": 0,
-            "attacks": 1,
-            "hit": 0,
-            "wound": 2,
-            "rend": 0,
-            "damage": -1
-        }
-        ,
+            "changes": [
+                {"RemoveWeapon": "Tempestos Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Stormstrike Glaive",
+                        "reach": 2,
+                        "attacks": 4,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+
+            ]
+        },
         {
             "name": "Stormstrike Glaive (Charge)",
-            "replace": "Tempestos Hammer",
-            "reach": 0,
-            "attacks": 1,
-            "hit": 0,
-            "wound": 2,
-            "rend": -1,
-            "damage": 1
-        }
+            "changes": [
+                {"RemoveWeapon": "Tempestos Hammer"},
+                {
+                    "AddWeapon": {
+                        "name": "Stormstrike Glaive",
+                        "reach": 2,
+                        "attacks": 4,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -2,
+                        "damage": 3
+                    }
+                }
 
+            ]
+        }
     ]
 }

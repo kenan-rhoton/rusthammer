@@ -1,70 +1,94 @@
 {
-	"name": "Celestant Prime",
-	"bravery": 10,
-	"movement": 12,
-	"save": 3,
-	"size": 1,
-	"wounds": 8,
-	"weapons": [
-		{
-			"name": "Cometstrike Sceptre",
-			"reach": 24,
-			"attacks": 1,
-			"hit": 0,
-			"wound": 0,
-			"rend": -100,
-			"damage": 2
-		},
-		{
-			"name": "Ghal Maraz, the Hammer of Sigmar",
-			"reach": 2,
-			"attacks": 2,
-			"hit": 3,
-			"wound": 2,
-			"rend": -3,
-			"damage": 3
-		}
-	],
-	"retry": [
-		{
-			"name": "Charged (1)",
-			"replace": "Ghal Maraz, the Hammer of Sigmar",
-			"reach": 0,
-			"attacks": 2,
-			"hit": 0,
-			"wound": 0,
-			"rend": 0,
-			"damage": 0
-		},
-		{
-			"name": "Charged (2)",
-			"replace": "Ghal Maraz, the Hammer of Sigmar",
-			"reach": 0,
-			"attacks": 4,
-			"hit": 0,
-			"wound": 0,
-			"rend": 0,
-			"damage": 0
-		},
-		{
-			"name": "Charged (3)",
-			"replace": "Ghal Maraz, the Hammer of Sigmar",
-			"reach": 0,
-			"attacks": 6,
-			"hit": 0,
-			"wound": 0,
-			"rend": 0,
-			"damage": 0
-		},
-		{
-			"name": "Charged (4)",
-			"replace": "Ghal Maraz, the Hammer of Sigmar",
-			"reach": 0,
-			"attacks": 8,
-			"hit": 0,
-			"wound": 0,
-			"rend": 0,
-			"damage": 0
-		}
-	]
+    "name": "Celestant Prime",
+    "bravery": 10,
+    "movement": 12,
+    "save": 3,
+    "size": 1,
+    "wounds": 8,
+    "weapons": [
+        {
+            "name": "Cometstrike Sceptre",
+            "reach": 24,
+            "attacks": 1,
+            "hit": 0,
+            "wound": 0,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Ghal Maraz, the Hammer of Sigmar",
+            "reach": 2,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 2,
+            "rend": -3,
+            "damage": 3
+        }
+    ],
+    "retry": [
+        {
+            "name": "Charged (1)",
+            "changes": [
+                { 
+                    "ModifyWeapon": {
+                        "name": "Ghal Maraz, the Hammer of Sigmar",
+                        "reach": 0,
+                        "attacks": 2,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Charged (2)",
+            "changes": [
+                { 
+                    "ModifyWeapon": {
+                        "name": "Ghal Maraz, the Hammer of Sigmar",
+                        "reach": 0,
+                        "attacks": 4,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Charged (3)",
+            "changes": [
+                { 
+                    "ModifyWeapon": {
+                        "name": "Ghal Maraz, the Hammer of Sigmar",
+                        "reach": 0,
+                        "attacks": 6,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Charged (4)",
+            "changes": [
+                { 
+                    "ModifyWeapon": {
+                        "name": "Ghal Maraz, the Hammer of Sigmar",
+                        "reach": 0,
+                        "attacks": 8,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        }
+    ]
 }
