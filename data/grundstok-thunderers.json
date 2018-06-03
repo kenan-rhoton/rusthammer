@@ -1,0 +1,98 @@
+{
+    "name": "Grundstok Thunderers",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 5,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Aethershot Rifle",
+            "reach": 18,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Gun Butt",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Aetheric Fumigator",
+            "changes": [
+                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "AddWeapon": {
+                        "name": "Aetheric Fumigator",
+                        "reach": 9,
+                        "attacks": 2,
+                        "hit": 3,
+                        "wound": 2,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Decksweeper",
+            "changes": [
+                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "AddWeapon": {
+                        "name": "Decksweeper",
+                        "reach": 12,
+                        "attacks": 3.5,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Aethercannon",
+            "changes": [
+                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "AddWeapon": {
+                        "name": "Aethercannon",
+                        "reach": 12,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 2,
+                        "rend": -2,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Grundstok Mortar",
+            "changes": [
+                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "AddWeapon": {
+                        "name": "Grundstok Mortar",
+                        "reach": 12,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
+        }
+    ]
+}

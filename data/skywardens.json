@@ -1,0 +1,129 @@
+{
+    "name": "Skywardens",
+    "bravery": 7,
+    "movement": 12,
+    "save": 4,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Vulcaniser Pistol",
+            "reach": 9,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Skypike",
+            "reach": 2,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Volley Guns",
+            "changes": [
+                { "RemoveWeapon": "Vulcaniser Pistol" },
+                { "RemoveWeapon": "Skypike" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Gun",
+                        "reach": 24,
+                        "attacks": 6,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Skyhook",
+            "changes": [
+                { "RemoveWeapon": "Vulcaniser Pistol" },
+                { "RemoveWeapon": "Skypike" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Skyhook",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Drill Cannon",
+            "changes": [
+                { "RemoveWeapon": "Vulcaniser Pistol" },
+                { "RemoveWeapon": "Skypike" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Drill Cannon",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -3,
+                        "damage": 3,
+                        "extra": [
+                            {
+                                "name": "Exploding Drill",
+                                "reach": 24,
+                                "attacks": 1,
+                                "hit": 4,
+                                "wound": 6,
+                                "rend": -100,
+                                "damage": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
+

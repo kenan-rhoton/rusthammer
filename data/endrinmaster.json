@@ -1,0 +1,46 @@
+{
+    "name": "Endrinmaster",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Gaze of Grungni",
+            "reach": 9,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Aethermight Hammer",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Supercharged",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermight Hammer",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

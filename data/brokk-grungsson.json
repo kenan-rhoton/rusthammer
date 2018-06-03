@@ -59,6 +59,31 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "vs MONSTER or HERO",
+            "changes": [
+                { "AddSpecial": "Reroll 1s on Hit"},
+                { "AddSpecial": "Reroll 1s on Wound"}
+            ]
+        },
+        {
+            "name": "Supercharged",
+            "changes": [
+                { "AddSpecial": "Reroll 1s on Hit"},
+                { "AddSpecial": "Reroll 1s on Wound"},
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
         }
     ]
 }

@@ -1,0 +1,112 @@
+{
+    "name": "Arkanaut Company",
+    "bravery": 6,
+    "movement": 4,
+    "save": 5,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Privateer Pistol",
+            "reach": 12,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Arkanaut Cutter",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs HERO or MONSTER",
+            "changes": [
+                { "AddSpecial": "Reroll 1s on Hit"}
+            ]
+        },
+        {
+            "name": "Volley Guns",
+            "changes": [
+                { "RemoveWeapon": "Privateer Pistol" },
+                { "RemoveWeapon": "Arkanaut Cutter" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Gun",
+                        "reach": 18,
+                        "attacks": 6,
+                        "hit": 5,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Light Skyhooks",
+            "changes": [
+                { "RemoveWeapon": "Privateer Pistol" },
+                { "RemoveWeapon": "Arkanaut Cutter" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Light Skyhook",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Skypikes",
+            "changes": [
+                { "RemoveWeapon": "Privateer Pistol" },
+                { "RemoveWeapon": "Arkanaut Cutter" },
+                {
+                    "AddWeapon": {
+                        "name": "Skypike",
+                        "reach": 2,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 2
+                    }
+                }
+            ]
+        }
+    ]
+}

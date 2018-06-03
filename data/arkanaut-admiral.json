@@ -1,10 +1,10 @@
 {
     "name": "Arkanaut Admiral",
-    "bravery": 7,
+    "bravery": 8,
     "movement": 4,
-    "save": 4,
+    "save": 3,
     "size": 1,
-    "wounds": 12,
+    "wounds": 6,
     "weapons": [
         {
             "name": "Volley Pistol",
@@ -23,6 +23,15 @@
             "wound": 2,
             "rend": -2,
             "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs MONSTER or HERO",
+            "changes": [
+                { "AddSpecial": "Reroll 1s on Hit"},
+                { "AddSpecial": "Reroll 1s on Wound"}
+            ]
         }
     ]
 }

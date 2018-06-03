@@ -1,0 +1,96 @@
+{
+    "name": "Arkanaut Ironclad",
+    "bravery": 7,
+    "movement": 8,
+    "save": 4,
+    "size": 1,
+    "wounds": 18,
+    "weapons": [
+        {
+            "name": "Aethershot Carbines",
+            "reach": 12,
+            "attacks": 8,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Aethershock Torpedoes",
+            "reach": 24,
+            "attacks": 4,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Fragmentation Charges",
+            "reach": 1,
+            "attacks": 7,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Belaying Valves",
+            "reach": 1,
+            "attacks": 5,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Great Sky Cannon",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Great Sky Cannon",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 2,
+                        "rend": -2,
+                        "damage": 3.5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Great Skyhook",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Great Skyhook",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Aethermatic Volley Cannon",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Cannon",
+                        "reach": 18,
+                        "attacks": 10,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

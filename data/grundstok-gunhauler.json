@@ -1,0 +1,83 @@
+{
+    "name": "Grundstock Gunhauler",
+    "bravery": 7,
+    "movement": 12,
+    "save": 5,
+    "size": 1,
+    "wounds": 10,
+    "weapons": [
+        {
+            "name": "Aethershot Carbines",
+            "reach": 12,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Fragmentation Charges",
+            "reach": 1,
+            "attacks": 3.5,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Belaying Valves",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Sky Cannon",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Sky Cannon",
+                        "reach": 18,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 2,
+                        "rend": -2,
+                        "damage": 3.5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Drill Cannon",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Drill Cannon",
+                        "reach": 18,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -3,
+                        "damage": 3,
+                        "extra": [
+                            {
+                                "name": "Exploding Drill",
+                                "reach": 18,
+                                "attacks": 1,
+                                "hit": 4,
+                                "wound": 6,
+                                "rend": -100,
+                                "damage": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
+

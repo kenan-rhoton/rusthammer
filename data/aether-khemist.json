@@ -1,0 +1,28 @@
+{
+    "name": "Aether-Khemist",
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Noxious Aether",
+            "reach": 10,
+            "attacks": 10.5,
+            "hit": 4,
+            "wound": 4,
+            "rend": -2,
+            "damage": 1
+        },
+        {
+            "name": "Heavy Instruments",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

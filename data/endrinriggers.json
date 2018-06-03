@@ -1,0 +1,128 @@
+{
+    "name": "Endrinriggers",
+    "bravery": 7,
+    "movement": 12,
+    "save": 4,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Rapid-fire Rivet Gun",
+            "reach": 12,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Aethermatic Saw",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 2,
+            "rend": -2,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Volley Guns",
+            "changes": [
+                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
+                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Gun",
+                        "reach": 24,
+                        "attacks": 6,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Skyhook",
+            "changes": [
+                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
+                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Skyhook",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Drill Cannon",
+            "changes": [
+                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
+                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Drill Cannon",
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -3,
+                        "damage": 3,
+                        "extra": [
+                            {
+                                "name": "Exploding Drill",
+                                "reach": 24,
+                                "attacks": 1,
+                                "hit": 4,
+                                "wound": 6,
+                                "rend": -100,
+                                "damage": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
