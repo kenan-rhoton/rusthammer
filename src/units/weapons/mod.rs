@@ -11,6 +11,12 @@ pub struct Weapon {
     pub extra: Vec<Weapon>
 }
 
+#[derive(Deserialize,Debug,PartialEq,Default,Clone,Copy)]
+pub struct AttackResult {
+    pub range: i32,
+    pub value: f64
+}
+
 impl Weapon {
 
     pub fn merge(&self, w : &Weapon) -> Weapon {
@@ -30,33 +36,51 @@ impl Weapon {
 
 impl super::Unit {
 
-    fn each_weapon<C>(&self, mut action : C) -> f64 where C: FnMut(&Weapon) -> f64 {
-        self.size as f64 *
-            self.weapons.iter().fold(0.0, |acc, x| {
-                acc + action(x) + x.extra.iter().fold(0.0, |acc, x| acc + action(x))
+    fn each_weapon<C>(&self, mut action : C) -> Vec<AttackResult>
+        where C: FnMut(&Weapon) -> f64 {
+            self.weapons.iter().fold(Vec::new(), |mut result_list, weapon| {
+                let weapon_value = action(weapon) +
+                    weapon.extra.iter().fold(0.0, |acc, x| acc + action(x));
+
+                if !result_list.iter().any(|x| x.range == weapon.reach) {
+                    result_list.push(
+                        AttackResult{range: weapon.reach, value: 0.0})
+                }
+
+                result_list.iter().map(|x| {
+                    if x.range <= weapon.reach &&
+                        ((weapon.reach > 3) == (x.range > 3)) {
+                            AttackResult{
+                                value: x.value + weapon_value,
+                                range: x.range
+                            }
+                    } else {
+                        (*x).clone()
+                    }
+                }).collect()
             })
     }
 
-    pub fn precision(&self) -> f64 {
+    pub fn precision(&self) -> Vec<AttackResult> {
         self.each_weapon(|x| {
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound)
         })
     }
 
-    pub fn threat(&self) -> f64 {
+    pub fn threat(&self) -> Vec<AttackResult> {
         self.each_weapon(|x| {
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) * x.damage
         })
     }
 
-    pub fn unsaved(&self, opponent : &super::Unit) -> f64 {
+    pub fn unsaved(&self, opponent : &super::Unit) -> Vec<AttackResult> {
         self.each_weapon(|x| {
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
                 (1.0 - opponent.to_save(x.rend))
         })
     }
 
-    pub fn expected_damage(&self, opponent : &super::Unit) -> f64 {
+    pub fn expected_damage(&self, opponent : &super::Unit) -> Vec<AttackResult> {
         self.each_weapon(|x| {
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
                 (1.0 - opponent.to_save(x.rend)) * x.damage

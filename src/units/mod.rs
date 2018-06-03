@@ -1,4 +1,4 @@
-mod weapons;
+pub mod weapons;
 mod probabilities;
 mod change;
 extern crate serde_json;
