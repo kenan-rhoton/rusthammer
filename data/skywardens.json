@@ -1,5 +1,6 @@
 {
     "name": "Skywardens",
+    "points": 100,
     "bravery": 7,
     "movement": 12,
     "save": 4,

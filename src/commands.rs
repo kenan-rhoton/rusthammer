@@ -23,23 +23,23 @@ pub fn two_units(command : &String, source : &super::units::Unit, target : &supe
 
 fn exec_one(command : &String, source : &super::units::Unit) {
     match command.as_ref() {
-        "precision" => print_all("Precision", source.precision()),
-        "threat" => print_all("Threat:", source.threat()),
+        "precision" => print_all("Precision", source.precision(), source.points),
+        "threat" => print_all("Threat:", source.threat(), source.points),
         a => eprintln!("Unrecognized command: {}", a),
     }
 }
 
 fn exec_two(command : &String, source : &super::units::Unit, target : &super::units::Unit ) {
     match command.as_ref() {
-        "unsaved" => print_all("Unsaved wounds:", source.unsaved(target)),
-        "damage" => print_all("Expected Damage:", source.expected_damage(target)),
+        "unsaved" => print_all("Unsaved wounds:", source.unsaved(target), source.points),
+        "damage" => print_all("Expected Damage:", source.expected_damage(target), source.points),
         a => eprintln!("Unrecognized command: {}", a),
     }
 }
 
 
 
-fn print_all(title : &str, result_list : Vec<super::units::weapons::AttackResult>) {
+fn print_all(title : &str, result_list : Vec<super::units::weapons::AttackResult>, points : i32) {
     let (ranged, melee) :
         (Vec<super::units::weapons::AttackResult>,
          Vec<super::units::weapons::AttackResult>)
@@ -48,12 +48,14 @@ fn print_all(title : &str, result_list : Vec<super::units::weapons::AttackResult
     print_kind("Ranged", ranged);
     print_kind("Melee", melee);
 
-    println!("{}: {}", title, result_list.iter().fold(0.0, |a,x| a + x.value));
+    let res = result_list.iter().fold(0.0, |a,x| a + x.value);
+    println!("{}: {} --- EFFICIENCY: {}", title, res, 100.0 * res / points as f64);
 }
 
 fn print_kind(title : &str, list : Vec<super::units::weapons::AttackResult>) {
     println!("    {}:", title);
     list.iter().for_each(|x| println!("        {} -> {}", x.range, x.value));
-    println!("        TOTAL -> {}", list.iter().fold(0.0, |a,x| a + x.value));
+    let res = list.iter().fold(0.0, |a,x| a + x.value);
+    println!("        TOTAL -> {}", res);
 
 }

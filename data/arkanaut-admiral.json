@@ -1,5 +1,6 @@
 {
     "name": "Arkanaut Admiral",
+    "points": 140,
     "bravery": 8,
     "movement": 4,
     "save": 3,

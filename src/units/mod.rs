@@ -7,6 +7,7 @@ use std;
 #[derive(Debug,PartialEq,Deserialize,Default,Clone)]
 pub struct Unit {
     pub name: String,
+    pub points: i32,
     pub bravery: i32,
     pub movement: i32,
     pub save: i32,

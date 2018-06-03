@@ -39,8 +39,8 @@ impl super::Unit {
     fn each_weapon<C>(&self, mut action : C) -> Vec<AttackResult>
         where C: FnMut(&Weapon) -> f64 {
             self.weapons.iter().fold(Vec::new(), |mut result_list, weapon| {
-                let weapon_value = action(weapon) +
-                    weapon.extra.iter().fold(0.0, |acc, x| acc + action(x));
+                let weapon_value = self.size as f64 * (action(weapon) + 
+                    weapon.extra.iter().fold(0.0, |acc, x| acc + action(x)));
 
                 if !result_list.iter().any(|x| x.range == weapon.reach) {
                     result_list.push(

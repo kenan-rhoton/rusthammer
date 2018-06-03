@@ -1,5 +1,6 @@
 {
     "name": "Arkanaut Frigate",
+    "points": 280,
     "bravery": 7,
     "movement": 10,
     "save": 5,

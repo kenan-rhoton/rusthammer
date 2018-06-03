@@ -1,5 +1,6 @@
 {
     "name": "Knight-Venator",
+    "points": 120,
     "bravery": 9,
     "movement": 12,
     "save": 3,
@@ -24,13 +25,15 @@
             "rend": 0,
             "damage": 1,
             "extra": [
-                "name": "Celestial Rend",
-                "reach": 30,
-                "attacks": 3,
-                "hit": 4,
-                "wound": 6,
-                "rend": -3,
-                "damage": 1
+                {
+                    "name": "Celestial Rend",
+                    "reach": 30,
+                    "attacks": 3,
+                    "hit": 4,
+                    "wound": 6,
+                    "rend": -3,
+                    "damage": 1
+                }
             ]
         },
         {
@@ -42,13 +45,15 @@
             "rend": 0,
             "damage": 1,
             "extra": [
-                "name": "Celestial Rend",
-                "reach": 30,
-                "attacks": 3,
-                "hit": 4,
-                "wound": 6,
-                "rend": -3,
-                "damage": 1
+                {
+                    "name": "Celestial Rend",
+                    "reach": 30,
+                    "attacks": 3,
+                    "hit": 4,
+                    "wound": 6,
+                    "rend": -3,
+                    "damage": 1
+                }
             ]
         }
     ]

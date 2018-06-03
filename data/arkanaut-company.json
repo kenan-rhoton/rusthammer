@@ -1,5 +1,6 @@
 {
     "name": "Arkanaut Company",
+    "points": 120,
     "bravery": 6,
     "movement": 4,
     "save": 5,

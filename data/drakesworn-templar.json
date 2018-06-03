@@ -1,5 +1,6 @@
 {
     "name": "Drakesworn Templar",
+    "points": 500,
     "bravery": 9,
     "movement": 12,
     "save": 3,

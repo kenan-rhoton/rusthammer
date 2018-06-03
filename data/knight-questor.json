@@ -1,5 +1,6 @@
 {
     "name": "Knight-Questor",
+    "points": 100,
     "bravery": 8,
     "movement": 5,
     "save": 3,
