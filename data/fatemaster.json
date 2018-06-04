@@ -1,0 +1,33 @@
+{
+    "name": "Fatemaster",
+    "points": 140,
+    "bravery": 8,
+    "movement": 16,
+    "save": 4,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Fireglaive of Tzeentch",
+            "reach": 2,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 2
+        },
+        {
+            "name": "Disc of Tzeentch's Protruding Blades",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 2,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "special": [
+	    "+2 Save vs Flying",
+	    "Supersave 4+"
+    ]
+}

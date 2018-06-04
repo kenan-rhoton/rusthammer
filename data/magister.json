@@ -1,0 +1,38 @@
+{
+    "name": "Magister",
+    "points": 120,
+    "bravery": 7,
+    "movement": 6,
+    "save": 5,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Tzeentchian Runestaff",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 2
+        },
+        {
+            "name": "Warpsteel Sword",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Arcane Bolt",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 2,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ]
+}
