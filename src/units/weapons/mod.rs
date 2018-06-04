@@ -1,14 +1,26 @@
 #[derive(Deserialize,Debug,PartialEq,Default,Clone)]
 pub struct Weapon {
     pub name: String,
+    #[serde(default)]
     pub reach: i32,
+    #[serde(default)]
     pub attacks: f64,
+    #[serde(default)]
     pub hit: i32,
+    #[serde(default)]
     pub wound: i32,
+    #[serde(default)]
     pub rend: i32,
+    #[serde(default)]
     pub damage: f64,
     #[serde(default)]
-    pub extra: Vec<Weapon>
+    pub extra: Vec<Weapon>,
+    #[serde(default = "default_quantity")]
+    pub quantity: f64
+}
+
+fn default_quantity() -> f64 {
+    1.0
 }
 
 #[derive(Deserialize,Debug,PartialEq,Default,Clone,Copy)]
@@ -28,6 +40,7 @@ impl Weapon {
             wound: self.wound + w.wound,
             rend: self.rend + w.rend,
             damage: self.damage + w.damage,
+            quantity: self.quantity,
             extra: self.extra.clone()
         }
     }
@@ -58,8 +71,9 @@ fn add_result_at_range(result_list : &Vec<AttackResult>, reach: i32, value : f64
 
 fn calculate_value<C>(weapon : &Weapon, action : &C) -> f64
 where C: Fn(&Weapon) -> f64 {
-    (action(weapon) + 
-     weapon.extra.iter().fold(0.0, |acc, x| acc + action(x)))
+    weapon.quantity *
+        (action(weapon) + 
+         weapon.extra.iter().fold(0.0, |acc, x| acc + action(x)))
 }
 
 
