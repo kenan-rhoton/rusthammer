@@ -4,7 +4,9 @@ pub enum Change {
     RemoveWeapon(String),
     AddWeapon(super::weapons::Weapon),
     ModifyWeapon(super::weapons::Weapon),
-    AddSpecial(String)
+    AddSpecial(String),
+    SetSize(i32),
+    SetPoints(i32)
 }
 
 impl super::Unit {
@@ -51,12 +53,28 @@ impl super::Unit {
         }
     }
 
+    fn set_size(&self, size : i32) -> super::Unit {
+        super::Unit {
+            size,
+            ..self.clone()
+        }
+    }
+
+    fn set_points(&self, points : i32) -> super::Unit {
+        super::Unit {
+            points,
+            ..self.clone()
+        }
+    }
+
     pub fn apply_change(&self, change : &Change) -> super::Unit {
         match change {
             Change::RemoveWeapon(w) => self.remove_weapon(w),
             Change::AddWeapon(w) => self.add_weapon(w),
             Change::ModifyWeapon(w) => self.modify_weapon(w),
             Change::AddSpecial(s) => self.add_special(s),
+            Change::SetSize(i) => self.set_size(*i),
+            Change::SetPoints(i) => self.set_points(*i),
         }
     }
 }

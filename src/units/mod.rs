@@ -1,6 +1,7 @@
 pub mod weapons;
 mod probabilities;
 mod change;
+mod leader;
 extern crate serde_json;
 use std;
 
@@ -14,6 +15,8 @@ pub struct Unit {
     pub size: i32,
     pub weapons: Vec<weapons::Weapon>,
     pub wounds: i32,
+    #[serde(default)]
+    pub leader: Option<leader::Leader>,
     #[serde(default)]
     pub retry: Vec<UnitOption>,
     #[serde(default)]
