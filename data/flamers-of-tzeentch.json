@@ -1,0 +1,40 @@
+{
+    "name": "Flamers of Tzeentch",
+    "points": 180,
+    "bravery": 10,
+    "movement": 9,
+    "save": 5,
+    "size": 3,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Warpflame",
+            "reach": 18,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 2,
+            "extra": [
+                {
+                    "name": "Capricious Warpflame",
+                    "reach": 18,
+                    "attacks": 1,
+                    "hit": 4,
+                    "wound": -100,
+                    "rend": -10,
+                    "damage": 0.666
+                }
+            ]
+        },
+        {
+            "name": "Flaming Maw",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 5,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

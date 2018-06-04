@@ -1,0 +1,29 @@
+{
+    "name": "The Blue Scribes",
+    "points": 120,
+    "bravery": 10,
+    "movement": 16,
+    "save": 5,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Sharpened Quills",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 5,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Disc's Many-fanged Mouths",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ]
+}

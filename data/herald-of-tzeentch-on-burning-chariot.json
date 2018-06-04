@@ -1,0 +1,83 @@
+{
+    "name": "Herald of Tzeentch on Burning Chariot",
+    "points": 200,
+    "bravery": 10,
+    "movement": 14,
+    "save": 5,
+    "size": 1,
+    "wounds": 8,
+    "weapons": [
+        {
+            "name": "Staff of Change",
+            "reach": 2,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Screamers' Lamprey Bites",
+            "reach": 1,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Wake of Fire",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Tzeentch's Firestorm",
+            "reach": 14,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 4,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs Monster",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Screamers' Lamprey Bites",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Ritual Dagger",
+            "changes": [
+                { "RemoveWeapon": "Staff of Change" },
+                {
+                    "AddWeapon": {
+                        "name": "Ritual Dagger",
+                        "reach": 1,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
+

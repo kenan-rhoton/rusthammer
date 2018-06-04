@@ -1,0 +1,20 @@
+{
+    "name": "The Changeling",
+    "points": 140,
+    "bravery": 10,
+    "movement": 5,
+    "save": 5,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "The Trickster's Staff",
+            "reach": 2,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ]
+}

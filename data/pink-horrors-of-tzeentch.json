@@ -1,0 +1,99 @@
+{
+    "name": "Pink Horrors of Tzeentch",
+    "points": 120,
+    "bravery": 10,
+    "movement": 5,
+    "save": 5,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Magical Flames",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Grasping Hands",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Magical Flames",
+                "reach": 18,
+                "attacks": 1,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Grasping Hands",
+                "reach": 1,
+                "attacks": 2,
+                "hit": 5,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Arcane Bolt",
+                "reach": 18,
+                "attacks": 1,
+                "hit": 2,
+                "wound": -10,
+                "rend": -100,
+                "damage": 2
+            }
+        ]
+    },
+    "retry": [
+        {
+            "name": "Size 20",
+            "changes": [
+                { "SetSize": 20 },
+                { "SetPoints": 240 },
+                {
+                    "ModifyWeapon": {
+                        "name": "Magical Flames",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": -1,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Size 30",
+            "changes": [
+                { "SetSize": 30 },
+                { "SetPoints": 300 },
+                {
+                    "ModifyWeapon": {
+                        "name": "Magical Flames",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": -1,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        }
+    ]
+}
+

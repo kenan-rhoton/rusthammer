@@ -1,0 +1,87 @@
+{
+    "name": "Burning Chariots of Tzeentch",
+    "points": 160,
+    "bravery": 10,
+    "movement": 14,
+    "save": 5,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Billowing Warpflame",
+            "reach": 18,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 2,
+            "extra": [
+                {
+                    "name": "Capricious Warpflame",
+                    "reach": 18,
+                    "attacks": 1,
+                    "hit": 4,
+                    "wound": -100,
+                    "rend": -10,
+                    "damage": 0.666
+                }
+            ]
+        },
+        {
+            "name": "Flaming Maw",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 5,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Blue Horror's Jabs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 5,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Screamers' Lamprey Bites",
+            "reach": 1,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Wake of Fire",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs Monster",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Screamers' Lamprey Bites",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+

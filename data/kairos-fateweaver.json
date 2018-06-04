@@ -1,0 +1,38 @@
+{
+    "name": "Kairos Fateweaver",
+    "points": 340,
+    "bravery": 10,
+    "movement": 10,
+    "save": 4,
+    "size": 1,
+    "wounds": 14,
+    "weapons": [
+        {
+            "name": "Staff of Tomorrow",
+            "reach": 3,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Beaks and Claws",
+            "reach": 1,
+            "attacks": 5,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Gift of Change",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 2,
+            "wound": -10,
+            "rend": -100,
+            "damage": 3.5
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Screamers of Tzeentch",
+    "points": 120,
+    "bravery": 10,
+    "movement": 16,
+    "save": 5,
+    "size": 3,
+    "wounds": 3,
+    "weapons": [
+        {
+            "name": "Lamprey Bite",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Slashing Fins",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 6,
+            "wound": -10,
+            "rend": -100,
+            "damage": 1
+        },
+        {
+            "name": "Tzeentch's Firestorm",
+            "reach": 14,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 4,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs Monster",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Lamprey Bite",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": 0,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

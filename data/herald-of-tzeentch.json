@@ -1,0 +1,58 @@
+{
+    "name": "Herald of Tzeentch on Disc",
+    "points": 120,
+    "bravery": 10,
+    "movement": 16,
+    "save": 5,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Staff of Change",
+            "reach": 2,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Magical Flames",
+            "reach": 18,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Pink Fire of Tzeentch",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 5,
+            "wound": -10,
+            "rend": -100,
+            "damage": 3.5
+        }
+    ],
+    "retry": [
+        {
+            "name": "Ritual Dagger",
+            "changes": [
+                { "RemoveWeapon": "Staff of Change" },
+                {
+                    "AddWeapon": {
+                        "name": "Ritual Dagger",
+                        "reach": 1,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
+

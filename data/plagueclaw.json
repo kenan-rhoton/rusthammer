@@ -1,0 +1,38 @@
+{
+    "name": "Plagueclaw",
+    "points": 180,
+    "bravery": 4,
+    "movement": 3,
+    "save": 5,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Plagueclaw Catapult",
+            "reach": 31,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -2,
+            "damage": 3.5
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs 10+",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Plagueclaw Catapult",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": -1,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 3.5
+                    }
+                }
+            ]
+        }
+    ]
+}
