@@ -1,0 +1,47 @@
+{
+    "name": "Tzaangor Shaman",
+    "points": 160,
+    "bravery": 6,
+    "movement": 16,
+    "save": 5,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Staff of Change",
+            "reach": 2,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Ritual Dagger",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Disc of Tzeentch's Teeth and Horns",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Arcane Bolt",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 2,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ]
+}

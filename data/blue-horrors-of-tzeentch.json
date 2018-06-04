@@ -1,0 +1,49 @@
+{
+    "name": "Blue Horrors of Tzeentch",
+    "points": 50,
+    "bravery": 10,
+    "movement": 5,
+    "save": 6,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Magical Flames",
+            "reach": 14,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Taloned Hands",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Size 30",
+            "changes": [
+                { "SetSize": 30 },
+                { "SetPoints": 120 },
+                {
+                    "ModifyWeapon": {
+                        "name": "Magical Flames",
+                        "reach": 0,
+                        "attacks": 0,
+                        "hit": -1,
+                        "wound": 0,
+                        "rend": 0,
+                        "damage": 0
+                    }
+                }
+            ]
+        }
+    ]
+}
