@@ -54,35 +54,58 @@
             "rend": -1,
             "damage": 2
         }
-    ],
-    "retry": [
+    	],
+	"leader": [
         {
-            "name": "Aviarch Greatbow",
-            "changes": [
-                {"RemoveWeapon": "Greatbow's Arrow of Fate"},
+            "name": "Greatbow's Arrow of Fate",
+            "reach": 24,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2,
+            "extra": [
                 {
-                    "AddWeapon": {
-                        "name": "Aviarch Greatbow's Arrow of Fate",
-                        "reach": 24,
-                        "attacks": 1,
-                        "hit": 4,
-                        "wound": 3,
-                        "rend": -1,
-                        "damage": 2,
-			"extra": [
-             		   	{
-            		        "name": "Judgement from Afar",
-            		        "reach": 24,
-           	        	"attacks": 1,
-              	      		"hit": 6,
-              		      	"wound": -10,
-             	       		"rend": -100,
-                    		"damage": 2
-                		}
-            		]
-                    }
+                    "name": "Judgement from Afar",
+                    "reach": 24,
+                    "attacks": 1,
+                    "hit": 6,
+                    "wound": -10,
+                    "rend": -100,
+                    "damage": 2
                 }
             ]
+        },
+	{
+            "name": "Greatbow",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 5,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        },
+	{
+            "name": "Vicious Beak",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        },
+	{
+            "name": "Disc of Tzeentch's Teeth and Horns",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
         }
-    ]
+    ],
+	"special": [
+    	"Reroll Failed Hits in Combat",
+    	"Reroll Failed Wounds in Combat"
+]
 }
