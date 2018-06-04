@@ -1,50 +1,67 @@
 {
-    "name": "Retributors",
-    "points": 220,
-    "bravery": 7,
-    "movement": 4,
-    "save": 4,
-    "size": 5,
-    "wounds": 3,
-    "weapons": [
-        {
-            "name": "Lightning Hammer",
-            "reach": 1,
-            "attacks": 2,
-            "hit": 4,
-            "wound": 3,
-            "rend": -1,
-            "damage": 2,
-            "extra": [
-                {
-                    "name": "Blast to Ashes",
-                    "reach": 1,
-                    "attacks": 2,
-                    "hit": 6,
-                    "wound": -10,
-                    "rend": -100,
-                    "damage": 2
-                }
-            ]
-        }
-    ],
-    "retry": [
-        {
-            "name": "Starsoul Mace",
-            "changes": [
-                {"RemoveWeapon": "Lightning Hammer"},
-                {
-                    "AddWeapon": {
-                        "name": "Starsoul Mace",
-                        "reach": 1,
-                        "attacks": 1,
-                        "hit": -10,
-                        "wound": -10,
-                        "rend": -100,
-                        "damage": 2
-                    }
-                }
-            ]
-        }
-    ]
+	"name": "Retributors",
+	"points": 220,
+	"bravery": 7,
+	"movement": 4,
+	"save": 4,
+	"size": 5,
+	"wounds": 3,
+	"weapons": [
+		{
+			"name": "Lightning Hammer",
+			"quantity": 0.6,
+			"reach": 1,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 3,
+			"rend": -1,
+			"damage": 2,
+			"extra": [
+				{
+					"name": "Blast to Ashes",
+					"reach": 1,
+					"attacks": 2,
+					"hit": 6,
+					"wound": -10,
+					"rend": -100,
+					"damage": 2
+				}
+			]
+		},
+		{
+			"name": "Starsoul Mace",
+			"quantity": 0.4,
+			"reach": 1,
+			"attacks": 1,
+			"hit": -10,
+			"wound": -10,
+			"rend": -100,
+			"damage": 2
+		}
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Lightning Hammer",
+				"reach": 1,
+				"attacks": 3,
+				"hit": 4,
+				"wound": 3,
+				"rend": -1,
+				"damage": 2,
+				"extra": [
+					{
+						"name": "Blast to Ashes",
+						"reach": 1,
+						"attacks": 2,
+						"hit": 6,
+						"wound": -10,
+						"rend": -100,
+						"damage": 2
+					}
+				]
+			}
+
+		]
+	}
 }

@@ -1,0 +1,87 @@
+{
+	"name": "Kairic Acolytes",
+	"points": 100,
+	"bravery": 5,
+	"movement": 6,
+	"save": 6,
+	"size": 10,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Sorcerous Bolt",
+			"reach": 12,
+			"attacks": 1,
+			"hit": 5,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Cursed Blade",
+			"quantity": 0.7,
+			"reach": 1,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Cursed Glaive",
+			"quantity": 0.3,
+			"reach": 1,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": -1,
+			"damage": 1
+		}
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Sorcerous Bolt",
+				"reach": 12,
+				"attacks": 2,
+				"hit": 5,
+				"wound": 4,
+				"rend": 0,
+				"damage": 1
+			},
+			{
+				"name": "Cursed Glaive",
+				"reach": 1,
+				"attacks": 1,
+				"hit": 4,
+				"wound": 4,
+				"rend": -1,
+				"damage": 1
+			}
+		]
+	},
+	"special": [
+	],
+	"retry": [
+		{
+			"name": "Gestalt Sorcery",
+			"changes": [
+				{ "ModifyWeapon": { "name": "Sorcerous Bolt", "hit": -1 } }
+			]
+		},
+		{
+			"name": "Size 40",
+			"changes": [
+				{ "SetSize": 40 },
+				{ "SetPoints": 360 }
+			]
+		},
+		{
+			"name": "Gestalt Sorcery size 40",
+			"changes": [
+				{ "SetSize": 40 },
+				{ "SetPoints": 360 },
+				{ "ModifyWeapon": { "name": "Sorcerous Bolt", "hit": -1 } }
+			]
+		}
+	]
+}

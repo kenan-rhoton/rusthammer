@@ -1,0 +1,31 @@
+{
+	"name": "Chaos Spawn",
+	"points": 50,
+	"bravery": 10,
+	"movement": 7,
+	"save": 5,
+	"size": 1,
+	"wounds": 5,
+	"weapons": [
+		{
+			"name": "Freakish Mutations",
+			"quantity": 0.83,
+			"reach": 1,
+			"attacks": 7,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Freakish Mutations",
+			"quantity": 0.166,
+			"reach": 1,
+			"attacks": 7,
+			"hit": 3,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		}
+	]
+}

@@ -1,0 +1,64 @@
+{
+	"name": "Tzaangor Enlightened",
+	"points": 160,
+	"bravery": 6,
+	"movement": 16,
+	"save": 5,
+	"size": 3,
+	"wounds": 4,
+	"weapons": [
+		{
+			"name": "Tzeentchian Spear",
+			"reach": 2,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 3,
+			"rend": -1,
+			"damage": 2
+		},
+		{
+			"name": "Vicious Beak",
+			"reach": 1,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 5,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Disc of Tzeentch's Teeth and Horns",
+			"reach": 1,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 3,
+			"rend": -1,
+			"damage": 2
+		}
+	],
+	"retry": [
+		{
+			"name": "Attack Second",
+			"changes": [
+				{ "AddSpecial": "Reroll 1s on Hit" },
+				{ "AddSpecial": "Reroll 1s on Wound" }
+			]
+		},
+		{
+			"name": "Shaman Support",
+			"changes": [
+				{ "ModifyWeapon": { "name": "Tzeentchian Spear", "hit": -1 } },
+				{ "ModifyWeapon": { "name": "Vicious Beak", "hit": -1 } }
+			]
+		},
+		{
+			"name": "Attack Second with Shaman",
+			"changes": [
+				{ "AddSpecial": "Reroll 1s on Hit" },
+				{ "AddSpecial": "Reroll 1s on Wound" },
+				{ "ModifyWeapon": { "name": "Tzeentchian Spear", "hit": -1 } },
+				{ "ModifyWeapon": { "name": "Vicious Beak", "hit": -1 } }
+			]
+		}
+	]
+}
+
