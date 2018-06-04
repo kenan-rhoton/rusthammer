@@ -1,0 +1,87 @@
+{
+    "name": "Huskard On Thundertusk",
+    "points": 380,
+    "bravery": 9,
+    "movement": 8,
+    "save": 4,
+    "size": 1,
+    "wounds": 12,
+    "weapons": [
+        {
+            "name": "Frost-wreathed Ice",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 2,
+            "wound": -10,
+            "rend": -100,
+            "damage": 6
+        },
+        {
+            "name": "Chaintrap",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 3
+        },
+        {
+            "name": "Huskard's Punches and Kicks",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Thundertusk's Crushing Blows",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Subtract 1 from Hit in Combat"
+    ],
+    "retry": [
+        {
+            "name": "Harpoon Launcher",
+            "changes": [
+                { "RemoveWeapon": "Chaintrap" },
+                {
+                    "AddWeapon": {
+                        "name": "Harpoon Launcher",
+                        "reach": 20,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blood Vulture",
+            "changes": [
+                { "RemoveWeapon": "Chaintrap" },
+                {
+                    "AddWeapon": {
+                        "name": "Blood Vulture",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
+

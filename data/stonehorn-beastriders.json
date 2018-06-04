@@ -1,0 +1,104 @@
+{
+    "name": "Stonehorn Beastriders",
+    "points": 360,
+    "bravery": 7,
+    "movement": 12,
+    "save": 4,
+    "size": 1,
+    "wounds": 12,
+    "weapons": [
+        {
+            "name": "Chaintrap",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 3
+        },
+        {
+            "name": "Beastrider's Punches and Kicks",
+            "reach": 1,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Stonehorn's Horns",
+            "reach": 2,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 3,
+            "rend": -2,
+            "damage": 3
+        },
+        {
+            "name": "Stonehorn's Crushing Hooves",
+            "reach": 1,
+            "attacks": 3.5,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Half damage taken"
+    ],
+    "retry": [
+        {
+            "name": "Earth-shattering Charge",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Earth-shattering Charge",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 3.5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Harpoon Launcher",
+            "changes": [
+                { "RemoveWeapon": "Chaintrap" },
+                {
+                    "AddWeapon": {
+                        "name": "Harpoon Launcher",
+                        "reach": 20,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Blood Vulture",
+            "changes": [
+                { "RemoveWeapon": "Chaintrap" },
+                {
+                    "AddWeapon": {
+                        "name": "Blood Vulture",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+

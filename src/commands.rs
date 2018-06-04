@@ -45,17 +45,18 @@ fn print_all(title : &str, result_list : Vec<super::units::weapons::AttackResult
          Vec<super::units::weapons::AttackResult>)
          = result_list.iter().partition(|x| x.range > 3);
 
-    print_kind("Ranged", ranged);
-    print_kind("Melee", melee);
+    print_kind("Ranged", &ranged);
+    print_kind("Melee", &melee);
 
-    let res = result_list.iter().fold(0.0, |a,x| a + x.value);
+    let res = ranged.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value +
+        melee.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value;
     println!("{}: {} --- EFFICIENCY: {}", title, res, 100.0 * res / points as f64);
 }
 
-fn print_kind(title : &str, list : Vec<super::units::weapons::AttackResult>) {
+fn print_kind(title : &str, list : &Vec<super::units::weapons::AttackResult>) {
     println!("    {}:", title);
     list.iter().for_each(|x| println!("        {} -> {}", x.range, x.value));
-    let res = list.iter().fold(0.0, |a,x| a + x.value);
+    let res = list.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value;
     println!("        TOTAL -> {}", res);
 
 }

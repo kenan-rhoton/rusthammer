@@ -1,0 +1,20 @@
+{
+    "name": "Frost Sabres",
+    "points": 40,
+    "bravery": 5,
+    "movement": 9,
+    "save": 6,
+    "size": 2,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Elongated Fangs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ]
+}

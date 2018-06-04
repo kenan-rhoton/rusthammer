@@ -1,0 +1,50 @@
+{
+    "name": "Frostlord On Thundertusk",
+    "points": 460,
+    "bravery": 9,
+    "movement": 8,
+    "save": 3,
+    "size": 1,
+    "wounds": 13,
+    "weapons": [
+        {
+            "name": "Frost-wreathed Ice",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 2,
+            "wound": -10,
+            "rend": -100,
+            "damage": 6
+        },
+        {
+            "name": "Frost Spear",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 3
+        },
+        {
+            "name": "Frostlord's Punches and Kicks",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Thundertusk's Crushing Blows",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Subtract 1 from Hit in Combat"
+    ]
+}

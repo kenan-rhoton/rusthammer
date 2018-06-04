@@ -1,0 +1,104 @@
+{
+    "name": "Mournfang Pack",
+    "points": 120,
+    "bravery": 6,
+    "movement": 9,
+    "save": 4,
+    "size": 2,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Leader's Ironlock Pistol",
+            "reach": 12,
+            "attacks": 0.5,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Culling Clubs or Prey Hackers",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 2
+        },
+        {
+            "name": "Mournfang's Tusks",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "special": [
+        "Deal Damage on Save of 6"
+    ],
+    "retry": [
+        {
+            "name": "Mournfang Charge",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Mournfang Charge",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gargant Hackers",
+            "changes": [
+                { "RemoveWeapon": "Culling Clubs or Prey Hackers"},
+                {
+                    "AddWeapon": {
+                        "name": "Gargant Hacker",
+                        "reach": 2,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gargant Charge",
+            "changes": [
+                { "RemoveWeapon": "Culling Clubs or Prey Hackers"},
+                {
+                    "AddWeapon": {
+                        "name": "Gargant Hacker",
+                        "reach": 2,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 3
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Mournfang Charge",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

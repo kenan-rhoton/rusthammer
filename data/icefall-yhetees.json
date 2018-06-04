@@ -1,0 +1,24 @@
+{
+    "name": "Icefall Yhetees",
+    "points": 120,
+    "bravery": 6,
+    "movement": 9,
+    "save": 6,
+    "size": 3,
+    "wounds": 4,
+    "weapons": [
+        {
+            "name": "Claws and Ice-encrusted Clubs",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Subtract 1 from Hit in Combat"
+    ]
+}
+

@@ -43,8 +43,17 @@ impl super::Unit {
                     weapon.extra.iter().fold(0.0, |acc, x| acc + action(x)));
 
                 if !result_list.iter().any(|x| x.range == weapon.reach) {
-                    result_list.push(
-                        AttackResult{range: weapon.reach, value: 0.0})
+                    let val = result_list.iter()
+                        .filter(|x| (x.range > 3) == (weapon.reach > 3))
+                        .min_by_key(|x| x.range)
+                        .unwrap_or(&AttackResult{range:0,value:0.0})
+                        .value;
+
+                        result_list.push(
+                            AttackResult{
+                            range: weapon.reach,
+                            value: val
+                        })
                 }
 
                 result_list.iter().map(|x| {

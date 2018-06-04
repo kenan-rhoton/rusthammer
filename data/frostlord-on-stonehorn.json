@@ -43,5 +43,26 @@
             "rend": -1,
             "damage": 2
         }
+    ],
+    "special": [
+        "Half damage taken"
+    ],
+    "retry": [
+        {
+            "name": "Earth-shattering Charge",
+            "changes": [
+                {
+                    "AddWeapon": {
+                        "name": "Earth-shattering Charge",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": -10,
+                        "wound": -10,
+                        "rend": -100,
+                        "damage": 3.5
+                    }
+                }
+            ]
+        }
     ]
 }
