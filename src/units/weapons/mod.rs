@@ -31,6 +31,17 @@ pub struct AttackResult {
 
 impl Weapon {
 
+    pub fn merge_weapon(weapon_list : &Vec<Weapon>, target : &Weapon) -> Vec<Weapon> {
+        weapon_list.iter().map(|w| {
+            if w.name == target.name {
+                w.merge(target)
+            } else {
+                w.clone()
+            }
+        })
+        .collect()
+    }
+
     pub fn merge(&self, w : &Weapon) -> Weapon {
         Weapon {
             name: w.name.clone(),
@@ -41,7 +52,11 @@ impl Weapon {
             rend: self.rend + w.rend,
             damage: self.damage + w.damage,
             quantity: self.quantity,
-            extra: self.extra.clone()
+            extra: if w.extra.len() > 0 {
+                w.extra.clone()
+            } else {
+                self.extra.clone()
+            }
         }
     }
 

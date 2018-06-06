@@ -34,16 +34,15 @@ impl Unit {
 
     fn modify_weapon(&self, target : &Weapon) -> Unit {
         let clone = self.clone();
-        super::Unit {
-            weapons: clone.weapons.iter()
-                .map(|w| {
-                    if w.name == target.name {
-                        w.merge(target)
-                    } else {
-                        w.clone()
-                    }
-                })
-                .collect(),
+        Unit {
+            leader: match clone.leader {
+                None => None,
+                Some(lead) => Some(Leader{
+                    weapons: Weapon::merge_weapon(&lead.weapons, target),
+                    ..lead.clone()
+                }),
+            },
+            weapons: Weapon::merge_weapon(&clone.weapons, target),
             ..clone
         }
     }
