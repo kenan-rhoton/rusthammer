@@ -9,6 +9,7 @@
     "weapons": [
         {
             "name": "Privateer Pistol",
+            "quantity": 0.7,
             "reach": 12,
             "attacks": 2,
             "hit": 4,
@@ -18,14 +19,57 @@
         },
         {
             "name": "Arkanaut Cutter",
+            "quantity": 0.3,
             "reach": 1,
             "attacks": 1,
             "hit": 4,
             "wound": 4,
             "rend": 0,
             "damage": 1
+        },
+        {
+            "name": "Gun Butt",
+            "quantity": 0.3,
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Aethermatic Volley Gun",
+            "quantity": 0.3,
+            "reach": 18,
+            "attacks": 6,
+            "hit": 5,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
         }
     ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Volley Pistol",
+                "reach": 12,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Arkanaut Cutter",
+                "reach": 1,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
     "retry": [
         {
             "name": "vs HERO or MONSTER",
@@ -34,53 +78,13 @@
             ]
         },
         {
-            "name": "Volley Guns",
-            "changes": [
-                { "RemoveWeapon": "Privateer Pistol" },
-                { "RemoveWeapon": "Arkanaut Cutter" },
-                {
-                    "AddWeapon": {
-                        "name": "Gun Butt",
-                        "reach": 1,
-                        "attacks": 1,
-                        "hit": 4,
-                        "wound": 5,
-                        "rend": 0,
-                        "damage": 1
-                    }
-                },
-                {
-                    "AddWeapon": {
-                        "name": "Aethermatic Volley Gun",
-                        "reach": 18,
-                        "attacks": 6,
-                        "hit": 5,
-                        "wound": 4,
-                        "rend": -1,
-                        "damage": 1
-                    }
-                }
-            ]
-        },
-        {
             "name": "Light Skyhooks",
             "changes": [
-                { "RemoveWeapon": "Privateer Pistol" },
-                { "RemoveWeapon": "Arkanaut Cutter" },
-                {
-                    "AddWeapon": {
-                        "name": "Gun Butt",
-                        "reach": 1,
-                        "attacks": 1,
-                        "hit": 4,
-                        "wound": 5,
-                        "rend": 0,
-                        "damage": 1
-                    }
-                },
+                { "RemoveWeapon": "Aethermatic Volley Gun" },
                 {
                     "AddWeapon": {
                         "name": "Light Skyhook",
+                        "quantity": 0.3,
                         "reach": 24,
                         "attacks": 1,
                         "hit": 4,
@@ -94,11 +98,12 @@
         {
             "name": "Skypikes",
             "changes": [
-                { "RemoveWeapon": "Privateer Pistol" },
                 { "RemoveWeapon": "Arkanaut Cutter" },
+                { "RemoveWeapon": "Aethermatic Volley Gun" },
                 {
                     "AddWeapon": {
                         "name": "Skypike",
+                        "quantity": 0.3,
                         "reach": 2,
                         "attacks": 2,
                         "hit": 4,
