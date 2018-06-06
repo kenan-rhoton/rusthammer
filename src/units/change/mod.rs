@@ -2,6 +2,9 @@ use super::Unit;
 use super::weapons::Weapon;
 use super::leader::Leader;
 
+#[cfg(test)]
+mod tests;
+
 #[derive(Deserialize,Debug,PartialEq,Clone)]
 pub enum Change {
     RemoveWeapon(String),
@@ -79,54 +82,4 @@ impl Unit {
             Change::SetPoints(i) => self.set_points(*i),
         }
     }
-}
-
-fn test_unit_two_weapons() -> Unit {
-        Unit{
-            weapons: vec![
-                Weapon {
-                    name: String::from("Potato"),
-                    ..Default::default()
-                },
-                Weapon {
-                    name: String::from("Tomatoes"),
-                    ..Default::default()
-                }
-            ],
-            ..Default::default()
-        }
-}
-
-fn test_unit_one_weapon() -> Unit {
-        Unit{
-            weapons: vec![
-                Weapon {
-                    name: String::from("Potato"),
-                    ..Default::default()
-                }
-            ],
-            ..Default::default()
-        }
-}
-
-#[test]
-fn test_remove_weapon(){
-    assert_eq!(
-        test_unit_two_weapons().apply_change(
-            &Change::RemoveWeapon(String::from("Tomatoes"))
-        ),
-        test_unit_one_weapon());
-}
-
-#[test]
-fn test_add_weapon(){
-    assert_eq!(
-        test_unit_one_weapon().apply_change(
-            &Change::AddWeapon(
-                Weapon {
-                    name: String::from("Tomatoes"),
-                    ..Default::default()
-                })
-        ),
-        test_unit_two_weapons());
 }
