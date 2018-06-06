@@ -1,19 +1,22 @@
+use super::Unit;
+use super::weapons::Weapon;
+use super::leader::Leader;
 
 #[derive(Deserialize,Debug,PartialEq,Clone)]
 pub enum Change {
     RemoveWeapon(String),
-    AddWeapon(super::weapons::Weapon),
-    ModifyWeapon(super::weapons::Weapon),
+    AddWeapon(Weapon),
+    ModifyWeapon(Weapon),
     AddSpecial(String),
     SetSize(i32),
     SetPoints(i32)
 }
 
-impl super::Unit {
+impl Unit {
 
-    fn remove_weapon(&self, target : &String) -> super::Unit {
+    fn remove_weapon(&self, target : &String) -> Unit {
         let clone = self.clone();
-        super::Unit {
+        Unit {
             weapons: clone.weapons.into_iter()
                 .filter(|w| w.name != *target)
                 .collect(),
@@ -21,15 +24,15 @@ impl super::Unit {
         }
     }
 
-    fn add_weapon(&self, target : &super::weapons::Weapon) -> super::Unit {
+    fn add_weapon(&self, target : &Weapon) -> Unit {
         let mut clone = self.clone();
         clone.weapons.push(target.clone());
-        super::Unit {
+        Unit {
             ..clone
         }
     }
 
-    fn modify_weapon(&self, target : &super::weapons::Weapon) -> super::Unit {
+    fn modify_weapon(&self, target : &Weapon) -> Unit {
         let clone = self.clone();
         super::Unit {
             weapons: clone.weapons.iter()
@@ -45,29 +48,29 @@ impl super::Unit {
         }
     }
 
-    fn add_special(&self, special : &String) -> super::Unit {
+    fn add_special(&self, special : &String) -> Unit {
         let mut clone = self.clone();
         clone.special.push(special.clone());
-        super::Unit {
+        Unit {
             ..clone
         }
     }
 
-    fn set_size(&self, size : i32) -> super::Unit {
-        super::Unit {
+    fn set_size(&self, size : i32) -> Unit {
+        Unit {
             size,
             ..self.clone()
         }
     }
 
-    fn set_points(&self, points : i32) -> super::Unit {
-        super::Unit {
+    fn set_points(&self, points : i32) -> Unit {
+        Unit {
             points,
             ..self.clone()
         }
     }
 
-    pub fn apply_change(&self, change : &Change) -> super::Unit {
+    pub fn apply_change(&self, change : &Change) -> Unit {
         match change {
             Change::RemoveWeapon(w) => self.remove_weapon(w),
             Change::AddWeapon(w) => self.add_weapon(w),
@@ -79,14 +82,14 @@ impl super::Unit {
     }
 }
 
-fn test_unit_two_weapons() -> super::Unit {
-        super::Unit{
+fn test_unit_two_weapons() -> Unit {
+        Unit{
             weapons: vec![
-                super::weapons::Weapon {
+                Weapon {
                     name: String::from("Potato"),
                     ..Default::default()
                 },
-                super::weapons::Weapon {
+                Weapon {
                     name: String::from("Tomatoes"),
                     ..Default::default()
                 }
@@ -95,10 +98,10 @@ fn test_unit_two_weapons() -> super::Unit {
         }
 }
 
-fn test_unit_one_weapon() -> super::Unit {
-        super::Unit{
+fn test_unit_one_weapon() -> Unit {
+        Unit{
             weapons: vec![
-                super::weapons::Weapon {
+                Weapon {
                     name: String::from("Potato"),
                     ..Default::default()
                 }
@@ -121,7 +124,7 @@ fn test_add_weapon(){
     assert_eq!(
         test_unit_one_weapon().apply_change(
             &Change::AddWeapon(
-                super::weapons::Weapon {
+                Weapon {
                     name: String::from("Tomatoes"),
                     ..Default::default()
                 })

@@ -59,10 +59,7 @@ fn add_result_at_range(result_list : &Vec<AttackResult>, reach: i32, value : f64
     result_list.iter().map(|x| {
         if x.range <= reach &&
             ((reach > 3) == (x.range > 3)) {
-                AttackResult{
-                    value: x.value + value,
-                    range: x.range
-                }
+                AttackResult{value: x.value + value,range: x.range}
             } else {
                 (*x).clone()
             }
@@ -83,11 +80,7 @@ fn results_from_weapons<C>(init : Vec<AttackResult>, weapons : &Vec<Weapon>, act
         weapons.iter().fold(init, |mut result_list, weapon| {
             if !result_list.iter().any(|x| x.range == weapon.reach) {
                 let val = value_for_lowest_range(&result_list, weapon.reach);
-                result_list.push(
-                    AttackResult{
-                        range: weapon.reach,
-                        value: val
-                    })
+                result_list.push(AttackResult{range: weapon.reach,value: val})
             }
 
             let weapon_value = size as f64 * calculate_value(weapon, action);
