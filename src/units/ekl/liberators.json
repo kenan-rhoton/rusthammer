@@ -1,0 +1,47 @@
+{
+    "name": "Liberators (Warhammer & Shield)",
+    "points": 100,
+    "bravery": 6,
+    "movement": 5,
+    "save": 4,
+    "size": 10,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Warhammer",
+	    "quantity": 0.8888888,
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Grandhammer",
+	    "quantity": 0.11111111,
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "leader": {
+	"weapons": [
+            {
+                "name": "Grandhammer",
+                "reach": 1,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 3,
+                "rend": -1,
+                "damage": 2
+            }
+	]
+    },
+    "special": [
+        "Reroll 1s on Save"
+    ]
+}
