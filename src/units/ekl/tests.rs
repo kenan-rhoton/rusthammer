@@ -7,7 +7,13 @@ fn test_fail_super_weak() {
     let super_weak = Unit {
         size: 1, wounds: 1, save: 10, ..Default::default()
     };
-    assert_eq!(super_weak.ekl(), EKL::Fail(1));
+    assert_eq!(super_weak.ekl(), EKL::Fail{
+        rounds: 1,
+        wound_ratio: 1.0,
+        round_efficiency: 1.0,
+        wound_efficiency: 1.0,
+        kill_damage: 8.666666119999999
+    });
 }
 
 #[test]
@@ -16,7 +22,13 @@ fn test_fail_sort_of_weak() {
     let sort_of_weak = Unit {
         size: 1, wounds: 9, save: 10, ..Default::default()
     };
-    assert_eq!(sort_of_weak.ekl(), EKL::Fail(2));
+    assert_eq!(sort_of_weak.ekl(), EKL::Fail{
+        rounds: 2,
+        wound_ratio: 1.0,
+        round_efficiency: 0.5,
+        wound_efficiency: 1.0,
+        kill_damage: 17.333332239999997
+    });
 }
 
 #[test]
@@ -25,7 +37,13 @@ fn test_fail_weak_with_save() {
     let weak_with_save = Unit {
         size: 1, wounds: 7, save: 5, ..Default::default()
     };
-    assert_eq!(weak_with_save.ekl(), EKL::Fail(2));
+    assert_eq!(weak_with_save.ekl(), EKL::Fail{
+        rounds: 2,
+        wound_ratio: 1.0,
+        round_efficiency: 0.5,
+        wound_efficiency: 1.0,
+        kill_damage: 12.666665933333334
+    });
 }
 
 #[test]
@@ -35,7 +53,13 @@ fn test_fail_eventually() {
     let meatbag = Unit {
         size: 1, wounds: 100, save: 2, ..Default::default()
     };
-    assert_eq!(meatbag.ekl(), EKL::Fail(51));
+    assert_eq!(meatbag.ekl(), EKL::Fail{
+        rounds: 51,
+        wound_ratio: 1.0,
+        round_efficiency: 0.0196078431372549,
+        wound_efficiency: 1.0,
+        kill_damage: 101.9999952400001
+    });
 }
 
 #[test]
@@ -56,7 +80,7 @@ fn test_wipe_instantly() {
         ],
         ..Default::default()
     };
-    assert_eq!(over_powered.ekl(), EKL::Wipe);
+    assert_eq!(over_powered.ekl(), EKL::Wipe(3000000000.0));
 }
 
 #[test]
@@ -81,8 +105,9 @@ fn test_simple_win() {
     };
     assert_eq!(quick_maths.ekl(), EKL::Win{
         rounds: 2,
-        wound_ratio: 0.311111148,
+        wound_ratio: 0.5827160657777778,
         round_efficiency: 0.5,
-        wound_efficiency: 0.311111148
+        wound_efficiency: 0.5827160657777778,
+        kill_damage: 20.0
     });
 }
