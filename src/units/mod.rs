@@ -2,6 +2,7 @@ pub mod weapons;
 mod probabilities;
 mod change;
 mod leader;
+mod ekl;
 extern crate serde_json;
 use std;
 

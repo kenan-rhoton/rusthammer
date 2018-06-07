@@ -25,6 +25,7 @@ fn exec_one(command : &String, source : &super::units::Unit) {
     match command.as_ref() {
         "precision" => print_all("Precision", source.precision(), source.points),
         "threat" => print_all("Threat:", source.threat(), source.points),
+        "ekl" => println!("EKL: {:?}", source.ekl()),
         a => eprintln!("Unrecognized command: {}", a),
     }
 }
