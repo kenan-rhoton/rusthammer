@@ -38,7 +38,7 @@ impl Unit {
                 return EKL::Win{
                     rounds: round,
                     wound_ratio: (wound_buffer - my_wounds)/wound_buffer,
-                    round_efficiency: 100.0 * (round as f64 / self.points as f64),
+                    round_efficiency: 100.0 / (round as f64 * self.points as f64),
                     wound_efficiency: 100.0 * (((wound_buffer - my_wounds)/wound_buffer) / self.points as f64)
                 };
             }

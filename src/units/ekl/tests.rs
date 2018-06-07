@@ -82,7 +82,7 @@ fn test_simple_win() {
     assert_eq!(quick_maths.ekl(), EKL::Win{
         rounds: 2,
         wound_ratio: 0.311111148,
-        round_efficiency: 2.0,
+        round_efficiency: 0.5,
         wound_efficiency: 0.311111148
     });
 }
