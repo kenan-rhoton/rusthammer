@@ -34,6 +34,7 @@ fn exec_two(command : &String, source : &super::units::Unit, target : &super::un
     match command.as_ref() {
         "unsaved" => print_all("Unsaved wounds:", source.unsaved(target), source.points),
         "damage" => print_all("Expected Damage:", source.expected_damage(target), source.points),
+        "fight" => println!("Fight Result: {:?}", source.fight(target)),
         a => eprintln!("Unrecognized command: {}", a),
     }
 }

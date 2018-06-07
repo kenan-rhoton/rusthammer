@@ -23,7 +23,7 @@ fn liberators() -> Unit {
 
 impl Unit {
 
-    fn to_the_death(&self, enemy : &Unit) -> EKL {
+    pub fn fight(&self, enemy : &Unit) -> EKL {
         let (mut my_wounds, mut enemy_wounds, mut round) = (0., 0., 1);
         let wound_buffer = (self.wounds * self.size) as f64;
 
@@ -32,6 +32,9 @@ impl Unit {
                 self.expected_damage(enemy));
 
             if enemy_wounds >= (enemy.wounds * enemy.size) as f64 {
+                if round == 1 {
+                    return EKL::Wipe
+                }
                 return EKL::Win{
                     rounds: round,
                     wound_ratio: (wound_buffer - my_wounds)/wound_buffer,
@@ -50,12 +53,7 @@ impl Unit {
 
     pub fn ekl(&self) -> EKL {
         let libs = liberators();
-        if self.expected_damage(&libs).iter()
-            .any(|x| x.value > (libs.wounds * libs.size) as f64) {
-                return EKL::Wipe;
-            }
-
-        self.to_the_death(&libs)
+        self.fight(&libs)
     }
 
 }
