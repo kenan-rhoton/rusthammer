@@ -11,6 +11,11 @@ fn test_check() {
     assert_approx_eq!(check(1), dice::roll_over(1));
 }
 
+fn get_save(save_string : &String) -> i32 {
+    let v : Vec<&str> = save_string.matches(char::is_numeric).collect();
+    v[0].parse::<i32>().unwrap()
+}
+
 impl super::Unit {
 
     pub fn to_roll(&self, target : i32, name : &str) -> f64{
@@ -33,7 +38,13 @@ impl super::Unit {
     }
 
     pub fn to_save(&self, rend : i32) -> f64 {
-        self.to_roll(self.save - rend, "Save")
+        let super_save = self.special.iter().find(
+            |x| x.contains("Supersave"));
+        match super_save {
+            None => self.to_roll(self.save - rend, "Save"),
+            Some(x) => self.to_roll(self.save - rend, "Save") *
+                self.to_roll(get_save(x), "Supersave"),
+        }
     }
 
 }

@@ -62,6 +62,24 @@ impl ::units::Unit {
             }
         }
 
+    fn affect_weapon(&self, weapon : &Weapon) -> Weapon {
+        if self.special.iter().any(
+            |x| x == &String::from("Half damage taken")) {
+            Weapon {
+                damage: if weapon.damage > 1.0 {
+                    weapon.damage / 2.0
+                } else {
+                    weapon.damage
+                },
+                ..weapon.clone()
+            }
+        } else {
+            Weapon {
+                ..weapon.clone()
+            }
+        }
+    }
+
     fn each_weapon<C>(&self, action : C) -> Vec<AttackResult>
         where C: Fn(&Weapon) -> f64 {
             results_from_weapons(self.leader_weapon(&action), &self.weapons, &action, self.get_size())
@@ -80,14 +98,16 @@ impl ::units::Unit {
     }
 
     pub fn unsaved(&self, opponent : &Unit) -> Vec<AttackResult> {
-        self.each_weapon(move |x: &Weapon| {
+        self.each_weapon(move |w: &Weapon| {
+            let x = opponent.affect_weapon(w);
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
                 (1.0 - opponent.to_save(x.rend))
         })
     }
 
     pub fn expected_damage(&self, opponent : &Unit) -> Vec<AttackResult> {
-        self.each_weapon(move |x: &Weapon| {
+        self.each_weapon(move |w: &Weapon| {
+            let x = opponent.affect_weapon(w);
             x.attacks * self.to_hit(x.hit) * self.to_wound(x.wound) *
                 (1.0 - opponent.to_save(x.rend)) * x.damage
         })
