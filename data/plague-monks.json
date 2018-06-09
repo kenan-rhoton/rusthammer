@@ -1,0 +1,98 @@
+{
+	"name": "Plague Monks",
+	"points": 240,
+	"bravery": 5,
+	"movement": 6,
+	"save": 1,
+	"size": 40,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Foetid Blade",
+			"reach": 1,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Woe-Stave",
+			"reach": 2,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 5,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"special": [
+		"Deathrattle"
+	],
+	"retry": [
+		{
+			"name": "Charge + buff",
+			"changes": [
+				{
+					"ModifyWeapon": {
+						"name": "Foetid Blade",
+						"attacks": 2,
+						"extra": [
+							{
+								"name": "Blades of Putrefaction",
+								"reach": 1,
+								"attacks": 3,
+								"hit": 6,
+								"wound": -100,
+								"rend": -10,
+								"damage": 1
+							}
+						]
+					}
+				},
+				{
+					"ModifyWeapon": {
+						"name": "Woe-Stave",
+						"attacks": 1,
+						"extra": [
+							{
+								"name": "Blades of Putrefaction",
+								"reach": 1,
+								"attacks": 5,
+								"hit": 6,
+								"wound": -100,
+								"rend": -10,
+								"damage": 1
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Charge + buff con doble foetid",
+			"changes": [
+				{
+					"ModifyWeapon": {
+						"name": "Foetid Blade",
+						"attacks": 2,
+						"extra": [
+							{
+								"name": "Blades of Putrefaction",
+								"reach": 1,
+								"attacks": 3,
+								"hit": 6,
+								"wound": -100,
+								"rend": -10,
+								"damage": 1
+							}
+						]
+					}
+				},
+				{"RemoveWeapon": "Woe-Stave"},
+				{"AddSpecial": "Reroll Failed Hits"}
+			]
+		}
+
+	]
+}
