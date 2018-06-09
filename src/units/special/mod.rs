@@ -1,6 +1,9 @@
 use super::Unit;
 use ::units::weapons::Weapon;
 
+#[cfg(test)]
+mod tests;
+
 fn get_number(save_string : &String) -> i32 {
     let v : Vec<&str> = save_string.matches(char::is_numeric).collect();
     v[0].parse::<i32>().unwrap()
@@ -26,6 +29,14 @@ impl Unit {
             1.0/6.0
         } else if self.check_special(&format!("Reroll Failed {}s", name)) {
             (target - 1) as f64/6.0
+        } else {
+            0.0
+        }
+    }
+
+    pub fn deathrattle(&self) -> f64 {
+        if self.check_special("Deathrattle") {
+            1.0/6.0
         } else {
             0.0
         }
