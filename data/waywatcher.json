@@ -1,0 +1,79 @@
+{
+	"name": "Waywatcher",
+	"points": 100,
+	"bravery": 8,
+	"movement": 6,
+	"save": 4,
+	"size": 1,
+	"wounds": 5,
+	"weapons": [
+		{
+			"name": "Waystalker Bow",
+			"reach": 22,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 1
+		},
+		{
+			"name": "Waystalker Blade",
+			"reach": 1,
+			"attacks": 2,
+			"hit": 3,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"special": [
+		"Subtract 1 from Hit in Shooting"
+	],
+	"retry": [
+		{
+			"name": "Fast Shots",
+			"changes": [
+				{ "ModifyWeapon":
+					{
+						"name": "Waystalker Bow",
+						"attacks": 3,
+						"extra": [
+							{
+								"name": "Waystalker Bow",
+								"reach": 22,
+								"attacks": 6,
+								"hit": 6,
+								"wound": 3,
+								"rend": -1,
+								"damage": 1
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Precise Shots",
+			"changes": [
+				{ "ModifyWeapon":
+					{
+						"name": "Waystalker Bow",
+						"damage": 1,
+						"wound": -1,
+						"extra": [
+							{
+								"name": "Waystalker Bow",
+								"reach": 22,
+								"attacks": 3,
+								"hit": 3,
+								"wound": 6,
+								"rend": -2,
+								"damage": 2
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}

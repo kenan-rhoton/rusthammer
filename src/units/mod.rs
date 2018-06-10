@@ -33,6 +33,11 @@ pub struct UnitOption {
 
 impl Unit {
 
+    pub fn init(&mut self) {
+        self.retry.push(UnitOption {
+            name: String::from("Base"), changes: vec![] });
+    }
+
     pub fn merge(&self, opt : &UnitOption) -> Unit {
         opt.changes.iter().fold(self.clone(),
             |current, change_data| current.apply_change(change_data))

@@ -1,39 +1,45 @@
 {
-    "name": "Protectors",
-    "points": 200,
-    "bravery": 7,
-    "movement": 4,
-    "save": 4,
-    "size": 5,
-    "wounds": 3,
-    "weapons": [
-        {
-            "name": "Stormstrike Glaive",
-            "reach": 3,
-            "attacks": 3,
-            "hit": 3,
-            "wound": 3,
-            "rend": -1,
-            "damage": 1
-        }
-    ],
-    "retry": [
-        {
-            "name": "Starsoul Mace",
-            "changes": [
-                { "RemoveWeapon": "Stormstrike Glaive" },
-                {
-                    "AddWeapon": {
-                        "name": "Starsoul Mace",
-                        "reach": 1,
-                        "attacks": 1,
-                        "hit": -10,
-                        "wound": -10,
-                        "rend": -100,
-                        "damage": 2
-                    }
-                }
-            ]
-        }
-    ]
+	"name": "Protectors",
+	"points": 200,
+	"bravery": 7,
+	"movement": 4,
+	"save": 4,
+	"size": 5,
+	"wounds": 3,
+	"weapons": [
+		{
+			"name": "Stormstrike Glaive",
+			"quantity": 0.5,
+			"reach": 3,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 1
+		},
+		{
+			"name": "Starsoul Mace",
+			"quantity": 0.5,
+			"reach": 1,
+			"attacks": 1,
+			"hit": -10,
+			"wound": -10,
+			"rend": -100,
+			"damage": 2
+		}
+
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Stormstrike Glaive",
+				"reach": 3,
+				"attacks": 4,
+				"hit": 3,
+				"wound": 3,
+				"rend": -1,
+				"damage": 1
+			}
+		]
+	}
 }

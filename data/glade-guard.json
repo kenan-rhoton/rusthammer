@@ -1,0 +1,79 @@
+{
+	"name": "Glade Guard",
+	"points": 120,
+	"bravery": 6,
+	"movement": 6,
+	"save": 6,
+	"size": 10,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Longbow",
+			"reach": 20,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Glade Blade",
+			"reach": 1,
+			"attacks": 1,
+			"hit": 5,
+			"wound": 5,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"leader": {
+		"weapons": [
+		{
+			"name": "Longbow",
+			"reach": 20,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Glade Blade",
+			"reach": 1,
+			"attacks": 1,
+			"hit": 5,
+			"wound": 5,
+			"rend": 0,
+			"damage": 1
+		}
+		]
+	},
+	"retry": [
+		{
+			"name": "Peerless Archery",
+			"changes": [
+				{ "ModifyWeapon":
+					{
+						"name": "Longbow",
+						"hit": -1
+					}
+				},
+				{ "SetSize": 20 },
+				{ "SetPoints": 240 }
+			]
+		},
+		{
+			"name": "Arcane Bodkins",
+			"changes": [
+				{ "ModifyWeapon":
+					{
+						"name": "Longbow",
+						"rend": -3
+					}
+				}
+			]
+		}
+	]
+}
+
+

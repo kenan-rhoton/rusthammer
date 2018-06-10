@@ -42,6 +42,14 @@ impl Unit {
         }
     }
 
+    pub fn thornshields(&self) -> f64 {
+        if self.check_special("Thornshields") {
+            1.0/6.0
+        } else {
+            0.0
+        }
+    }
+
     pub fn affect_opponent_weapon(&self, weapon : &Weapon) -> Weapon {
         if self.check_special("Half damage taken") {
             Weapon {

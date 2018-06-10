@@ -1,27 +1,31 @@
-pub fn single_unit(command : &String, source : &super::units::Unit) {
-    println!("{}", source.name);
-    exec_one(command, source);
+use ::units::Unit;
+
+pub fn single_unit(command : &String, source : &mut Unit) {
+    source.init();
     source.retry.iter().for_each(|r| {
         print!("{} - ", r.name);
         exec_one(command, &source.merge(r));
     });
 }
 
-pub fn two_units(command : &String, source : &super::units::Unit, target : &super::units::Unit ) {
+pub fn two_units(command : &String, source : &mut Unit, target : &mut super::units::Unit ) {
     println!(
         "{} vs {} (Wounds: {} Size: {} Save: {})",
         source.name, target.name, target.wounds, target.size, target.save
         );
 
-    exec_two(command, source, target);
+    source.init();
+    target.init();
     source.retry.iter().for_each(|r| {
-        println!("{}: ", r.name);
-        exec_two(command, &source.merge(r), target)
+        target.retry.iter().for_each(|l| {
+            println!("{} vs {}: ", r.name, l.name);
+            exec_two(command, &source.merge(r), &target.merge(l));
+        });
     });
 }
 
 
-fn exec_one(command : &String, source : &super::units::Unit) {
+fn exec_one(command : &String, source : &Unit) {
     match command.as_ref() {
         "precision" => print_all("Precision", source.precision(), source.points),
         "threat" => print_all("Threat:", source.threat(), source.points),
@@ -30,7 +34,7 @@ fn exec_one(command : &String, source : &super::units::Unit) {
     }
 }
 
-fn exec_two(command : &String, source : &super::units::Unit, target : &super::units::Unit ) {
+fn exec_two(command : &String, source : &Unit, target : &Unit ) {
     match command.as_ref() {
         "unsaved" => print_all("Unsaved wounds:", source.unsaved(target), source.points),
         "damage" => print_all("Expected Damage:", source.expected_damage(target), source.points),

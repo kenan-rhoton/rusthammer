@@ -19,8 +19,8 @@ fn main() {
         3 => {
             let unit1 = units::Unit::from_file(args[2].parse().unwrap());
             match unit1 {
-                Ok(u1) =>
-                    commands::single_unit(&args[1], &u1),
+                Ok(mut u1) =>
+                    commands::single_unit(&args[1], &mut u1),
                 Err(_) =>
                     eprintln!("Cannot find data file: {}", args[2]),
             }
@@ -29,8 +29,8 @@ fn main() {
             let unit1 = units::Unit::from_file(args[2].parse().unwrap());
             let unit2 = units::Unit::from_file(args[3].parse().unwrap());
             match (unit1, unit2) {
-                (Ok(u1), Ok(u2)) =>
-                    commands::two_units(&args[1], &u1, &u2),
+                (Ok(mut u1), Ok(mut u2)) =>
+                    commands::two_units(&args[1], &mut u1, &mut u2),
                 (Err(_), Ok(_)) =>
                     eprintln!("Cannot find data file: {}", args[2]),
                 (Ok(_), Err(_)) =>
