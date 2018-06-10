@@ -9,7 +9,7 @@
     "weapons": [
         {
             "name": "Warhammer",
-	    "quantity": 0.8888888,
+	    "quantity": 0.8,
             "reach": 1,
             "attacks": 2,
             "hit": 4,
@@ -33,5 +33,57 @@
     },
     "special": [
         "Reroll 1s on Save"
+    ],
+    "retry": [
+	    {
+		    "name": "Size 10",
+		    "changes": [
+			    { "SetSize": 10 },
+			    { "SetPoints": 200 },
+			    { "ModifyWeapon" :
+				    {
+					    "name": "Warhammer",
+					    "quantity": 0.8888888
+				    }
+			    },
+			    {
+				    "AddWeapon" : {
+					    "name": "Grandhammer",
+					    "quantity": 0.1111111,
+					    "reach": 1,
+					    "attacks": 2,
+					    "hit": 4,
+					    "wound": 3,
+					    "rend": -1,
+					    "damage": 2
+				    }
+			    }
+		    ]
+	    },
+	    {
+		    "name": "Size 20",
+		    "changes": [
+			    { "SetSize": 20 },
+			    { "SetPoints": 400 },
+			    { "ModifyWeapon" :
+				    {
+					    "name": "Warhammer",
+					    "quantity": 0.84210
+				    }
+			    },
+			    {
+				    "AddWeapon" : {
+					    "name": "Grandhammer",
+					    "quantity": 0.15789,
+					    "reach": 1,
+					    "attacks": 2,
+					    "hit": 4,
+					    "wound": 3,
+					    "rend": -1,
+					    "damage": 2
+				    }
+			    }
+		    ]
+	    }
     ]
 }

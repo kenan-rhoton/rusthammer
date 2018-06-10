@@ -1,6 +1,7 @@
 use super::Fight;
 use ::units::Unit;
 use ::units::weapons::AttackResult;
+use std::cmp;
 
 fn fight_result(round : i32, status : &UnitStatus, enemy_status : &UnitStatus) -> Fight {
     return Fight {
@@ -17,7 +18,8 @@ struct UnitStatus {
     wounds_suffered: f64,
     original_size: i32,
     unit: Unit,
-    wound_buffer: f64
+    wound_buffer: f64,
+    round_casualties: i32
 }
 
 impl UnitStatus {
@@ -27,6 +29,7 @@ impl UnitStatus {
             wounds_suffered: 0.0,
             original_size: unit.size,
             wound_buffer: (unit.size * unit.wounds) as f64,
+            round_casualties: 0,
             unit: unit.clone()
         }
     }
@@ -37,22 +40,36 @@ impl UnitStatus {
 
 
     fn update_unit(&mut self) {
+        let new_size = self.original_size - (self.wounds_suffered / self.unit.wounds as f64).floor() as i32;
         self.unit = Unit {
-            size: self.original_size - (self.wounds_suffered / self.unit.wounds as f64).floor() as i32,
+            size: new_size,
             ..self.unit.clone()
+        };
+        self.round_casualties = self.unit.size - new_size;
+    }
+
+    fn battleshock(&mut self) {
+        let result = self.round_casualties + 3;
+        let shock = cmp::min(result - self.unit.bravery, self.unit.size);
+        if shock > 0 {
+            self.unit = Unit {
+                size: self.unit.size - shock,
+                ..self.unit.clone()
+            };
+            self.wounds_suffered = ((self.original_size - self.unit.size)
+                                    * self.unit.wounds) as f64;
         };
     }
 
     fn fight(&mut self, target : &mut UnitStatus) -> bool {
-        let model_count = target.unit.size;
         target.wounds_suffered += AttackResult::total(
             self.unit.expected_damage(&target.unit));
 
         target.update_unit();
-        let models_slain = (model_count - target.unit.size) as f64;
-        self.wounds_suffered += target.unit.deathrattle() * models_slain;
+        self.wounds_suffered += target.unit.deathrattle() * target.round_casualties as f64;
         self.wounds_suffered += target.unit.thornshields() *
             AttackResult::total(self.unit.precision());
+        self.update_unit();
         return target.unit.size < 1;
     }
 }
@@ -74,6 +91,8 @@ impl FightStatus {
     }
 
     pub fn update_round(&mut self) {
+        self.attacker.battleshock();
+        self.defender.battleshock();
         self.round += 1;
     }
 

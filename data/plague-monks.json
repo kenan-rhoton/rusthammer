@@ -3,7 +3,7 @@
 	"points": 240,
 	"bravery": 5,
 	"movement": 6,
-	"save": 1,
+	"save": 10,
 	"size": 40,
 	"wounds": 1,
 	"weapons": [
@@ -53,12 +53,12 @@
 				{
 					"ModifyWeapon": {
 						"name": "Woe-Stave",
-						"attacks": 1,
+						"attacks": 2,
 						"extra": [
 							{
 								"name": "Blades of Putrefaction",
 								"reach": 1,
-								"attacks": 5,
+								"attacks": 2,
 								"hit": 6,
 								"wound": -100,
 								"rend": -10,
