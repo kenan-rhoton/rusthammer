@@ -63,7 +63,8 @@ impl Weapon {
             wound: self.wound + w.wound,
             rend: self.rend + w.rend,
             damage: self.damage + w.damage,
-            quantity: self.quantity,
+            quantity: if w.quantity > 0.0 { w.quantity }
+                        else { self.quantity },
             extra: if w.extra.len() > 0 {
                 w.extra.clone()
             } else {

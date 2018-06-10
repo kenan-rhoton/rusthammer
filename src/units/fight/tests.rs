@@ -5,7 +5,7 @@ use super::Fight;
 #[test]
 fn test_fail_super_weak() {
     let super_weak = Unit {
-        size: 1, wounds: 1, save: 10, ..Default::default()
+        bravery: 100, size: 1, wounds: 1, save: 10, ..Default::default()
     };
     assert_eq!(super_weak.ekl(), Fight {
         winner: String::from("Liberators (Warhammer & Shield)"),
@@ -21,7 +21,7 @@ fn test_fail_super_weak() {
 fn test_fail_sort_of_weak() {
     // Note: Liberators with Shields have a threat of 8.666
     let sort_of_weak = Unit {
-        size: 1, wounds: 9, save: 10, ..Default::default()
+        bravery: 100, size: 1, wounds: 9, save: 10, ..Default::default()
     };
     assert_eq!(sort_of_weak.ekl(), Fight {
         winner: String::from("Liberators (Warhammer & Shield)"),
@@ -37,7 +37,7 @@ fn test_fail_sort_of_weak() {
 fn test_fail_weak_with_save() {
     // Note: Liberators with Shields have a threat of 8.666
     let weak_with_save = Unit {
-        size: 1, wounds: 7, save: 5, ..Default::default()
+        bravery: 100, size: 1, wounds: 7, save: 5, ..Default::default()
     };
     assert_eq!(weak_with_save.ekl(), Fight {
         winner: String::from("Liberators (Warhammer & Shield)"),
@@ -54,7 +54,7 @@ fn test_fail_eventually() {
     // Note: Liberators with Shields have a threat of 8.666
     //       remember the Grandhammers have Rend -1, though
     let meatbag = Unit {
-        size: 1, wounds: 100, save: 2, ..Default::default()
+        bravery: 100, size: 1, wounds: 100, save: 2, ..Default::default()
     };
     assert_eq!(meatbag.ekl(), Fight {
         winner: String::from("Liberators (Warhammer & Shield)"),
@@ -72,7 +72,7 @@ fn test_simple_win() {
     //       a save of 4+, 2 wounds and a size of 10
     let quick_maths = Unit {
         name: String::from("potato"),
-        size: 1, wounds: 5, save: 3, points:100,
+        size: 1, wounds: 5, save: 3, points:100, bravery: 20,
         weapons: vec![
             Weapon{
                 reach: 1,
