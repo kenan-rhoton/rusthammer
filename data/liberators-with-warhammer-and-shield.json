@@ -16,16 +16,6 @@
             "wound": 3,
             "rend": 0,
             "damage": 1
-        },
-        {
-            "name": "Grandhammer",
-	    "quantity": 0.11111111,
-            "reach": 1,
-            "attacks": 2,
-            "hit": 4,
-            "wound": 3,
-            "rend": -1,
-            "damage": 2
         }
     ],
     "leader": {

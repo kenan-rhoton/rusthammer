@@ -1,0 +1,51 @@
+{
+	"name": "Wayfinder",
+	"points": 100,
+	"bravery": 8,
+	"movement": 6,
+	"save": 4,
+	"size": 1,
+	"wounds": 5,
+	"weapons": [
+		{
+			"name": "Hunting Falcon's Beak",
+			"reach": 18,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Greatbow",
+			"reach": 20,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 1
+		},
+		{
+			"name": "Kindred Blade",
+			"reach": 1,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"retry": [
+		{
+			"name": "Hail of Doom Arrow",
+			"changes": [
+				{ "ModifyWeapon": {
+					"name": "Greatbow",
+					"attacks": 7.5
+				}
+				}
+			]
+		}
+	]
+}
+

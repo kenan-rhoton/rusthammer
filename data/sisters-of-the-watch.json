@@ -1,0 +1,61 @@
+{
+	"name": "Sisters of the Watch",
+	"points": 220,
+	"bravery": 7,
+	"movement": 6,
+	"save": 5,
+	"size": 10,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Watch Bow",
+			"reach": 18,
+			"attacks": 1,
+			"hit": 3,
+			"wound": 3,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Ithilmar Sword",
+			"reach": 1,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Watch Bow",
+				"reach": 18,
+				"attacks": 2,
+				"hit": 3,
+				"wound": 3,
+				"rend": 0,
+				"damage": 1
+			},
+			{
+				"name": "Ithilmar Sword",
+				"reach": 1,
+				"attacks": 1,
+				"hit": 4,
+				"wound": 4,
+				"rend": 0,
+				"damage": 1
+			}
+		]
+	},
+	"retry": [
+		{
+			"name": "Quicksilver Shot",
+			"changes": [
+				{ "ModifyWeapon":
+					{ "name": "Watch Bow", "attacks": 1 }
+				}
+			]
+		}
+	]
+}

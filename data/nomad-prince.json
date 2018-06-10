@@ -1,0 +1,32 @@
+{
+	"name": "Nomad Prince",
+	"points": 80,
+	"bravery": 8,
+	"movement": 6,
+	"save": 4,
+	"size": 1,
+	"wounds": 5,
+	"weapons": [
+		{
+			"name": "Hunting Hawk's Beak",
+			"reach": 20,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Starlight Spear",
+			"reach": 2,
+			"attacks": 4,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 2
+		}
+	],
+	"special": [
+		"Reroll Failed Saves"
+	]
+}
