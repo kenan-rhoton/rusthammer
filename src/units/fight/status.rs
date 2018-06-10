@@ -51,6 +51,8 @@ impl UnitStatus {
         target.update_unit();
         let models_slain = (model_count - target.unit.size) as f64;
         self.wounds_suffered += target.unit.deathrattle() * models_slain;
+        self.wounds_suffered += target.unit.thornshields() *
+            AttackResult::total(self.unit.precision());
         return target.unit.size < 1;
     }
 }

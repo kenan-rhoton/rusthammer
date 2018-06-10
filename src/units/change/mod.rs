@@ -11,6 +11,7 @@ pub enum Change {
     AddWeapon(Weapon),
     ModifyWeapon(Weapon),
     AddSpecial(String),
+    ModifySave(i32),
     SetSize(i32),
     SetPoints(i32)
 }
@@ -58,6 +59,13 @@ impl Unit {
         }
     }
 
+    fn modify_save(&self, modifier : i32) -> Unit {
+        Unit {
+            save: self.save + modifier,
+            ..self.clone()
+        }
+    }
+
     fn set_size(&self, size : i32) -> Unit {
         Unit {
             size,
@@ -78,6 +86,7 @@ impl Unit {
             Change::AddWeapon(w) => self.add_weapon(w),
             Change::ModifyWeapon(w) => self.modify_weapon(w),
             Change::AddSpecial(s) => self.add_special(s),
+            Change::ModifySave(i) => self.modify_save(*i),
             Change::SetSize(i) => self.set_size(*i),
             Change::SetPoints(i) => self.set_points(*i),
         }
