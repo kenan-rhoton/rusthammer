@@ -26,6 +26,28 @@
             "damage": 1
         }
     ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Shockbolt Bow",
+                "reach": 24,
+                "attacks": 3.5,
+                "hit": 2,
+                "wound": 3,
+                "rend": -1,
+                "damage": 1
+            },
+            {
+                "name": "Storm Gladius",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 2,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
     "retry": [
         {
             "name": "Boltstorm Crossbow",
@@ -57,40 +79,6 @@
                         "wound": 4,
                         "rend": 0,
                         "damage": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Shockbolt Bow",
-            "changes": [
-                {"RemoveWeapon": "Skybolt Bow"},
-                {
-                    "AddWeapon": {
-                        "name": "Shockbolt Bow",
-                        "reach": 24,
-                        "attacks": 3.5,
-                        "hit": 3,
-                        "wound": 3,
-                        "rend": -1,
-                        "damage": 1
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Thunderbolt Crossbow",
-            "changes": [
-                {"RemoveWeapon": "Skybolt Bow"},
-                {
-                    "AddWeapon": {
-                        "name": "Thunderbolt Crossbow",
-                        "reach": 18,
-                        "attacks": 1,
-                        "hit": 3,
-                        "wound": -10,
-                        "rend": -100,
-                        "damage": 2
                     }
                 }
             ]
