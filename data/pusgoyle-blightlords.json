@@ -1,0 +1,71 @@
+{
+    "name": "Pusgoyle Blightlords",
+    "points": 220,
+    "bravery": 8,
+    "movement": 8,
+    "save": 4,
+    "size": 2,
+    "wounds": 7,
+    "weapons": [
+        {
+            "name": "Blighted Weapon",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Blighted Weapon",
+                    "reach": 1,
+                    "attacks": 10.5,
+                    "hit": 6,
+                    "wound": 3,
+                    "rend": 0,
+                    "damage": 1
+                }
+            ]
+        },
+        {
+            "name": "Dolorous Tocsin",
+            "quantity": 0.5,
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -2,
+            "damage": 2
+        },
+        {
+            "name": "Foul Mouthparts",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Venomous Sting",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Virulent Discharge",
+            "reach": 3,
+            "attacks": 1,
+            "hit": 6,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ],
+    "special": [
+        "Supersave 5+"
+    ]
+}

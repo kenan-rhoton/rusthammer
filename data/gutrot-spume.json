@@ -1,0 +1,37 @@
+{
+    "name": "Gutrot Spume",
+    "points": 140,
+    "bravery": 9,
+    "movement": 4,
+    "save": 3,
+    "size": 1,
+    "wounds": 7,
+    "weapons": [
+        {
+            "name": "Rot-pocked Axe",
+            "reach": 2,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Flailing Tentacles",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 2,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "vs HERO",
+            "changes": [
+                { "AddSpecial": "Reroll 1s on Hit" }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Putrid Blightkings",
+    "points": 160,
+    "bravery": 8,
+    "movement": 4,
+    "save": 4,
+    "size": 5,
+    "wounds": 4,
+    "weapons": [
+        {
+            "name": "Blighted Weapon",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Blighted Weapon",
+                    "reach": 1,
+                    "attacks": 10.5,
+                    "hit": 6,
+                    "wound": 3,
+                    "rend": 0,
+                    "damage": 1
+                }
+            ]
+        },
+        {
+            "name": "Virulent Discharge",
+            "reach": 3,
+            "attacks": 1,
+            "hit": 6,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        }
+    ]
+}
+

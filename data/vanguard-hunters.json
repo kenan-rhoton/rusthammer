@@ -25,5 +25,27 @@
             "rend": 0,
             "damage": 1
         }
-    ]
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Boltstorm Pistol",
+                "reach": 9,
+                "attacks": 3,
+                "hit": 3,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Shock Handaxe",
+                "reach": 1,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 3,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    }
 }
