@@ -9,7 +9,7 @@ mod tests;
 
 extern crate serde_json;
 
-#[derive(Debug,PartialEq)]
+#[derive(Debug,PartialEq,Serialize)]
 pub struct Fight {
     winner: String,
     rounds: i32,
@@ -17,6 +17,14 @@ pub struct Fight {
     round_efficiency: f64,
     wound_efficiency: f64,
     kill_damage: f64
+}
+
+impl Fight {
+
+    pub fn json(&self) -> String {
+        serde_json::to_string_pretty(&self).unwrap()
+    }
+
 }
 
 

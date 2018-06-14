@@ -31,21 +31,164 @@ pub struct UnitOption {
     pub changes: Vec<change::Change>
 }
 
-impl Unit {
+#[derive(Serialize)]
+struct UnitResult {
+    scenario: String,
+    result: f64
+}
 
-    pub fn init(&mut self) {
-        self.retry.push(UnitOption {
-            name: String::from("Base"), changes: vec![] });
+#[derive(Serialize)]
+pub struct UnitResultList {
+    title: String,
+    results: Vec<UnitResult>
+}
+
+impl UnitResultList {
+
+    pub fn new(title: String) -> UnitResultList {
+        UnitResultList {
+            title,
+            results: Vec::new()
+        }
     }
 
-    pub fn merge(&self, opt : &UnitOption) -> Unit {
+    pub fn add_result(&mut self, scenario : String, result: f64) {
+        self.results.push(UnitResult{scenario, result});
+    }
+
+    pub fn json(&self) -> String {
+        serde_json::to_string_pretty(&self).unwrap()
+    }
+
+    fn insert_sorted(&mut self, result : UnitResult) {
+        for i in 0..self.results.len() {
+            if self.results[i].result < result.result {
+                self.results.insert(i,result);
+                return
+            }
+        }
+        self.results.push(result);
+    }
+
+    fn max(&mut self, num : usize) {
+        self.results.truncate(num);
+    }
+
+}
+
+impl Unit {
+
+    fn merge(&self, opt : &UnitOption) -> Unit {
         opt.changes.iter().fold(self.clone(),
             |current, change_data| current.apply_change(change_data))
     }
 
+    pub fn precision(&self) -> UnitResultList {
+        let mut results = UnitResultList::new(self.name.clone());
+        self.retry.iter().for_each(|unit| {
+            results.add_result(
+                format!("{}", unit.name),
+                self.merge(unit).weapons_precision());
+        });
+        results
+    }
+
+    pub fn threat(&self) -> UnitResultList {
+        let mut results = UnitResultList::new(self.name.clone());
+        self.retry.iter().for_each(|unit| {
+            results.add_result(
+                format!("{}", unit.name),
+                self.merge(unit).weapons_threat());
+        });
+        results
+    }
+
+    pub fn unsaved(&self, opponent: &Unit) -> UnitResultList {
+        let mut results = UnitResultList::new(
+            format!("{} vs {}", self.name.clone(), opponent.name.clone()));
+        self.retry.iter().for_each(|unit| {
+            opponent.retry.iter().for_each(|opp| {
+                results.add_result(
+                    format!("{} vs {}", unit.name, opp.name),
+                    self.merge(unit).weapons_unsaved(&opponent.merge(opp)));
+            });
+        });
+        results
+    }
+
+    pub fn damage(&self, opponent: &Unit) -> UnitResultList {
+        let mut results = UnitResultList::new(
+            format!("{} vs {}", self.name.clone(), opponent.name.clone()));
+        self.retry.iter().for_each(|unit| {
+            opponent.retry.iter().for_each(|opp| {
+                results.add_result(
+                    format!("{} vs {}", unit.name, opp.name),
+                    self.merge(unit).weapons_damage(&opponent.merge(opp)));
+            });
+        });
+        results
+    }
+
+    pub fn high_save(&self) -> UnitResultList {
+        let opponent = Unit {
+            name: String::from("Save 2+"),
+            save: 2,
+            ..Default::default()
+        };
+        let mut results = UnitResultList::new(
+            format!("{} vs {}", self.name.clone(), opponent.name.clone()));
+        self.retry.iter().for_each(|unit| {
+            results.add_result(
+                format!("{} vs {}", unit.name, opponent.name.clone()),
+                self.merge(unit).weapons_damage(&opponent));
+        });
+        results
+    }
+
+    pub fn top_threat(unit_list : Vec<String>) -> UnitResultList {
+        let mut results = UnitResultList::new(String::from("Top Threat Efficiency"));
+
+        unit_list.iter().skip(2).for_each(|u| {
+            let unit = Unit::from_file(u.to_string()).unwrap();
+            let unit_result = unit.threat();
+
+            unit_result.results.into_iter().for_each(|mut res| {
+                res.result = res.result * 100.0 / unit.points as f64;
+                res.scenario = format!("{} - {}", unit.name, res.scenario);
+                results.insert_sorted(res);
+            });
+        });
+        results.max(20);
+        results
+    }
+
+    pub fn top_high_save(unit_list : Vec<String>) -> UnitResultList {
+        let mut results = UnitResultList::new(String::from("Top Penetration Efficiency"));
+
+        unit_list.iter().skip(2).for_each(|u| {
+            let unit = Unit::from_file(u.to_string()).unwrap();
+            let unit_result = unit.high_save();
+
+            unit_result.results.into_iter().for_each(|mut res| {
+                res.result = res.result * 100.0 / unit.points as f64;
+                res.scenario = format!("{} - {}", unit.name, res.scenario);
+                results.insert_sorted(res);
+            });
+        });
+        results.max(20);
+        results
+    }
+
     pub fn from_file(filename : String) -> Result<Unit, Box<std::error::Error>> {
         let file = std::fs::File::open(filename)?;
-        let u = serde_json::from_reader(file)?;
+
+        let mut u : Unit = serde_json::from_reader(file)?;
+        
+        u.retry.insert(0, ::units::UnitOption{
+            name: String::from("Base"),
+            changes: Vec::new()
+        });
+        
         Ok(u)
     }
 
