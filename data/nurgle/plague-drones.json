@@ -4,80 +4,44 @@
 	"bravery": 10,
 	"movement": 8,
 	"save": 5,
-	"size": 6,
+	"size": 3,
 	"wounds": 5,
 	"weapons": [
 		{
 			"name": "Death's Head",
 			"reach": 14,
 			"attacks": 3,
-			"hit": 4,
+			"hit": 3,
 			"wound": 3,
 			"rend": 0,
-			"damage": 1,
-			"extra":[{
-				"name": "Blades of Putrefaction",
-				"reach": 1,
-				"attacks": 3,
-				"hit": 6,
-				"wound": -100,
-				"rend": -10,
-				"damage": 1
-			}]
+			"damage": 1
 		},
 		{
 			"name": "Plaguesword",
 			"reach": 1,
 			"attacks": 3,
-			"hit": 4,
+			"hit": 3,
 			"wound": 3,
 			"rend": 0,
-			"damage": 1,
-			"extra":[{
-				"name": "Blades of Putrefaction",
-				"reach": 1,
-				"attacks": 3,
-				"hit": 6,
-				"wound": -100,
-				"rend": -10,
-				"damage": 1
-			}]
+			"damage": 1
 		},
 		{
 			"name": "Prehensile Proboscis",
 			"reach": 1,
 			"attacks": 5,
-			"hit": 3,
+			"hit": 2,
 			"wound": 4,
 			"rend": 0,
-			"damage": 1,
-			"extra":[{
-				"name": "Blades of Putrefaction",
-				"reach": 1,
-				"attacks": 5,
-				"hit": 6,
-				"wound": -100,
-				"rend": -10,
-				"damage": 1
-			}]
+			"damage": 1
 		},
 		{
 			"name": "Venomous Sting",
 			"reach": 1,
 			"attacks": 3,
-			"hit": 4,
+			"hit": 3,
 			"wound": 3,
 			"rend": -1,
-			"damage": 2,
-			"extra":[{
-				"name": "Blades of Putrefaction",
-				"reach": 1,
-				"attacks": 3,
-				"hit": 6,
-				"wound": -100,
-				"rend": -10,
-				"damage": 1
-			}]
+			"damage": 2
 		}
 	],
 	"leader": {
@@ -86,55 +50,28 @@
 				"name": "Death's Head",
 				"reach": 14,
 				"attacks": 3,
-				"hit": 4,
+				"hit": 3,
 				"wound": 3,
 				"rend": 0,
-				"damage": 1,
-				"extra":[{
-					"name": "Blades of Putrefaction",
-					"reach": 1,
-					"attacks": 3,
-					"hit": 6,
-					"wound": -100,
-					"rend": -10,
-					"damage": 1
-				}]
+				"damage": 1
 			},
 			{
 				"name": "Leader's Plaguesword",
 				"reach": 1,
 				"attacks": 4,
-				"hit": 4,
+				"hit": 3,
 				"wound": 3,
 				"rend": 0,
-				"damage": 1,
-				"extra":[{
-					"name": "Blades of Putrefaction",
-					"reach": 1,
-					"attacks": 4,
-					"hit": 6,
-					"wound": -100,
-					"rend": -10,
-					"damage": 1
-				}]
+				"damage": 1
 			},
 			{
 				"name": "Prehensile Proboscis",
 				"reach": 1,
 				"attacks": 5,
-				"hit": 3,
+				"hit": 2,
 				"wound": 4,
 				"rend": 0,
-				"damage": 1,
-				"extra":[{
-					"name": "Blades of Putrefaction",
-					"reach": 1,
-					"attacks": 5,
-					"hit": 6,
-					"wound": -100,
-					"rend": -10,
-					"damage": 1
-				}]
+				"damage": 1
 			},
 			{
 				"name": "Venomous Sting",
@@ -143,16 +80,7 @@
 				"hit": 4,
 				"wound": 3,
 				"rend": -1,
-				"damage": 2,
-				"extra":[{
-					"name": "Blades of Putrefaction",
-					"reach": 1,
-					"attacks": 3,
-					"hit": 6,
-					"wound": -100,
-					"rend": -10,
-					"damage": 1
-				}]
+				"damage": 2
 			}
 		]
 	},
