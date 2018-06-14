@@ -9,6 +9,7 @@
     "weapons": [
         {
             "name": "Severin's Broadsword",
+            "quantity": 0.33333,
             "reach": 1,
             "attacks": 3,
             "hit": 3,
@@ -18,6 +19,7 @@
         },
         {
             "name": "Obryn's Grandhammer",
+            "quantity": 0.33333,
             "reach": 1,
             "attacks": 2,
             "hit": 4,
@@ -27,6 +29,7 @@
         },
         {
             "name": "Angharad's Warhammer",
+            "quantity": 0.33333,
             "reach": 1,
             "attacks": 3,
             "hit": 3,
