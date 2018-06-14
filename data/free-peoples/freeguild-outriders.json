@@ -1,0 +1,97 @@
+{
+    "name": "Freeguild Outriders",
+    "points": 130,
+    "bravery": 6,
+    "movement": 12,
+    "save": 5,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Repeater Handgun",
+            "reach": 14,
+            "attacks": 2,
+            "hit": 5,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+            {
+                "name": "Cavalry Sabre",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+        {
+            "name": "Steed's Stamping Hooves",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Leader's Repeater Handgun",
+                "reach": 14,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 3,
+                "rend": -1,
+                "damage": 1
+            },
+            {
+                "name": "Cavalry Sabre",
+                "reach": 1,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Steed's Stamping Hooves",
+                "reach": 1,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 5,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
+    "retry": [
+        {
+            "name": "Repeater Pistol Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Repeater Handgun",
+                        "reach": -5,
+                        "attacks": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Grenade Launcher Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Repeater Handgun",
+                        "attacks": -1,
+                        "reach": -4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

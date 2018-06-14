@@ -1,0 +1,65 @@
+{
+    "name": "Warrior Priest",
+    "points": 80,
+    "bravery": 7,
+    "movement": 5,
+    "save": 3,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Sigmarite Warhammer",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Greathammer",
+            "changes": [
+                { "RemoveWeapon": "Sigmarite Warhammer" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Greathammer",
+                        "reach": 1,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                { "ModifySave": 1 }
+            ]
+        },
+        {
+            "name": "Warhorse",
+            "changes": [
+                { "SetMove": 12 },
+                {
+                    "AddWeapon": {
+                        "name": "Warhorse's Steel-shod Hooves",
+                        "reach": 1,
+                        "attacks": 2,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Double Warhammers",
+            "changes": [
+                { "ModifySave": 1 },
+                { "AddSpecial": "Reroll 1s on Hit" }
+            ]
+        }
+    ]
+}
+

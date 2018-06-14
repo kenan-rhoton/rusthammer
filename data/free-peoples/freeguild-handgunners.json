@@ -1,0 +1,114 @@
+{
+    "name": "Freeguild Handgunners",
+    "points": 100,
+    "bravery": 5,
+    "movement": 5,
+    "save": 6,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Freeguild Handgun",
+            "reach": 16,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Dagger",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Leader's Freeguild Handgun",
+                "reach": 16,
+                "attacks": 1,
+                "hit": 3,
+                "wound": 3,
+                "rend": -1,
+                "damage": 1
+            },
+            {
+                "name": "Dagger",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 5,
+                "wound": 5,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
+    "retry": [
+        {
+            "name": "Repeater Handgun Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Freeguild Handgun",
+                        "reach": -6,
+                        "hit": 1,
+                        "attacks": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Long Rifle Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Freeguild Handgun",
+                        "reach": 14,
+                        "hit": 1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "No movement OR size 20+",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Freeguild Handgun",
+                        "hit": -1
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Freeguild Handgun",
+                        "hit": -1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "No movement AND size 20+",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Freeguild Handgun",
+                        "hit": -2
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Freeguild Handgun",
+                        "hit": -2
+                    }
+                }
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,111 @@
+{
+    "name": "Freeguild General",
+    "points": 100,
+    "bravery": 7,
+    "movement": 12,
+    "save": 4,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Great Weapon",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 3,
+            "rend": -2,
+            "damage": 2
+        },
+        {
+            "name": "Warhorse's Steel-shod Hooves",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Freeguild Lance",
+            "changes": [
+                { "RemoveWeapon": "Great Weapon" },
+                {
+                    "AddWeapon": {
+                        "name": "Freeguild Lance",
+                        "reach": 2,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Freeguild Lance (Charge)",
+            "changes": [
+                { "RemoveWeapon": "Great Weapon" },
+                {
+                    "AddWeapon": {
+                        "name": "Freeguild Lance",
+                        "reach": 2,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sigmarite Weapon & Shield",
+            "changes": [
+                { "RemoveWeapon": "Great Weapon" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Weapon",
+                        "reach": 1,
+                        "attacks": 5,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                { "ModifySave": -1 }
+            ]
+        },
+        {
+            "name": "Sigmarite Weapon & Pistol",
+            "changes": [
+                { "RemoveWeapon": "Great Weapon" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Weapon",
+                        "reach": 1,
+                        "attacks": 5,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Pistol",
+                        "reach": 9,
+                        "attacks": 1,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

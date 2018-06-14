@@ -14,7 +14,8 @@ pub enum Change {
     RemoveSpecial(String),
     ModifySave(i32),
     SetSize(i32),
-    SetPoints(i32)
+    SetPoints(i32),
+    SetMove(i32)
 }
 
 impl Unit {
@@ -89,6 +90,13 @@ impl Unit {
         }
     }
 
+    fn set_move(&self, movement : i32) -> Unit {
+        Unit {
+            movement,
+            ..self.clone()
+        }
+    }
+
     pub fn apply_change(&self, change : &Change) -> Unit {
         match change {
             Change::RemoveWeapon(w) => self.remove_weapon(w),
@@ -99,6 +107,7 @@ impl Unit {
             Change::ModifySave(i) => self.modify_save(*i),
             Change::SetSize(i) => self.set_size(*i),
             Change::SetPoints(i) => self.set_points(*i),
+            Change::SetMove(i) => self.set_move(*i),
         }
     }
 }

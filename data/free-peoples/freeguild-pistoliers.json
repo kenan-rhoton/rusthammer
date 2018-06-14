@@ -1,0 +1,85 @@
+{
+    "name": "Freeguild Pistoliers",
+    "points": 130,
+    "bravery": 5,
+    "movement": 12,
+    "save": 5,
+    "size": 5,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Brace of Pistols",
+            "reach": 9,
+            "attacks": 2,
+            "hit": 5,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        },
+        {
+            "name": "Steed's Stamping Hooves",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 5,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Leader's Brace of Pistols",
+                "reach": 9,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 3,
+                "rend": -1,
+                "damage": 1
+            },
+            {
+                "name": "Cavalry Sabre",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Steed's Stamping Hooves",
+                "reach": 1,
+                "attacks": 2,
+                "hit": 4,
+                "wound": 5,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
+    "retry": [
+        {
+            "name": "Repeater Handgun Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Brace of Pistols",
+                        "reach": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Repeater Pistol Leader",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Leader's Brace of Pistols",
+                        "attacks": 1,
+                        "hit": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
