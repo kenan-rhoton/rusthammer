@@ -5,4 +5,4 @@ rust:
 script:
     - cargo build --verbose
     - cargo test --verbose
-    - target/debug/hammer top-high-save-efficiency data/*/*
+    - RUST_BACKTRACE=1 target/debug/hammer top-high-save-efficiency data/*/*
