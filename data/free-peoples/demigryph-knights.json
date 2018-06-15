@@ -1,0 +1,101 @@
+{
+    "name": "Demigryph Knights",
+    "points": 160,
+    "bravery": 6,
+    "movement": 10,
+    "save": 4,
+    "size": 3,
+    "wounds": 4,
+    "weapons": [
+        {
+            "name": "Lance and Sword",
+            "reach": 2,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Demigryph's Razor-sharp Talons",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+            "extra": [
+                {
+                    "name": "Savage Ferocity",
+                    "reach": 1,
+                    "attacks": 3,
+                    "hit": 4,
+                    "wound": 6,
+                    "rend": -1,
+                    "damage": 2
+                }
+            ]
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Lance and Sword",
+                "reach": 2,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Demigryph's Razor-sharp Talons",
+                "reach": 1,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 4,
+                "rend": -1,
+                "damage": 1,
+                "extra": [
+                    {
+                        "name": "Savage Ferocity",
+                        "reach": 1,
+                        "attacks": 3,
+                        "hit": 4,
+                        "wound": 6,
+                        "rend": -1,
+                        "damage": 2
+                    }
+                ]
+            }
+        ]
+    },
+    "special": [
+        "Reroll 1s on Save"
+    ],
+    "retry": [
+        {
+            "name": "Lance Charge",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Lance and Sword",
+                        "wound": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cavalry Halberds",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Lance and Sword",
+                        "wound": -1
+                    }
+                }
+            ]
+        }
+    ]
+}

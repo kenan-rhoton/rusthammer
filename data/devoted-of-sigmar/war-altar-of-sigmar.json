@@ -1,0 +1,68 @@
+{
+    "name": "War Altar of Sigmar",
+    "points": 250,
+    "bravery": 7,
+    "movement": 10,
+    "save": 4,
+    "size": 1,
+    "wounds": 11,
+    "weapons": [
+        {
+            "name": "Light of Banishment",
+            "reach": 20,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 3
+        },
+        {
+            "name": "Warhorses' Steel-shod Hooves",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Sigmarite Greathammer",
+            "reach": 1,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "retry": [
+        {
+            "name": "Warhammer and Staff",
+            "changes": [
+                { "RemoveWeapon": "Sigmarite Greathammer" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Warhammer",
+                        "reach": 1,
+                        "attacks": 4,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Staff of Sigmar",
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
+        }
+    ]
+}

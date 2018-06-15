@@ -25,22 +25,6 @@ fn default_quantity() -> f64 {
     1.0
 }
 
-#[derive(Deserialize,Debug,PartialEq,Default,Clone,Copy)]
-pub struct AttackResult {
-    pub range: i32,
-    pub value: f64
-}
-
-impl AttackResult {
-    pub fn total(result_list : Vec<AttackResult>) -> f64 {
-        let (ranged, melee) : (Vec<AttackResult>,Vec<AttackResult>)
-             = result_list.iter().partition(|x| x.range > 3);
-
-        ranged.iter().min_by_key(|x| x.range).unwrap_or(&AttackResult{range: 0, value:0.0}).value +
-            melee.iter().min_by_key(|x| x.range).unwrap_or(&AttackResult{range: 0, value:0.0}).value
-    }
-}
-
 impl Weapon {
 
     pub fn merge_weapon(weapon_list : &Vec<Weapon>, target : &Weapon) -> Vec<Weapon> {

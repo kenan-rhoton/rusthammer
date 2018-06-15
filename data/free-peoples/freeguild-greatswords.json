@@ -1,0 +1,67 @@
+{
+    "name": "Freeguild Greatswords",
+    "points": 150,
+    "bravery": 6,
+    "movement": 5,
+    "save": 4,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Zweihander",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Zweihander",
+                "reach": 1,
+                "attacks": 3,
+                "hit": 4,
+                "wound": 3,
+                "rend": -1,
+                "damage": 1
+            }
+        ]
+    },
+    "retry": [
+        {
+            "name": "Size 30",
+            "changes": [
+                { "SetSize": 30 },
+                { "SetPoints": 420 }
+            ]
+        },
+        {
+            "name": "Near Hero",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Zweihander",
+                        "hit": -1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Size 30 Near Hero",
+            "changes": [
+                { "SetSize": 30 },
+                { "SetPoints": 420 },
+                {
+                    "ModifyWeapon": {
+                        "name": "Zweihander",
+                        "hit": -1
+                    }
+                }
+            ]
+        }
+    ]
+}
+

@@ -1,68 +1,25 @@
 use ::units::Unit;
 
-pub fn single_unit(command : &String, source : &mut Unit) {
-    source.init();
-    source.retry.iter().for_each(|r| {
-        print!("{} - ", r.name);
-        exec_one(command, &source.merge(r));
-    });
+fn fetch_unit(path : &String) -> Unit {
+    Unit::from_file(path.to_string()).unwrap()
 }
 
-pub fn two_units(command : &String, source : &mut Unit, target : &mut super::units::Unit ) {
-    println!(
-        "{} vs {} (Wounds: {} Size: {} Save: {})",
-        source.name, target.name, target.wounds, target.size, target.save
-        );
-
-    source.init();
-    target.init();
-    source.retry.iter().for_each(|r| {
-        target.retry.iter().for_each(|l| {
-            println!("{} vs {}: ", r.name, l.name);
-            exec_two(command, &source.merge(r), &target.merge(l));
-        });
-    });
+pub fn command(args : Vec<String>) {
+    let res = exec(args);
+    println!("{}", res);
 }
 
-
-fn exec_one(command : &String, source : &Unit) {
-    match command.as_ref() {
-        "precision" => print_all("Precision", source.precision(), source.points),
-        "threat" => print_all("Threat:", source.threat(), source.points),
-        "ekl" => println!("EKL: {:?}", source.ekl()),
-        a => eprintln!("Unrecognized command: {}", a),
+fn exec(args : Vec<String>) -> String {
+    match args[1].as_ref() {
+        "precision" => Unit::precision(&fetch_unit(&args[2])).json(),
+        "threat" => Unit::threat(&fetch_unit(&args[2])).json(),
+        "high-save" => Unit::high_save(&fetch_unit(&args[2])).json(),
+        "ekl" => Unit::ekl(&fetch_unit(&args[2])).json(),
+        "unsaved" => Unit::unsaved(&fetch_unit(&args[2]), &fetch_unit(&args[3])).json(),
+        "damage" => Unit::damage(&fetch_unit(&args[2]), &fetch_unit(&args[3])).json(),
+        "fight" => Unit::fight(&fetch_unit(&args[2]), &fetch_unit(&args[3])).json(),
+        "top-threat-efficiency" => Unit::top_threat(args).json(),
+        "top-high-save-efficiency" => Unit::top_high_save(args).json(),
+        _ => format!("Unknown command: {}\n", args[1]),
     }
-}
-
-fn exec_two(command : &String, source : &Unit, target : &Unit ) {
-    match command.as_ref() {
-        "unsaved" => print_all("Unsaved wounds:", source.unsaved(target), source.points),
-        "damage" => print_all("Expected Damage:", source.expected_damage(target), source.points),
-        "fight" => println!("Fight Result: {:?}", source.fight(target)),
-        a => eprintln!("Unrecognized command: {}", a),
-    }
-}
-
-
-
-fn print_all(title : &str, result_list : Vec<super::units::weapons::AttackResult>, points : i32) {
-    let (ranged, melee) :
-        (Vec<super::units::weapons::AttackResult>,
-         Vec<super::units::weapons::AttackResult>)
-         = result_list.iter().partition(|x| x.range > 3);
-
-    print_kind("Ranged", &ranged);
-    print_kind("Melee", &melee);
-
-    let res = ranged.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value +
-        melee.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value;
-    println!("{}: {} --- EFFICIENCY: {}", title, res, 100.0 * res / points as f64);
-}
-
-fn print_kind(title : &str, list : &Vec<super::units::weapons::AttackResult>) {
-    println!("    {}:", title);
-    list.iter().for_each(|x| println!("        {} -> {}", x.range, x.value));
-    let res = list.iter().min_by_key(|x| x.range).unwrap_or(&super::units::weapons::AttackResult{range: 0, value:0.0}).value;
-    println!("        TOTAL -> {}", res);
-
 }

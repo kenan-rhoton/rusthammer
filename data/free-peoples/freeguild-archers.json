@@ -1,0 +1,63 @@
+{
+    "name": "Freeguild Archers",
+    "points": 100,
+    "bravery": 5,
+    "movement": 5,
+    "save": 6,
+    "size": 10,
+    "wounds": 1,
+    "weapons": [
+        {
+            "name": "Bow",
+            "reach": 18,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Shortsword",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 5,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Bow",
+                "reach": 18,
+                "attacks": 1,
+                "hit": 3,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            },
+            {
+                "name": "Shortsword",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 5,
+                "wound": 4,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
+    "special": [
+        "Reroll 1s on Hit"
+    ],
+    "retry": [
+        {
+            "name": "Size 30",
+            "changes": [
+                { "RemoveSpecial": "Reroll 1s on Hit" },
+                { "AddSpecial": "Reroll Failed Hits" }
+            ]
+        }
+    ]
+}

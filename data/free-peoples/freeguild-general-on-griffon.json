@@ -1,0 +1,86 @@
+{
+    "name": "Freeguild General on Griffon",
+    "points": 260,
+    "bravery": 7,
+    "movement": 15,
+    "save": 3,
+    "size": 1,
+    "wounds": 13,
+    "weapons": [
+        {
+            "name": "Freeguild Lance",
+            "reach": 2,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Griffon's Deadly Beak",
+            "reach": 2,
+            "attacks": 2,
+            "hit": 3,
+            "wound": 3,
+            "rend": -2,
+            "damage": 3.5
+        },
+        {
+            "name": "Griffon's Razor Claws",
+            "reach": 2,
+            "attacks": 6,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "retry": [
+        {
+            "name": "Lance Charge",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Freeguild Lance",
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Runesword",
+            "changes": [
+                { "RemoveWeapon": "Freeguild Lance" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Runesword",
+                        "reach": 1,
+                        "attacks": 5,
+                        "hit": 3,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Greathammer",
+            "changes": [
+                { "RemoveWeapon": "Freeguild Lance" },
+                {
+                    "AddWeapon": {
+                        "name": "Sigmarite Greathammer",
+                        "reach": 1,
+                        "attacks": 3,
+                        "hit": 3,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 2
+                    }
+                }
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,91 @@
+{
+    "name": "Freeguild Guard",
+    "points": 80,
+    "bravery": 5,
+    "movement": 5,
+    "save": 5,
+    "size": 10,
+    "wounds": 2,
+    "weapons": [
+        {
+            "name": "Halberd",
+            "reach": 1,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "leader": {
+        "weapons": [
+        {
+            "name": "Halberd",
+            "reach": 1,
+            "attacks": 2,
+            "hit": 4,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1
+        }
+        ]
+    },
+    "special": [
+        "Reroll 1s on Save"
+    ],
+    "retry": [
+        {
+            "name": "Size 40",
+            "changes": [
+                { "SetSize": 40 },
+                { "SetPoints": 280 }
+            ]
+        },
+        {
+            "name": "Spears",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Halberd",
+                        "reach": 1,
+                        "rend": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Swords",
+            "changes": [
+                { "ModifySave": -1 },
+                {
+                    "ModifyWeapon": {
+                        "name": "Halberd",
+                        "rend": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Militia Weapons",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Halberd",
+                        "rend": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Militia Weapons",
+                        "reach": 14,
+                        "attacks": 1,
+                        "hit": 5,
+                        "wound": 4,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

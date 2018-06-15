@@ -1,6 +1,5 @@
 use super::Fight;
 use ::units::Unit;
-use ::units::weapons::AttackResult;
 use std::cmp;
 
 fn fight_result(round : i32, status : &UnitStatus, enemy_status : &UnitStatus) -> Fight {
@@ -62,13 +61,12 @@ impl UnitStatus {
     }
 
     fn fight(&mut self, target : &mut UnitStatus) -> bool {
-        target.wounds_suffered += AttackResult::total(
-            self.unit.expected_damage(&target.unit));
+        target.wounds_suffered += self.unit.weapons_damage(&target.unit);
 
         target.update_unit();
         self.wounds_suffered += target.unit.deathrattle() * target.round_casualties as f64;
         self.wounds_suffered += target.unit.thornshields() *
-            AttackResult::total(self.unit.precision());
+            self.unit.weapons_precision();
         self.update_unit();
         return target.unit.size < 1;
     }
