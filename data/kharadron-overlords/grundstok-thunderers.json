@@ -26,14 +26,42 @@
             "damage": 1
         }
     ],
+    "leader": {
+        "weapons": [
+            {
+                "name": "Aethershot Rifle",
+                "reach": 18,
+                "attacks": 2,
+                "hit": 3,
+                "wound": 4,
+                "rend": -1,
+                "damage": 1
+            },
+            {
+                "name": "Gun Butt",
+                "reach": 1,
+                "attacks": 1,
+                "hit": 4,
+                "wound": 5,
+                "rend": 0,
+                "damage": 1
+            }
+        ]
+    },
     "retry": [
         {
             "name": "Aetheric Fumigator",
             "changes": [
-                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethershot Rifle",
+                        "quantity": 0.75
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Aetheric Fumigator",
+                        "quantity": 0.25,
                         "reach": 9,
                         "attacks": 2,
                         "hit": 3,
@@ -47,10 +75,16 @@
         {
             "name": "Decksweeper",
             "changes": [
-                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethershot Rifle",
+                        "quantity": 0.75
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Decksweeper",
+                        "quantity": 0.25,
                         "reach": 12,
                         "attacks": 3.5,
                         "hit": 4,
@@ -64,10 +98,16 @@
         {
             "name": "Aethercannon",
             "changes": [
-                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethershot Rifle",
+                        "quantity": 0.75
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Aethercannon",
+                        "quantity": 0.25,
                         "reach": 12,
                         "attacks": 1,
                         "hit": 4,
@@ -81,10 +121,75 @@
         {
             "name": "Grundstok Mortar",
             "changes": [
-                { "RemoveWeapon": "Aethershot Rifle" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethershot Rifle",
+                        "quantity": 0.75
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Grundstok Mortar",
+                        "quantity": 0.25,
+                        "reach": 12,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": 0,
+                        "damage": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "All Weapons",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethershot Rifle",
+                        "quantity": 0.0
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aetheric Fumigator",
+                        "quantity": 0.25,
+                        "reach": 9,
+                        "attacks": 2,
+                        "hit": 3,
+                        "wound": 2,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Decksweeper",
+                        "quantity": 0.25,
+                        "reach": 12,
+                        "attacks": 3.5,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethercannon",
+                        "quantity": 0.25,
+                        "reach": 12,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 2,
+                        "rend": -2,
+                        "damage": 2
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Grundstok Mortar",
+                        "quantity": 0.2,
                         "reach": 12,
                         "attacks": 1,
                         "hit": 4,

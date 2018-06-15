@@ -31,14 +31,25 @@ pub struct UnitOption {
     pub changes: Vec<change::Change>
 }
 
-#[derive(Serialize)]
+#[derive(Serialize,Clone)]
 struct UnitResult {
     scenario: String,
     result: f64,
     efficiency: f64
 }
 
-#[derive(Serialize)]
+impl UnitResult {
+
+    pub fn combine(&self, other: &UnitResult) -> UnitResult {
+        UnitResult {
+            scenario: self.scenario.clone(),
+            result: self.result + other.result,
+            efficiency: self.efficiency + other.efficiency
+        }
+    }
+}
+
+#[derive(Serialize,Clone)]
 pub struct UnitResultList {
     title: String,
     results: Vec<UnitResult>
@@ -73,6 +84,33 @@ impl UnitResultList {
 
     fn max(&mut self, num : usize) {
         self.results.truncate(num);
+    }
+
+    pub fn double(&self) -> UnitResultList {
+        UnitResultList {
+            results: self.results.iter()
+                .map(|x| UnitResult {
+                    scenario: x.scenario.clone(),
+                    result: x.result * 2.0,
+                    efficiency: x.efficiency * 2.0
+                }).collect(),
+            title: self.title.clone()
+        }
+    }
+
+    fn find_result(&self, s : &String) -> UnitResult {
+        self.results.clone().into_iter().find(|x| x.scenario == s.to_string())
+            .unwrap_or(UnitResult{scenario: s.to_string(), result: 0.0, efficiency: 0.0})
+    }
+
+    pub fn combine(&self, other: &UnitResultList) -> UnitResultList {
+        UnitResultList {
+            results: self.results.iter()
+                .map(|x| {
+                    x.combine(&other.find_result(&x.scenario))
+                }).collect(),
+            title: self.title.clone()
+        }
     }
 
 }
@@ -141,6 +179,44 @@ impl Unit {
         })
     }
 
+    fn only_ranged(&self) -> Unit {
+        Unit {
+            weapons: self.weapons.clone().into_iter().filter(|x| x.reach > 3).collect(),
+            ..self.clone()
+        }
+    }
+
+    pub fn ranged_threat(&self) -> UnitResultList {
+        self.only_ranged().threat()
+    }
+
+    pub fn ranged_high_save(&self) -> UnitResultList {
+        self.only_ranged().high_save()
+    }
+
+    fn only_combat(&self) -> Unit {
+        Unit {
+            weapons: self.weapons.clone().into_iter().filter(|x| x.reach <= 3).collect(),
+            ..self.clone()
+        }
+    }
+
+    pub fn combat_threat(&self) -> UnitResultList {
+        self.only_combat().threat()
+    }
+
+    pub fn combat_high_save(&self) -> UnitResultList {
+        self.only_combat().high_save()
+    }
+
+    pub fn effective_threat(&self) -> UnitResultList {
+        self.combat_threat().double().combine(&self.ranged_threat())
+    }
+
+    pub fn effective_high_save(&self) -> UnitResultList {
+        self.combat_high_save().double().combine(&self.ranged_high_save())
+    }
+
     fn top_efficiency(unit_list : Vec<String>, action : fn(&Unit) -> UnitResultList, name: String) -> UnitResultList {
         let mut results = UnitResultList::new(name);
 
@@ -157,17 +233,17 @@ impl Unit {
         results
     }
 
-    pub fn top_threat(unit_list : Vec<String>) -> UnitResultList {
+    pub fn top_threat_efficiency(unit_list : Vec<String>) -> UnitResultList {
         Unit::top_efficiency(
             unit_list,
-            Unit::threat,
+            Unit::effective_threat,
             String::from("Top Threat Efficiency"))
     }
 
-    pub fn top_high_save(unit_list : Vec<String>) -> UnitResultList {
+    pub fn top_high_save_efficiency(unit_list : Vec<String>) -> UnitResultList {
         Unit::top_efficiency(
             unit_list,
-            Unit::high_save,
+            Unit::effective_high_save,
             String::from("Top Penetration Efficiency"))
     }
 

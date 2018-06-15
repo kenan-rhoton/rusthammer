@@ -28,13 +28,24 @@
     ],
     "retry": [
         {
-            "name": "Volley Guns",
+            "name": "Volley Gun",
             "changes": [
-                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
-                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Rapid-fire Rivet Gun",
+                        "quantity": 0.6666666
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "quantity": 0.6666666
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Gun Butt",
+                        "quantity": 0.3333333,
                         "reach": 1,
                         "attacks": 1,
                         "hit": 4,
@@ -46,6 +57,7 @@
                 {
                     "AddWeapon": {
                         "name": "Aethermatic Volley Gun",
+                        "quantity": 0.3333333,
                         "reach": 24,
                         "attacks": 6,
                         "hit": 4,
@@ -59,11 +71,22 @@
         {
             "name": "Skyhook",
             "changes": [
-                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
-                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Rapid-fire Rivet Gun",
+                        "quantity": 0.6666666
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "quantity": 0.6666666
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Gun Butt",
+                        "quantity": 0.3333333,
                         "reach": 1,
                         "attacks": 1,
                         "hit": 4,
@@ -75,6 +98,60 @@
                 {
                     "AddWeapon": {
                         "name": "Skyhook",
+                        "quantity": 0.3333333,
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -2,
+                        "damage": 3
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Volley Gun + Skyhook",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Rapid-fire Rivet Gun",
+                        "quantity": 0.3333333
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "quantity": 0.3333333
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "quantity": 0.6666666,
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Gun",
+                        "quantity": 0.3333333,
+                        "reach": 24,
+                        "attacks": 6,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Skyhook",
+                        "quantity": 0.3333333,
                         "reach": 24,
                         "attacks": 1,
                         "hit": 4,
@@ -88,11 +165,22 @@
         {
             "name": "Drill Cannon",
             "changes": [
-                { "RemoveWeapon": "Rapid-fire Rivet Gun" },
-                { "RemoveWeapon": "Aethermatic Saw" },
+                {
+                    "ModifyWeapon": {
+                        "name": "Rapid-fire Rivet Gun",
+                        "quantity": 0.6666666
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "quantity": 0.6666666
+                    }
+                },
                 {
                     "AddWeapon": {
                         "name": "Gun Butt",
+                        "quantity": 0.3333333,
                         "reach": 1,
                         "attacks": 1,
                         "hit": 4,
@@ -104,6 +192,71 @@
                 {
                     "AddWeapon": {
                         "name": "Drill Cannon",
+                        "quantity": 0.3333333,
+                        "reach": 24,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 3,
+                        "rend": -3,
+                        "damage": 3,
+                        "extra": [
+                            {
+                                "name": "Exploding Drill",
+                                "reach": 24,
+                                "attacks": 1,
+                                "hit": 4,
+                                "wound": 6,
+                                "rend": -100,
+                                "damage": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Volley Gun + Drill Cannon",
+            "changes": [
+                {
+                    "ModifyWeapon": {
+                        "name": "Rapid-fire Rivet Gun",
+                        "quantity": 0.3333333
+                    }
+                },
+                {
+                    "ModifyWeapon": {
+                        "name": "Aethermatic Saw",
+                        "quantity": 0.3333333
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Gun Butt",
+                        "quantity": 0.6666666,
+                        "reach": 1,
+                        "attacks": 1,
+                        "hit": 4,
+                        "wound": 5,
+                        "rend": 0,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Aethermatic Volley Gun",
+                        "quantity": 0.3333333,
+                        "reach": 24,
+                        "attacks": 6,
+                        "hit": 4,
+                        "wound": 4,
+                        "rend": -1,
+                        "damage": 1
+                    }
+                },
+                {
+                    "AddWeapon": {
+                        "name": "Drill Cannon",
+                        "quantity": 0.3333333,
                         "reach": 24,
                         "attacks": 1,
                         "hit": 4,
