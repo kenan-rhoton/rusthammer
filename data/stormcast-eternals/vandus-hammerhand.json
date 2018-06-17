@@ -1,0 +1,64 @@
+{
+    "name": "Vandus Hammerhand",
+    "points": 280,
+    "bravery": 9,
+    "movement": 10,
+    "save": 3,
+    "size": 1,
+    "wounds": 7,
+    "weapons": [
+        {
+            "name": "Storm Breath",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 4,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+        },
+        {
+            "name": "Heldensen",
+            "reach": 2,
+            "attacks": 3,
+            "hit": 3,
+            "wound": 2,
+            "rend": -1,
+            "damage": 3
+        },
+        {
+            "name": "Calanax's Claws and Fangs",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 4,
+            "rend": -1,
+            "damage": 1,
+	    "extra": [
+		    {
+			    "name": "Intolerable Damage",
+			    "reach": 1,
+			    "attacks": 4,
+			    "hit": 3,
+			    "wound": 6,
+			    "rend": -1,
+			    "damage": 3.5
+		    }
+	    ]
+        }
+    ],
+    "retry": [
+	    {
+		    "name": "Charge",
+		    "changes": [
+			    {
+				    "ModifyWeapon": {
+					    "name": "Heldensen",
+					    "attacks": 2
+				    }
+			    }
+		    ]
+	    }
+    ]
+}
+
+

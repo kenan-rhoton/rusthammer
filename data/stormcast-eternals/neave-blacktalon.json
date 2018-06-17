@@ -1,0 +1,62 @@
+{
+	"name": "Neave Blacktalon",
+	"points": 120,
+	"bravery": 9,
+	"movement": 6,
+	"save": 3,
+	"size": 1,
+	"wounds": 6,
+	"weapons": [
+		{
+			"name": "Boltstorm Pistol",
+			"reach": 9,
+			"attacks": 2,
+			"hit": 3,
+			"wound": 3,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "The Whirlwind Axes",
+			"reach": 1,
+			"attacks": 7,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 1,
+			"extra": [
+				{
+					"name": "Lightning-Fast Strikes",
+					"reach": 1,
+					"attacks": 7,
+					"hit": 6,
+					"wound": 3,
+					"rend": -1,
+					"damage": 1
+				}
+			]
+		}
+	],
+	"special": [
+		"Run and Shoot"
+    ],
+    "retry": [
+	    {
+		    "name": "vs HERO",
+		    "changes": [
+			    {
+				    "ModifyWeapon": {
+					    "name": "The Whirlwind Axes",
+					    "damage": 1
+				    }
+			    },
+			    {
+				    "ModifyWeapon": {
+					    "name": "Boltstorm Pistol",
+					    "damage": 1
+				    }
+			    }
+		    ]
+	    }
+    ]
+}
