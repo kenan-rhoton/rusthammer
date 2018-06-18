@@ -182,6 +182,17 @@ impl Unit {
     fn only_ranged(&self) -> Unit {
         Unit {
             weapons: self.weapons.clone().into_iter().filter(|x| x.reach > 3).collect(),
+            retry: self.retry.clone().into_iter()
+                .map(|x|
+                     UnitOption {
+                         name: x.name,
+                         changes: x.changes.into_iter()
+                             .filter(|c| match c {
+                                 change::Change::AddWeapon(w) =>
+                                     w.reach > 3,
+                                 _ => true,
+                             }).collect()
+                     }).collect(),
             ..self.clone()
         }
     }
@@ -197,6 +208,17 @@ impl Unit {
     fn only_combat(&self) -> Unit {
         Unit {
             weapons: self.weapons.clone().into_iter().filter(|x| x.reach <= 3).collect(),
+            retry: self.retry.clone().into_iter()
+                .map(|x|
+                     UnitOption {
+                         name: x.name,
+                         changes: x.changes.into_iter()
+                             .filter(|c| match c {
+                                 change::Change::AddWeapon(w) =>
+                                     w.reach <= 3,
+                                 _ => true,
+                             }).collect()
+                     }).collect(),
             ..self.clone()
         }
     }
