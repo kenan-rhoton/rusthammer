@@ -167,7 +167,7 @@ impl Unit {
         self.versus(&opponent, Unit::weapons_damage)
     }
 
-    pub fn high_save(&self) -> UnitResultList {
+    pub fn penetration(&self) -> UnitResultList {
         self.damage(&Unit {
             name: String::from("Save 2+"),
             save: 2,
@@ -182,6 +182,17 @@ impl Unit {
     fn only_ranged(&self) -> Unit {
         Unit {
             weapons: self.weapons.clone().into_iter().filter(|x| x.reach > 3).collect(),
+            retry: self.retry.clone().into_iter()
+                .map(|x|
+                     UnitOption {
+                         name: x.name,
+                         changes: x.changes.into_iter()
+                             .filter(|c| match c {
+                                 change::Change::AddWeapon(w) =>
+                                     w.reach > 3,
+                                 _ => true,
+                             }).collect()
+                     }).collect(),
             ..self.clone()
         }
     }
@@ -190,13 +201,24 @@ impl Unit {
         self.only_ranged().threat()
     }
 
-    pub fn ranged_high_save(&self) -> UnitResultList {
-        self.only_ranged().high_save()
+    pub fn ranged_penetration(&self) -> UnitResultList {
+        self.only_ranged().penetration()
     }
 
     fn only_combat(&self) -> Unit {
         Unit {
             weapons: self.weapons.clone().into_iter().filter(|x| x.reach <= 3).collect(),
+            retry: self.retry.clone().into_iter()
+                .map(|x|
+                     UnitOption {
+                         name: x.name,
+                         changes: x.changes.into_iter()
+                             .filter(|c| match c {
+                                 change::Change::AddWeapon(w) =>
+                                     w.reach <= 3,
+                                 _ => true,
+                             }).collect()
+                     }).collect(),
             ..self.clone()
         }
     }
@@ -205,16 +227,16 @@ impl Unit {
         self.only_combat().threat()
     }
 
-    pub fn combat_high_save(&self) -> UnitResultList {
-        self.only_combat().high_save()
+    pub fn combat_penetration(&self) -> UnitResultList {
+        self.only_combat().penetration()
     }
 
     pub fn effective_threat(&self) -> UnitResultList {
         self.combat_threat().double().combine(&self.ranged_threat())
     }
 
-    pub fn effective_high_save(&self) -> UnitResultList {
-        self.combat_high_save().double().combine(&self.ranged_high_save())
+    pub fn effective_penetration(&self) -> UnitResultList {
+        self.combat_penetration().double().combine(&self.ranged_penetration())
     }
 
     fn top_efficiency(unit_list : Vec<String>, action : fn(&Unit) -> UnitResultList, name: String) -> UnitResultList {
@@ -240,11 +262,39 @@ impl Unit {
             String::from("Top Threat Efficiency"))
     }
 
-    pub fn top_high_save_efficiency(unit_list : Vec<String>) -> UnitResultList {
+    pub fn top_penetration_efficiency(unit_list : Vec<String>) -> UnitResultList {
         Unit::top_efficiency(
             unit_list,
-            Unit::effective_high_save,
+            Unit::effective_penetration,
             String::from("Top Penetration Efficiency"))
+    }
+
+    pub fn top_ranged_threat_efficiency(unit_list : Vec<String>) -> UnitResultList {
+        Unit::top_efficiency(
+            unit_list,
+            Unit::ranged_threat,
+            String::from("Top Ranged Threat Efficiency"))
+    }
+
+    pub fn top_ranged_penetration_efficiency(unit_list : Vec<String>) -> UnitResultList {
+        Unit::top_efficiency(
+            unit_list,
+            Unit::ranged_penetration,
+            String::from("Top Ranged Penetration Efficiency"))
+    }
+
+    pub fn top_combat_threat_efficiency(unit_list : Vec<String>) -> UnitResultList {
+        Unit::top_efficiency(
+            unit_list,
+            Unit::combat_threat,
+            String::from("Top Combat Threat Efficiency"))
+    }
+
+    pub fn top_combat_penetration_efficiency(unit_list : Vec<String>) -> UnitResultList {
+        Unit::top_efficiency(
+            unit_list,
+            Unit::combat_penetration,
+            String::from("Top Combat Penetration Efficiency"))
     }
 
     pub fn from_file(filename : String) -> Result<Unit, Box<std::error::Error>> {
