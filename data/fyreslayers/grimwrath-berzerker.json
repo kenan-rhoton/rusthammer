@@ -1,0 +1,48 @@
+{
+    "name": "Grimwrath Berzerker",
+    "points": 80,
+    "bravery": 9,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Fyresteel Throwing Axe",
+            "reach": 8,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Fyrestorm Greataxe",
+            "reach": 1,
+            "attacks": 4,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        }
+    ],
+    "special": [
+	"Supersave 6+"
+    ],
+    "retry": [
+	{
+	    "name": "Battle Fury",
+	    "changes": [
+		{
+		    "ModifyWeapon": {
+			    "name": "Fyrestorm Greataxe",
+			    "attacks": 4
+		    }
+		}
+	    ]
+	}
+    ]
+}
+
+
+

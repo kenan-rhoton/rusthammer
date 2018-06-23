@@ -1,0 +1,33 @@
+{
+    "name": "Auric Runefather",
+    "points": 80,
+    "bravery": 8,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 6,
+    "weapons": [
+        {
+            "name": "Fyresteel Throwing Axe",
+            "reach": 8,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Latchkey Grandaxe",
+            "reach": 3,
+            "attacks": 3,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 3
+        }
+    ],
+    "special": [
+	    "-2 Bravery"
+    ]
+}
+

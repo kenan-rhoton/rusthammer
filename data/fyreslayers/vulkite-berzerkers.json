@@ -1,0 +1,119 @@
+{
+	"name": "Vulkite Berzerkers",
+	"points": 120,
+	"bravery": 7,
+	"movement": 4,
+	"save": 5,
+	"size": 10,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Fyresteel Throwing Axe",
+			"reach": 8,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Fyresteel Handaxe",
+			"reach": 1,
+			"attacks": 2,
+			"hit": 4,
+			"wound": 3,
+			"rend": 0,
+			"damage": 1
+		}
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Fyresteel Throwing Axe",
+				"reach": 8,
+				"attacks": 1,
+				"hit": 3,
+				"wound": 4,
+				"rend": 0,
+				"damage": 1
+			},
+			{
+				"name": "Fyresteel Handaxe",
+				"reach": 1,
+				"attacks": 2,
+				"hit": 4,
+				"wound": 3,
+				"rend": 0,
+				"damage": 2
+			}
+		]
+	},
+	"special": [
+		"Supersave 6+"
+	],
+	"retry": [
+		{
+			"name": "Double Handaxes",
+			"changes": [
+				{ "AddSpecial": "Reroll Failed Hits" }
+			]
+		},
+		{
+			"name": "War-Picks",
+			"changes": [
+				{ "RemoveWeapon": "Fyresteel Handaxe" },
+				{
+					"AddWeapon": {
+						"name": "Fyresteel War-pick",
+						"reach": 1,
+						"attacks": 2,
+						"hit": 4,
+						"wound": 4,
+						"rend": -1,
+						"damage": 1
+					}
+				}
+			]
+		},
+		{
+			"name": "Bladed Slingshields - Charge",
+			"changes": [
+				{
+					"AddWeapon": {
+						"name": "Bladed Slingshield",
+						"reach": 1,
+						"attacks": 1,
+						"hit": 6,
+						"wound": -10,
+						"rend": -100,
+						"damage": 1
+					}
+				}
+			]
+		},
+		{
+			"name": "Bladed Slingshields - No Charge",
+			"changes": [
+				{ "ModifySave": -1 }
+			]
+		},
+		{
+			"name": "Size 20",
+			"changes": [
+				{ "SetSize": 20 },
+				{ "SetPoints": 240 },
+				{ "RemoveSpecial": "Supersave 6+" },
+				{ "AddSpecial": "Supersave 5+" }
+			]
+		},
+		{
+			"name": "Size 30",
+			"changes": [
+				{ "SetSize": 30 },
+				{ "SetPoints": 330 },
+				{ "RemoveSpecial": "Supersave 6+" },
+				{ "AddSpecial": "Supersave 4+" }
+			]
+		}
+	]
+}

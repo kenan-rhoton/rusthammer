@@ -42,7 +42,34 @@
             "wound": 4,
             "rend": 0,
             "damage": 1
-        }
+        },
+	{
+            "name": "Roaring Fyrestream",
+            "reach": 15,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+	},
+	{
+            "name": "Lashing Tail",
+            "reach": 3,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+	},
+	{
+            "name": "Volcanic Blood",
+            "reach": 3,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 2
+	}
     ]
 }
 
