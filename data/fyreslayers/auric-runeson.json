@@ -1,0 +1,94 @@
+{
+    "name": "Auric Runeson",
+    "points": 80,
+    "bravery": 7,
+    "movement": 4,
+    "save": 4,
+    "size": 1,
+    "wounds": 5,
+    "weapons": [
+        {
+            "name": "Wyrmslayer Javelin (Ranged)",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 3,
+            "rend": -1,
+            "damage": 2
+        },
+        {
+            "name": "Fyresteel Throwing Axe",
+            "reach": 8,
+            "attacks": 1,
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": 1
+        },
+        {
+            "name": "Wyrmslayer Javelin (Melee)",
+            "reach": 3,
+            "attacks": 1,
+            "hit": 4,
+            "wound": 3,
+            "rend": -1,
+            "damage": 1
+        }
+    ],
+    "retry": [
+	{
+	    "name": "Explosive Rage",
+	    "changes": [
+		{ "AddSpecial": "Reroll 1s on Hit" }
+	    ]
+	},
+	{
+	    "name": "Monster Slayer",
+	    "changes": [
+		{
+		    "ModifyWeapon": {
+			"name": "Wyrmslayer Javelin (Ranged)",
+			"damage": 2
+		    }
+		}
+	    ]
+	},
+	{
+	    "name": "Ancestral War-Axe",
+	    "changes": [
+		{ "RemoveWeapon": "Wyrmslayer Javelin (Ranged)" },
+		{ "RemoveWeapon": "Wyrmslayer Javelin (Melee)" },
+		{
+		    "AddWeapon": {
+			"name": "Ancestral War-Axe",
+			"reach": 1,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 4,
+			"rend": 0,
+			"damage": 2
+		    }
+		}
+	    ]
+	},
+	{
+	    "name": "Ancestral War-Axe + Rage",
+	    "changes": [
+		{ "RemoveWeapon": "Wyrmslayer Javelin (Ranged)" },
+		{ "RemoveWeapon": "Wyrmslayer Javelin (Melee)" },
+		{ "AddSpecial": "Reroll 1s on Hit" },
+		{
+		    "AddWeapon": {
+			"name": "Ancestral War-Axe",
+			"reach": 1,
+			"attacks": 3,
+			"hit": 3,
+			"wound": 4,
+			"rend": 0,
+			"damage": 2
+		    }
+		}
+	    ]
+	}
+    ]
+}

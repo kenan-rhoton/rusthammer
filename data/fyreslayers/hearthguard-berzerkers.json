@@ -1,0 +1,95 @@
+{
+	"name": "Hearthguard Berzerkers",
+	"points": 100,
+	"bravery": 8,
+	"movement": 4,
+	"save": 5,
+	"size": 5,
+	"wounds": 1,
+	"weapons": [
+		{
+			"name": "Fyresteel Throwing Axe",
+			"reach": 8,
+			"attacks": 1,
+			"hit": 4,
+			"wound": 4,
+			"rend": 0,
+			"damage": 1
+		},
+		{
+			"name": "Berserker Broadaxe",
+			"reach": 1,
+			"attacks": 1,
+			"hit": 3,
+			"wound": 3,
+			"rend": -1,
+			"damage": 2
+		}
+	],
+	"leader": {
+		"weapons": [
+			{
+				"name": "Fyresteel Throwing Axe",
+				"reach": 8,
+				"attacks": 1,
+				"hit": 3,
+				"wound": 4,
+				"rend": 0,
+				"damage": 1
+			},
+			{
+				"name": "Berserker Broadaxe",
+				"reach": 1,
+				"attacks": 1,
+				"hit": 3,
+				"wound": 3,
+				"rend": -1,
+				"damage": 3
+			}
+		]
+	},
+	"special": [
+		"Supersave 6+"
+	],
+	"retry": [
+		{
+			"name": "Flamestrike Poleaxes",
+			"changes": [
+				{
+					"ModifyWeapon": {
+						"name": "Berserker Broadaxe",
+						"wound": 1,
+						"rend": 1,
+						"damage": -1,
+						"extra": [
+							{
+								"name": "Smouldering Braziers",
+								"reach": 1,
+								"attacks": 1,
+								"hit": 3,
+								"wound": 3,
+								"rend": -100,
+								"damage": 1
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Size 30",
+			"changes": [
+				{ "SetSize": 30 },
+				{ "SetPoints": 480 }
+			]
+		},
+		{
+			"name": "Near HERO",
+			"changes": [
+				{ "RemoveSpecial": "Supersave 6+" },
+				{ "AddSpecial": "Supersave 4+" }
+			]
+		}
+	]
+}
+
