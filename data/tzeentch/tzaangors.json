@@ -82,8 +82,10 @@
 		    ]
 	    },
 	    {
-		    "name": "Size 18+",
+		    "name": "Size 20",
 		    "changes": [
+			    { "SetSize": 20 },
+			    { "SetPoints": 360},
 			    { "ModifyWeapon": { "name": "Savage Blade", "attacks": 2 } },
 			    { "ModifyWeapon": { "name": "Savage Greatblade", "attacks": 2 } },
 			    { "ModifyWeapon": { "name": "Mutant Savage Blade", "attacks": 2 } }
