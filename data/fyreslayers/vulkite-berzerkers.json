@@ -32,7 +32,7 @@
 				"name": "Fyresteel Throwing Axe",
 				"reach": 8,
 				"attacks": 1,
-				"hit": 3,
+				"hit": 4,
 				"wound": 4,
 				"rend": 0,
 				"damage": 1
@@ -61,16 +61,11 @@
 		{
 			"name": "War-Picks",
 			"changes": [
-				{ "RemoveWeapon": "Fyresteel Handaxe" },
 				{
-					"AddWeapon": {
-						"name": "Fyresteel War-pick",
-						"reach": 1,
-						"attacks": 2,
-						"hit": 4,
-						"wound": 4,
-						"rend": -1,
-						"damage": 1
+					"ModifyWeapon": {
+						"name": "Fyresteel Handaxe",
+						"wound": 1,
+						"rend": -1
 					}
 				}
 			]

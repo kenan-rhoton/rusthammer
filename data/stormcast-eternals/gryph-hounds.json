@@ -1,10 +1,10 @@
 {
     "name": "Gryph-Hounds",
-    "points": 40,
+    "points": 140,
     "bravery": 6,
     "movement": 9,
     "save": 7,
-    "size": 1,
+    "size": 6,
     "wounds": 3,
     "weapons": [
         {

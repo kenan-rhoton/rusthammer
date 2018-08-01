@@ -10,7 +10,7 @@
         {
             "name": "Storm Blast",
             "reach": 12,
-            "attacks": 2,
+            "attacks": 1,
             "hit": 4,
             "wound": -10,
             "rend": -100,
@@ -26,7 +26,7 @@
             "damage": 2,
 	    "extra": [
 		    {
-			    "name": "Lightning Blast",
+			    "name": "Blast to Ashes",
 			    "reach": 1,
 			    "attacks": 3,
 			    "hit": 6,

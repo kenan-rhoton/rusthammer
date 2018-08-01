@@ -11,8 +11,8 @@
             "name": "Cometstrike Sceptre",
             "reach": 24,
             "attacks": 1,
-            "hit": 0,
-            "wound": 0,
+            "hit": -10,
+            "wound": -10,
             "rend": -100,
             "damage": 2
         },

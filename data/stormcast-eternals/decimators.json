@@ -9,7 +9,7 @@
     "weapons": [
         {
             "name": "Thunderaxe",
-            "quantity": 0.6,
+            "quantity": 0.5,
             "reach": 2,
             "attacks": 1,
             "hit": 3,
@@ -19,61 +19,71 @@
         },
         {
             "name": "Starsoul Mace",
-            "quantity": 0.4,
+            "quantity": 0.5,
             "reach": 1,
             "attacks": 1,
-            "hit": -10,
+            "hit": 3,
             "wound": -10,
             "rend": -100,
-            "damage": 2
-        }
+            "damage": 2,
+	    "extra": [
+		    {
+			    "name": "Starsoul Boom",
+			    "reach": 1,
+			    "attacks": 1,
+			    "hit": 6,
+			    "wound": -10,
+			    "rend": -100,
+			    "damage": 3
+		    }
+	    ]
+	}
     ],
     "leader": {
-        "weapons": [
-            {
-                "name": "Thunderaxe",
-                "quantity": 0.6,
-                "reach": 2,
-                "attacks": 1,
-                "hit": 3,
-                "wound": 2,
-                "rend": -1,
-                "damage": 1
-            }
-        ]
+	    "weapons": [
+		    {
+			    "name": "Thunderaxe",
+			    "reach": 2,
+			    "attacks": 1,
+			    "hit": 3,
+			    "wound": 2,
+			    "rend": -1,
+			    "damage": 1
+		    }
+	    ]
     },
     "retry": [
-        {
-            "name": "3 targets",
-            "changes": [
-                {
-                    "ModifyWeapon": {
-                        "name": "Thunderaxe",
-                        "reach": 0,
-                        "attacks": 2,
-                        "hit": 0,
-                        "wound": 0,
-                        "rend": 0,
-                        "damage": 0
-                    }
-                }
-            ]
-        },
-        {
-            "name": "5 targets",
-            "changes": [
-                {
-                    "ModifyWeapon": {
-                        "name": "Thunderaxe",
-                        "reach": 0,
-                        "attacks": 4,
-                        "hit": 0,
-                        "wound": 0,
-                        "rend": 0,
-                        "damage": 0
-                    }
-                }
-            ]
-        }
+	    {
+		    "name": "3 targets",
+		    "changes": [
+			    {
+				    "ModifyWeapon": {
+					    "name": "Thunderaxe",
+					    "reach": 0,
+					    "attacks": 2,
+					    "hit": 0,
+					    "wound": 0,
+					    "rend": 0,
+					    "damage": 0
+				    }
+			    }
+		    ]
+	    },
+	    {
+		    "name": "5 targets",
+		    "changes": [
+			    {
+				    "ModifyWeapon": {
+					    "name": "Thunderaxe",
+					    "reach": 0,
+					    "attacks": 4,
+					    "hit": 0,
+					    "wound": 0,
+					    "rend": 0,
+					    "damage": 0
+				    }
+			    }
+		    ]
+	    }
     ]
 }

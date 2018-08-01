@@ -55,6 +55,8 @@
         {
             "name": "Size 30",
             "changes": [
+		{ "SetSize": 30 },
+		{ "SetPoints": 300 },
                 { "RemoveSpecial": "Reroll 1s on Hit" },
                 { "AddSpecial": "Reroll Failed Hits" }
             ]

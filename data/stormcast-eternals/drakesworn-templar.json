@@ -1,6 +1,6 @@
 {
     "name": "Drakesworn Templar",
-    "points": 500,
+    "points": 460,
     "bravery": 9,
     "movement": 12,
     "save": 3,
@@ -33,6 +33,15 @@
             "wound": 3,
             "rend": -1,
             "damage": 2
+        },
+        {
+            "name": "Stardrake's Cavernous Jaws",
+            "reach": 1,
+            "attacks": 1,
+            "hit": -10,
+            "wound": -10,
+            "rend": -100,
+            "damage": 4
         },
         {
             "name": "Rain of Stars",
@@ -71,7 +80,7 @@
                             {
                                 "name": "Hammer Smash",
                                 "reach": 1,
-                                "attacks": 2,
+                                "attacks": 4,
                                 "hit": 6,
                                 "wound": 3,
                                 "rend": -1,

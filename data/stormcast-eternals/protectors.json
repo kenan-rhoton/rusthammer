@@ -22,12 +22,22 @@
 			"quantity": 0.5,
 			"reach": 1,
 			"attacks": 1,
-			"hit": -10,
+			"hit": 3,
 			"wound": -10,
 			"rend": -100,
-			"damage": 2
+			"damage": 2,
+			"extra": [
+				{
+					"name": "Starsoul Boom",
+					"reach": 1,
+					"attacks": 1,
+					"hit": 6,
+					"wound": -10,
+					"rend": -100,
+					"damage": 3
+				}
+			]
 		}
-
 	],
 	"leader": {
 		"weapons": [
