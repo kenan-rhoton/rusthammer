@@ -1,6 +1,6 @@
 {
     "name": "Desolators",
-    "points": 240,
+    "points": 220,
     "bravery": 7,
     "movement": 10,
     "save": 3,
@@ -10,7 +10,7 @@
         {
             "name": "Storm Blast",
             "reach": 12,
-            "attacks": 2,
+            "attacks": 1,
             "hit": 4,
             "wound": -10,
             "rend": -100,
