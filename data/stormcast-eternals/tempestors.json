@@ -17,10 +17,10 @@
             "damage": 1
         },
         {
-            "name": "Lightning Surge",
-            "reach": 6,
-            "attacks": 2,
-            "hit": 3,
+            "name": "Storm Blast",
+            "reach": 12,
+            "attacks": 1,
+            "hit": 4,
             "wound": -10,
             "rend": -100,
             "damage": 2
